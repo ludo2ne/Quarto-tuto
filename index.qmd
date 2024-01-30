@@ -1,0 +1,25 @@
+---
+title: "Quarto-tuto"
+description: "Discover some of Quarto's features"
+author: "Ludovic Deneuville"
+format: html
+from: markdown+emoji
+---
+
+## Web page
+
+
+## Notebook
+
+
+## Slideshow with [revealJS](https://quarto.org/docs/presentations/revealjs/){.external target="_blank"}
+
+- Speaker view
+- chalkboard
+- print-pdf
+
+
+
+## Links
+
+- [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}

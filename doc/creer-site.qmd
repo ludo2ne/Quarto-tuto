@@ -1,0 +1,42 @@
+---
+title: "Créer son site avec Quarto"
+author: "Ludovic Deneuville"
+format: html
+from: markdown+emoji
+---
+
+
+## Installer Quarto
+
+## Créer un dépôt sur GitHub
+
+* créer une branche nommée `gh-pages`
+* Settings > Pages
+  * Deploy from a branch
+  * branch : gh-pages
+
+## Cloner le dépôt
+
+Insérer à minima les fichiers suivants :
+
+* _quarto.yml
+* index.qmd
+* styles.css
+* .github/worflows/publish.yml
+
+Recommandé :
+
+* .gitignore
+* dossier `doc` pour ranger les pages
+  * sous-dossiers `cours`, et `tp`
+
+## Tester en local
+
+* `quarto render` : Génrer les pages html
+
+
+## Déployer sur GitHub pages
+
+* lors d'un push, le fichier `.github/worflows/publish.yml` déclenche un pipeline
+* le site est alors déployé sur https://<username>.github.io/<repositoryname>
+  * :bulb: Sur la page GitHub du projet, ajouter ce lien dans la section `About`
