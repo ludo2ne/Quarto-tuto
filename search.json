@@ -1,28 +1,28 @@
 [
   {
-    "objectID": "doc/creer-site.html#créer-un-dépôt-sur-github",
-    "href": "doc/creer-site.html#créer-un-dépôt-sur-github",
+    "objectID": "doc/create-website.html#create-a-repository-on-github",
+    "href": "doc/create-website.html#create-a-repository-on-github",
     "title": "Créer son site avec Quarto",
-    "section": "Créer un dépôt sur GitHub",
-    "text": "Créer un dépôt sur GitHub\n\ncréer une branche nommée gh-pages\nSettings &gt; Pages\n\nDeploy from a branch\nbranch : gh-pages"
+    "section": "Create a repository on GitHub",
+    "text": "Create a repository on GitHub\n\ncréer une branche nommée gh-pages\nSettings &gt; Pages\n\nDeploy from a branch\nbranch : gh-pages"
   },
   {
-    "objectID": "doc/creer-site.html#cloner-le-dépôt",
-    "href": "doc/creer-site.html#cloner-le-dépôt",
+    "objectID": "doc/create-website.html#cloner-le-dépôt",
+    "href": "doc/create-website.html#cloner-le-dépôt",
     "title": "Créer son site avec Quarto",
     "section": "Cloner le dépôt",
     "text": "Cloner le dépôt\nInsérer à minima les fichiers suivants :\n\n_quarto.yml\nindex.qmd\nstyles.css\n.github/worflows/publish.yml\n\nRecommandé :\n\n.gitignore\ndossier doc pour ranger les pages\n\nsous-dossiers cours, et tp"
   },
   {
-    "objectID": "doc/creer-site.html#tester-en-local",
-    "href": "doc/creer-site.html#tester-en-local",
+    "objectID": "doc/create-website.html#tester-en-local",
+    "href": "doc/create-website.html#tester-en-local",
     "title": "Créer son site avec Quarto",
     "section": "Tester en local",
     "text": "Tester en local\n\nquarto render : Génrer les pages html"
   },
   {
-    "objectID": "doc/creer-site.html#déployer-sur-github-pages",
-    "href": "doc/creer-site.html#déployer-sur-github-pages",
+    "objectID": "doc/create-website.html#déployer-sur-github-pages",
+    "href": "doc/create-website.html#déployer-sur-github-pages",
     "title": "Créer son site avec Quarto",
     "section": "Déployer sur GitHub pages",
     "text": "Déployer sur GitHub pages\n\nlors d’un push, le fichier .github/worflows/publish.yml déclenche un pipeline\nle site est alors déployé sur https://.github.io/\n\n💡 Sur la page GitHub du projet, ajouter ce lien dans la section About"
@@ -75,6 +75,48 @@
     "title": "Tuto Quarto-Reveal.js",
     "section": "Table",
     "text": "Table\n\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n\nQuarto-tuto"
+  },
+  {
+    "objectID": "doc/practical/notebook.html",
+    "href": "doc/practical/notebook.html",
+    "title": "Notebook",
+    "section": "",
+    "text": "Download this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/practical/notebook.html#before-you-start",
+    "href": "doc/practical/notebook.html#before-you-start",
+    "title": "Notebook",
+    "section": "",
+    "text": "Download this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/practical/notebook.html#introduction",
+    "href": "doc/practical/notebook.html#introduction",
+    "title": "Notebook",
+    "section": "1 Introduction",
+    "text": "1 Introduction\n# a python cell that will not be executed\n\n# a python cell to be executed if eval: true"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html",
+    "href": "doc/lesson/lesson1.html",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#introduction",
+    "href": "doc/lesson/lesson1.html#introduction",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#first-part",
+    "href": "doc/lesson/lesson1.html#first-part",
+    "title": "Lesson 1",
+    "section": "1 First part",
+    "text": "1 First part\n\n1.1 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\nprint(pairs)\n\n\n[[0.37454012 0.95071431]\n [0.73199394 0.59865848]\n [0.15601864 0.15599452]\n [0.05808361 0.86617615]\n [0.60111501 0.70807258]\n [0.02058449 0.96990985]\n [0.83244264 0.21233911]\n [0.18182497 0.18340451]\n [0.30424224 0.52475643]\n [0.43194502 0.29122914]]\n\n\n\n\n\n\n\n1.2 Code\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n1.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nShow\n\n\n\n\n\nHidden text"
   },
   {
     "objectID": "index.html#notebook",
@@ -138,26 +180,5 @@
     "title": "Code Python dans les slides",
     "section": "Code python",
     "text": "Code python\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nQuarto-tuto"
-  },
-  {
-    "objectID": "doc/cours/cm1.html",
-    "href": "doc/cours/cm1.html",
-    "title": "Cours n°1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
-  },
-  {
-    "objectID": "doc/cours/cm1.html#introduction",
-    "href": "doc/cours/cm1.html#introduction",
-    "title": "Cours n°1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
-  },
-  {
-    "objectID": "doc/cours/cm1.html#first-part",
-    "href": "doc/cours/cm1.html#first-part",
-    "title": "Cours n°1",
-    "section": "1 First part",
-    "text": "1 First part\n\n1.1 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\nprint(pairs)\n\n\n[[0.37454012 0.95071431]\n [0.73199394 0.59865848]\n [0.15601864 0.15599452]\n [0.05808361 0.86617615]\n [0.60111501 0.70807258]\n [0.02058449 0.96990985]\n [0.83244264 0.21233911]\n [0.18182497 0.18340451]\n [0.30424224 0.52475643]\n [0.43194502 0.29122914]]\n\n\n\n\n\n\n\n1.2 Code\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n1.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nCliquer pour afficher\n\n\n\n\n\nContenu caché"
   }
 ]

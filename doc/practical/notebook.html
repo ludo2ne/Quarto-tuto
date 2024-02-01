@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="example of python notebook">
 
-<title>Quarto tuto - Créer son site avec Quarto</title>
+<title>Quarto tuto - Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,17 +105,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Quarto tuto</span>
     </a>
   </div>
@@ -92,12 +126,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../doc/creer-site.html" aria-current="page"> 
-<span class="menu-text">Créer son site</span></a>
+    <a class="nav-link" href="../../doc/create-website.html"> 
+<span class="menu-text">Getting started</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,8 +139,8 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cours">    
         <li>
-    <a class="dropdown-item" href="../doc/cours/cm1.html">
- <span class="dropdown-text">Cours n°1</span></a>
+    <a class="dropdown-item" href="../../doc/lesson/lesson1.html">
+ <span class="dropdown-text">Lesson 1</span></a>
   </li>  
     </ul>
   </li>
@@ -116,32 +150,47 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-slides">    
         <li>
-    <a class="dropdown-item" href="../doc/slide/slide1.html">
+    <a class="dropdown-item" href="../../doc/slide/slide1.html">
  <span class="dropdown-text">Slides n°1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../doc/slide/codeR.html">
- <span class="dropdown-text">Code R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../doc/slide/codePython.html">
- <span class="dropdown-text">Code Python</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">TP</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practicals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practicals</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tp">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practicals">    
         <li>
-    <a class="dropdown-item" href="../doc/tp/tp1.html">
- <span class="dropdown-text">TP n°1</span></a>
+    <a class="dropdown-item" href="../../doc/practical/practical1.html">
+ <span class="dropdown-text">Practical 1</span></a>
   </li>  
     </ul>
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Examples</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examples">    
+        <li>
+    <a class="dropdown-item" href="../../doc/lesson/lesson1.html">
+ <span class="dropdown-text">Lesson</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/slide/slide1.html">
+ <span class="dropdown-text">Slides</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/slide/codeR.html">
+ <span class="dropdown-text">Slides R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/slide/codePython.html">
+ <span class="dropdown-text">Slides Python</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ludo2ne/quarto-tuto" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
@@ -163,26 +212,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start">Before you start</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="notebook.ipynb" download="notebook.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Créer son site avec Quarto</h1>
+<h1 class="title">Notebook</h1>
 </div>
 
+<div>
+  <div class="description">
+    example of python notebook
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ludovic Deneuville </p>
-          </div>
-  </div>
     
   
     
@@ -193,53 +253,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="installer-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="installer-quarto">Installer Quarto</h2>
-</section>
-<section id="créer-un-dépôt-sur-github" class="level2">
-<h2 class="anchored" data-anchor-id="créer-un-dépôt-sur-github">Créer un dépôt sur GitHub</h2>
-<ul>
-<li>créer une branche nommée <code>gh-pages</code></li>
-<li>Settings &gt; Pages
-<ul>
-<li>Deploy from a branch</li>
-<li>branch : gh-pages</li>
-</ul></li>
+<section id="before-you-start" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="before-you-start">Before you start</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Download this <a href="notebook.ipynb" target="_blank">Jupyter Notebook</a></label></li>
 </ul>
 </section>
-<section id="cloner-le-dépôt" class="level2">
-<h2 class="anchored" data-anchor-id="cloner-le-dépôt">Cloner le dépôt</h2>
-<p>Insérer à minima les fichiers suivants :</p>
-<ul>
-<li>_quarto.yml</li>
-<li>index.qmd</li>
-<li>styles.css</li>
-<li>.github/worflows/publish.yml</li>
-</ul>
-<p>Recommandé :</p>
-<ul>
-<li>.gitignore</li>
-<li>dossier <code>doc</code> pour ranger les pages
-<ul>
-<li>sous-dossiers <code>cours</code>, et <code>tp</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="tester-en-local" class="level2">
-<h2 class="anchored" data-anchor-id="tester-en-local">Tester en local</h2>
-<ul>
-<li><code>quarto render</code> : Génrer les pages html</li>
-</ul>
-</section>
-<section id="déployer-sur-github-pages" class="level2">
-<h2 class="anchored" data-anchor-id="déployer-sur-github-pages">Déployer sur GitHub pages</h2>
-<ul>
-<li>lors d’un push, le fichier <code>.github/worflows/publish.yml</code> déclenche un pipeline</li>
-<li>le site est alors déployé sur https://<username>.github.io/<repositoryname>
-<ul>
-<li><span class="emoji" data-emoji="bulb">💡</span> Sur la page GitHub du projet, ajouter ce lien dans la section <code>About</code></li>
-</ul></repositoryname></username></li>
-</ul>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a python cell that will not be executed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e53a5a5b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a python cell to be executed if eval: true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
