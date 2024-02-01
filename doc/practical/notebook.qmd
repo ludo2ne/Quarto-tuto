@@ -1,0 +1,32 @@
+---
+title: Notebook
+description: example of python notebook
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Before you start {.unnumbered}
+
+- [ ] Download this [Jupyter Notebook](notebook.ipynb){target="_blank"}
+
+
+## Introduction
+
+```{.python}
+# a python cell that will not be executed
+```
+
+```{python}
+# a python cell to be executed if eval: true
+```

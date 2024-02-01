@@ -6,14 +6,17 @@ from: markdown+emoji
 ---
 
 
-## Installer Quarto
+## Install Quarto
 
-## Créer un dépôt sur GitHub
+
+
+## Create a repository on GitHub
 
 * créer une branche nommée `gh-pages`
 * Settings > Pages
   * Deploy from a branch
   * branch : gh-pages
+
 
 ## Cloner le dépôt
 

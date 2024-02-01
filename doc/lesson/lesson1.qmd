@@ -1,6 +1,6 @@
 ---
-title: "Cours n°1"
-description: "Quelques exemples de syntaxe"
+title: "Lesson 1"
+description: "Some examples of use cases"
 author: "Ludovic Deneuville"
 format:
   html:
@@ -101,7 +101,7 @@ Note that there are five types of callouts, including:
 
 
 ::: {.callout-tip collapse="true"}
-## Cliquer pour afficher
+## Show
 
-Contenu caché
+Hidden text
 :::
