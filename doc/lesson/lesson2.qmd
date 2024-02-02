@@ -1,7 +1,7 @@
 ---
-title: "Lesson 2"
-description: "Some examples of use cases"
-author: "Ludovic Deneuville"
+title: "Lesson 2 title"
+description: "Lesson 2 description"
+author: "Author name"
 format:
   html:
     toc: true

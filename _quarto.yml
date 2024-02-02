@@ -9,33 +9,35 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: doc/create-website.qmd
-        text: Getting started
       - text: Lessons
         menu:
           - href: doc/lesson/lesson1.qmd
             text: "Lesson 1"
           - href: doc/lesson/lesson2.qmd
             text: "Lesson 2"
-      - text: Slides
+      - text: Presentation
         menu:
-          - href: doc/slide/slide1.qmd
-            text: "Slides n°1"
+          - href: doc/presentation/presentation1.qmd
+            text: "Presentation 1"
       - text: Practicals
         menu:
           - href: doc/practical/practical1.qmd
             text: "Practical 1"
     right:
+      - href: doc/create-website.qmd
+        text: Getting started
       - text: Examples
         menu:
           - href: doc/examples/lesson.qmd
             text: "Lesson"
-          - href: doc/examples/slide.qmd
-            text: "Slides"
+          - href: doc/examples/presentation.qmd
+            text: "Presentation"
+          - href: doc/examples/practical.qmd
+            text: "Practical"
           - href: doc/examples/codeR.qmd
-            text: "Slides R"
+            text: "Presentation R"
           - href: doc/examples/codePython.qmd
-            text: "Slides Python"
+            text: "Presentation Python"
       - icon: github
         href: https://github.com/ludo2ne/quarto-tuto
         target: "_blank"
