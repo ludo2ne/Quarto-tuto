@@ -98,6 +98,16 @@ Look for `navbar` key, and then add a link to this page
 
 ## Markdown tips
 
+### Unordered List
+
+```
+- first
+- second
+- third
+- [ ] checkbox
+```
+
+
 
 ## Quarto tips
 
