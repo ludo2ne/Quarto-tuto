@@ -1,5 +1,5 @@
 ---
-title: "Lesson 1"
+title: "Lesson 2"
 description: "Some examples of use cases"
 author: "Ludovic Deneuville"
 format:
