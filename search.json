@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "doc/examples/notebook.html",
+    "href": "doc/examples/notebook.html",
+    "title": "Notebook",
+    "section": "",
+    "text": "Download this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/examples/notebook.html#before-you-start",
+    "href": "doc/examples/notebook.html#before-you-start",
+    "title": "Notebook",
+    "section": "",
+    "text": "Download this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/examples/notebook.html#introduction",
+    "href": "doc/examples/notebook.html#introduction",
+    "title": "Notebook",
+    "section": "1 Introduction",
+    "text": "1 Introduction\n# a python cell that will not be executed\n\n# a python cell to be executed if eval: true"
+  },
+  {
     "objectID": "doc/create-website.html#create-a-repository-on-github",
     "href": "doc/create-website.html#create-a-repository-on-github",
     "title": "Créer son site avec Quarto",
@@ -77,46 +98,32 @@
     "text": "Table\n\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n\nQuarto-tuto"
   },
   {
-    "objectID": "doc/practical/notebook.html",
-    "href": "doc/practical/notebook.html",
-    "title": "Notebook",
+    "objectID": "doc/lesson/lesson2.html",
+    "href": "doc/lesson/lesson2.html",
+    "title": "Lesson 2",
     "section": "",
-    "text": "Download this Jupyter Notebook"
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
   },
   {
-    "objectID": "doc/practical/notebook.html#before-you-start",
-    "href": "doc/practical/notebook.html#before-you-start",
-    "title": "Notebook",
+    "objectID": "doc/lesson/lesson2.html#introduction",
+    "href": "doc/lesson/lesson2.html#introduction",
+    "title": "Lesson 2",
     "section": "",
-    "text": "Download this Jupyter Notebook"
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
   },
   {
-    "objectID": "doc/practical/notebook.html#introduction",
-    "href": "doc/practical/notebook.html#introduction",
-    "title": "Notebook",
-    "section": "1 Introduction",
-    "text": "1 Introduction\n# a python cell that will not be executed\n\n# a python cell to be executed if eval: true"
+    "objectID": "doc/lesson/lesson2.html#part-1",
+    "href": "doc/lesson/lesson2.html#part-1",
+    "title": "Lesson 2",
+    "section": "1 Part 1",
+    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
   },
   {
-    "objectID": "doc/lesson/lesson1.html",
-    "href": "doc/lesson/lesson1.html",
-    "title": "Lesson 1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html#introduction",
-    "href": "doc/lesson/lesson1.html#introduction",
-    "title": "Lesson 1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn a little markdown syntax"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html#first-part",
-    "href": "doc/lesson/lesson1.html#first-part",
-    "title": "Lesson 1",
-    "section": "1 First part",
-    "text": "1 First part\n\n1.1 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\nprint(pairs)\n\n\n[[0.37454012 0.95071431]\n [0.73199394 0.59865848]\n [0.15601864 0.15599452]\n [0.05808361 0.86617615]\n [0.60111501 0.70807258]\n [0.02058449 0.96990985]\n [0.83244264 0.21233911]\n [0.18182497 0.18340451]\n [0.30424224 0.52475643]\n [0.43194502 0.29122914]]\n\n\n\n\n\n\n\n1.2 Code\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n1.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nShow\n\n\n\n\n\nHidden text"
+    "objectID": "doc/lesson/lesson2.html#part-2",
+    "href": "doc/lesson/lesson2.html#part-2",
+    "title": "Lesson 2",
+    "section": "2 Part 2",
+    "text": "2 Part 2"
   },
   {
     "objectID": "index.html#notebook",
@@ -138,6 +145,34 @@
     "title": "Quarto-tuto",
     "section": "Links",
     "text": "Links\n\nProject Basics"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html",
+    "href": "doc/lesson/lesson1.html",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#introduction",
+    "href": "doc/lesson/lesson1.html#introduction",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#part-1",
+    "href": "doc/lesson/lesson1.html#part-1",
+    "title": "Lesson 1",
+    "section": "1 Part 1",
+    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#part-2",
+    "href": "doc/lesson/lesson1.html#part-2",
+    "title": "Lesson 1",
+    "section": "2 Part 2",
+    "text": "2 Part 2"
   },
   {
     "objectID": "doc/slide/codeR.html#code-r-dans-les-slides",
@@ -180,5 +215,47 @@
     "title": "Code Python dans les slides",
     "section": "Code python",
     "text": "Code python\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nQuarto-tuto"
+  },
+  {
+    "objectID": "doc/examples/lesson.html",
+    "href": "doc/examples/lesson.html",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#introduction",
+    "href": "doc/examples/lesson.html#introduction",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#metadata",
+    "href": "doc/examples/lesson.html#metadata",
+    "title": "Lesson 1",
+    "section": "1 Metadata",
+    "text": "1 Metadata\nThis file’s metadata is displayed at the top between the “—”.\n\n1.1 Basic setup\ntitle: \"Title of this page\"\ndescription: \"Description of this page\"\nauthor: \"Author name\"\nformat: html                             # because it's a webpage\nfrom: markdown+emoji                     # you use markdown language\n\n\n1.2 Advanced\n\n1.2.1 Add a table of contents\nWith the following setup, all titles, i.e. lines beginning with # will be added to the table of contents.\nformat:\n  html:\n    toc: true                            # Add a Table Of Contents\n    toc-location: left\n    toc-expand: 3                        # 1 : only main titles ... 5 : highly detailed\nIf you want to remove a title from the table of contents, use the unlisted class :\n# My title {.unlisted}\n\n\n\n1.3 Self-numbering\nIf you use this setup number-sections: true, each title will be numbered.\nIf you don’t want to number a part, use class unnumbered :\n# Introduction {.unnumbered}\n\n\n1.4 Export pdf\nThe format of a web page is html.\nBut you can also export in pdf format.\nformat:\n  html:\n    ...\n  pdf: default\nWhen you will render the quarto project, it will create a file lesson.pdf in addition of lesson.html.\nOn the webpage, a link will appear under the table of contents to download the pdf.\n\n\n\n\n\n\nNote\n\n\n\nTo perform this you have to install first tinytex : quarto install tinytex"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "href": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "title": "Lesson 1",
+    "section": "2 Add a link in the navigation bar",
+    "text": "2 Add a link in the navigation bar\nThe navigation bar is setup in the file _quarto.yml. Look for navbar key, and then add a link to this page"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#markdown-tips",
+    "href": "doc/examples/lesson.html#markdown-tips",
+    "title": "Lesson 1",
+    "section": "3 Markdown tips",
+    "text": "3 Markdown tips\n\n3.1 Unordered List\n- first\n- second\n- third\n- [ ] checkbox"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#quarto-tips",
+    "href": "doc/examples/lesson.html#quarto-tips",
+    "title": "Lesson 1",
+    "section": "4 Quarto tips",
+    "text": "4 Quarto tips\n\n4.1 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\nprint(pairs)\n\n\n[[0.37454012 0.95071431]\n [0.73199394 0.59865848]\n [0.15601864 0.15599452]\n [0.05808361 0.86617615]\n [0.60111501 0.70807258]\n [0.02058449 0.96990985]\n [0.83244264 0.21233911]\n [0.18182497 0.18340451]\n [0.30424224 0.52475643]\n [0.43194502 0.29122914]]\n\n\n\n\n\n\n\n4.2 Code\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n4.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nShow\n\n\n\n\n\nHidden text"
   }
 ]
