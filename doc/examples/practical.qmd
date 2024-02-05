@@ -1,7 +1,9 @@
 ---
-title: "Practical 1"
-description: "Some examples of use cases"
-author: "Ludovic Deneuville"
+title: "Practical title"
+description: "Practical description"
+author: "Author name"
+date: 09/20/2023
+date-format: long
 format:
   html:
     toc: true

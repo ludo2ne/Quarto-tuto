@@ -1,0 +1,141 @@
+---
+title: "Code Python dans les slides"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+    code-tools: true
+from: markdown+emoji
+number-sections: true
+---
+
+
+## Python
+
+- [Utiliser Python](https://quarto.org/docs/computations/python.html){.external target="_blank"}
+- install Python
+- install jupyter
+- install all needed packages
+  - `pip install matplotlib numpy pandas ...`
+
+::: {.callout-tip}
+Instead of install packages one by one
+
+- list all needed packages in file `requirements.txt` at the project root
+- run `pip install -r requirements.txt`
+:::
+
+
+## Cells
+
+### A non-evaluated cell
+
+If you add a dot (.) before the keyword `Python`, the cell will not be evaluated.
+
+:::: {.columns}
+::: {.column}
+Code
+
+```
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+x = np.linspace(-5, 5, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution')
+plt.show()
+```
+:::
+
+::: {.column}
+Result
+
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+x = np.linspace(-3, 3, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution')
+plt.show()
+```
+:::
+::::
+
+
+### An evaluated cell
+
+if you remove the dot (.) before the keyword `Python`, the cell will be evaluated.
+
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+x = np.linspace(-3, 3, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution')
+plt.show()
+```
+
+
+## Tabulations
+
+::: {.panel-tabset}
+
+#### Code
+
+``` {.python filename="file.py"}
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
+plt.show()
+```
+
+#### Plot
+
+``` {python}
+#| code-fold: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
+plt.show()
+```
+
+#### Data
+
+Display table of data using `tabulate`
+
+``` {python}
+#| code-fold: true
+from IPython.display import Markdown
+from tabulate import tabulate
+
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+Markdown(tabulate(
+  pairs, 
+  headers=["X","Y"]
+))
+```
+
+:::
+

@@ -7,14 +7,21 @@ format:
     toc: true
     toc-location: left
     toc-expand: 3
-  pdf: default
+    code-tools: true
+  pdf:
+    margin-left: 2cm
+    margin-right: 2cm
+    margin-top: 2cm
+    margin-bottom: 2cm
 from: markdown+emoji
 number-sections: true
 ---
 
 ## Introduction {.unnumbered}
 
-Welcome to this course
+Welcome to this page.
+
+you can click on the `Code` button at the top right to see the page's source code.
 
 
 ### Objectives {.unnumbered}
@@ -27,16 +34,18 @@ Welcome to this course
 
 ## Metadata
 
-This file's metadata is displayed at the top between the "---".
+This file's metadata is displayed at the top between the `---`.
 
 ### Basic setup
 
 ```yaml
+---
 title: "Title of this page"
 description: "Description of this page"
 author: "Author name"
 format: html                             # because it's a webpage
 from: markdown+emoji                     # you use markdown language
+---
 ```
 
 ### Advanced
@@ -59,7 +68,7 @@ If you want to remove a title from the table of contents, use the `unlisted` cla
 # My title {.unlisted}
 ```
 
-### Self-numbering
+#### Self-numbering
 
 If you use this setup `number-sections: true`, each title will be numbered.  
 If you don't want to number a part, use class `unnumbered` :
@@ -69,7 +78,7 @@ If you don't want to number a part, use class `unnumbered` :
 ```
 
 
-### Export pdf
+#### Export pdf
 
 The format of a web page is html.  
 But you can also export in pdf format.
@@ -84,7 +93,7 @@ format:
 When you will render the quarto project, it will create a file `lesson.pdf` in addition of `lesson.html`.  
 On the webpage, a link will appear under the table of contents to download the pdf.
 
-:::::: {.callout-note}
+::: {.callout-note}
 To perform this you have to install first tinytex : `quarto install tinytex`
 :::
 
@@ -95,89 +104,63 @@ The navigation bar is setup in the file `_quarto.yml`.
 Look for `navbar` key, and then add a link to this page
 
 
+## Markdown basics
 
-## Markdown tips
-
-### Unordered List
-
-```
-- first
-- second
-- third
-- [ ] checkbox
-```
+For more information, you can see [this page ](https://quarto.org/docs/authoring/markdown-basics.html){.external target="_blank"}
 
 
+### Text format
 
-## Quarto tips
+**bold** - *italic* - ***italicbold*** - `Script` - ~~strike~~
+
+> Citation
+
+[Orange text on black background]{.orange_black} by defining class *.orange_black* in file `style.css` at the project root.
 
 
-### Tabulations
+### Table
 
-::: {.panel-tabset}
+More about [markdown table](https://quarto.org/docs/authoring/tables.html){.external target="_blank"}
 
-#### Code
+| Code | Name                    | City                 |
+|:----:|-------------------------|----------------------|
+| 01   | Ain                     | Bourg-en-Bresse      |
+| 02   | Aisne                   | Laon                 |
+| 03   | Allier                  | Moulins              |
+| 04   | Alpes-de-Haute-Provence | Digne-les-Bains      |
+| 05   | Hautes-Alpes            | Gap                  |
 
-``` {.python filename="file.py"}
-import numpy as np
-import matplotlib.pyplot as plt
+: French Departments {.striped .hover .success}
 
-np.random.seed(42)
-pairs = np.random.rand(10, 2)
 
-plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
-plt.show()
-```
+### List
 
-#### Plot
-
-``` {python}
-#| code-fold: true
-import numpy as np
-import matplotlib.pyplot as plt
-
-np.random.seed(42)
-pairs = np.random.rand(10, 2)
-
-plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
-plt.show()
-```
-
-#### Data
-
-``` {python filename="file.py"}
-#| code-fold: true
-import numpy as np
-import matplotlib.pyplot as plt
-
-np.random.seed(42)
-pairs = np.random.rand(10, 2)
-print(pairs)
-```
-
-:::
+- item 1
+  - item1.1
+- item 2
+- [ ] item3 with checkbox
 
 
 
-### Code
+## Advanced tools
 
-```{python}
+### Math
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
+- with one `$` : inline $\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}$
+- with two `$$`: $$\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}$$
 
-x = np.linspace(-5, 5, 1000)
 
-pdf = norm.pdf(x, 0, 1)
-plt.plot(x, pdf, label='Normal Distribution')
-plt.show()
+### Diagrams with [Mermaid](https://mermaid.js.org/){target="_blank"}
+
+```{mermaid}
+flowchart LR
+    20 -- +12 --> 32 -- /8 --> 4
 ```
 
 
 ### Callout Blocks
 
-:::{.callout-note}
+::: {.callout-note}
 Note that there are five types of callouts, including:
 `note`, `tip`, `warning`, `caution`, and `important`.
 :::

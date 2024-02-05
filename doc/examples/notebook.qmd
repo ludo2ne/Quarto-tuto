@@ -18,6 +18,7 @@ lightbox: true
 
 ## Before you start {.unnumbered}
 
+- If you set metadata `ipynb: default`, it will generate the *.ipynb* file so you can download it
 - [ ] Download this [Jupyter Notebook](notebook.ipynb){target="_blank"}
 
 

@@ -30,14 +30,16 @@ website:
         menu:
           - href: doc/examples/lesson.qmd
             text: "Lesson"
-          - href: doc/examples/presentation.qmd
-            text: "Presentation"
+          - href: doc/examples/notebook.qmd
+            text: "Notebook"
           - href: doc/examples/practical.qmd
             text: "Practical"
-          - href: doc/examples/codeR.qmd
-            text: "Presentation R"
-          - href: doc/examples/codePython.qmd
-            text: "Presentation Python"
+          - href: doc/examples/presentation.qmd
+            text: "Presentation"
+          - href: doc/examples/python.qmd
+            text: "Python"
+          - href: doc/examples/R.qmd
+            text: "R"
       - icon: github
         href: https://github.com/ludo2ne/quarto-tuto
         target: "_blank"

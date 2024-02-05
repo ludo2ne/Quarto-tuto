@@ -1,0 +1,29 @@
+---
+title: "Tuto Quarto-Reveal.js"
+subtitle: "Create a slideshow using Quarto and Reveal.js"
+author: "Ludovic Deneuville"
+format:
+  revealjs:
+    theme: moon
+    footer: "[Quarto-tuto](../../index.html)"     # Link to the homepage
+    slide-number: c/t                             # collapsed/total
+    preview-links: true
+    chalkboard: true
+    controls: true
+    transition: slide
+from: markdown+emoji
+---
+
+## Introduction
+
+hello
+
+
+## Today's plan
+
+- part 1
+- part 2
+
+
+## Part 1
+

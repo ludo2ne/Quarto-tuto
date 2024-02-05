@@ -1,1 +1,39 @@
 /* css styles */
+
+/************************************************************/
+/* Titles                                                   */
+/************************************************************/
+
+h1,h2,h3,h4 {
+    color:#447099;
+  }
+
+h2::before {
+    content: '\25B6'; /*Arrow Forward*/
+    margin-right: 8px;
+  }
+
+h3::before {
+    content: '\1F538'; /*Orange Diamond*/
+    margin-right: 8px;
+  }
+
+h4::before {
+    content: '\1F4CD';  /*Pushpin*/
+    margin-right: 8px;
+  }
+
+
+/************************************************************/
+/* Others                                                   */
+/************************************************************/
+
+.column{
+    width: 50%;
+    padding: 5px
+}
+
+.orange_black{
+  color:orange;
+  background-color:black
+}

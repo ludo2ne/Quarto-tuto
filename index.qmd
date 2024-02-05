@@ -6,10 +6,25 @@ format: html
 from: markdown+emoji
 ---
 
+On this site you will find examples of how to create a static website with examples of
+
+- Web page
+- Notebook
+- Presentation
+
+
 ## Web page
 
+Easily create pages by entering text in markdown format. Quarto will format it into pretty pages.
 
-## Notebook
+You can use a wide range of tools:
+- Tables, Lists
+- Images, Videos
+- Python or R code
+- mathematical formulas
+- Export pdf
+
+
 
 
 ## Slideshow with [revealJS](https://quarto.org/docs/presentations/revealjs/){.external target="_blank"}

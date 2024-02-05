@@ -17,12 +17,6 @@ number-sections: true
 Welcome to this course
 
 
-### :dart: Objectives {.unnumbered}
-
-- [ ] xxx
-- [ ] yyy
-
-
 ## Part 1
 
 ### Part 1.1
