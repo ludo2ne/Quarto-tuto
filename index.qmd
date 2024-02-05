@@ -6,11 +6,11 @@ format: html
 from: markdown+emoji
 ---
 
-On this site you will find examples of how to create a static website with examples of
+On this site you will find examples of how to create a static website with examples of :
 
-- Web page
-- Notebook
-- Presentation
+- Web page(doc/example/lesson.qmd)
+- Notebook(doc/example/notebook.qmd)
+- Presentation(doc/example/presentation.qmd)
 
 
 ## Web page
@@ -25,16 +25,21 @@ You can use a wide range of tools:
 - Export pdf
 
 
-
-
-## Slideshow with [revealJS](https://quarto.org/docs/presentations/revealjs/){.external target="_blank"}
+## Presentation with [revealJS](https://quarto.org/docs/presentations/revealjs/){.external target="_blank"}
 
 - Speaker view
 - chalkboard
 - print-pdf
 
 
+## Python notebooks
 
-## Links
+- Write it with markdown syntax
+- Display it on you website
+- Download *.ipynb* file and load it on Jupyter
 
+
+## Create a Quarto project
+
+- See section [Getting started](doc/create-website.qmd)
 - [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}

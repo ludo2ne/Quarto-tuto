@@ -12,7 +12,7 @@ number-sections: true
 number-depth: 3
 jupyter: python3
 execute:
-  eval: false
+  eval: true
 lightbox: true
 ---
 
@@ -24,10 +24,34 @@ lightbox: true
 
 ## Introduction
 
+
+## Python cells
+
+### A python cell that will not be executed
+
 ```{.python}
-# a python cell that will not be executed
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+x = np.linspace(-3, 3, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution')
+plt.show()
 ```
 
+
+### A python cell to be executed if eval: true
+
 ```{python}
-# a python cell to be executed if eval: true
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+x = np.linspace(-3, 3, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution')
+plt.show()
 ```
