@@ -104,7 +104,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -151,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-presentation">    
         <li>
-    <a class="dropdown-item" href="../../doc/presentation/presentation1.qmd">
+    <a class="dropdown-item" href="../../doc/presentation/presentation1.html">
  <span class="dropdown-text">Presentation 1</span></a>
   </li>  
     </ul>
@@ -183,20 +215,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/examples/presentation.qmd">
- <span class="dropdown-text">Presentation</span></a>
+    <a class="dropdown-item" href="../../doc/examples/notebook.html">
+ <span class="dropdown-text">Notebook</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/examples/practical.qmd">
+    <a class="dropdown-item" href="../../doc/examples/practical.html">
  <span class="dropdown-text">Practical</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/examples/codeR.qmd">
- <span class="dropdown-text">Presentation R</span></a>
+    <a class="dropdown-item" href="../../doc/examples/presentation.html">
+ <span class="dropdown-text">Presentation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/examples/codePython.qmd">
- <span class="dropdown-text">Presentation Python</span></a>
+    <a class="dropdown-item" href="../../doc/examples/python.html">
+ <span class="dropdown-text">Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/examples/R.html">
+ <span class="dropdown-text">R</span></a>
   </li>  
     </ul>
   </li>
@@ -234,18 +270,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#basic-setup" id="toc-basic-setup" class="nav-link" data-scroll-target="#basic-setup"><span class="header-section-number">1.1</span> Basic setup</a></li>
   <li><a href="#advanced" id="toc-advanced" class="nav-link" data-scroll-target="#advanced"><span class="header-section-number">1.2</span> Advanced</a></li>
-  <li><a href="#self-numbering" id="toc-self-numbering" class="nav-link" data-scroll-target="#self-numbering"><span class="header-section-number">1.3</span> Self-numbering</a></li>
-  <li><a href="#export-pdf" id="toc-export-pdf" class="nav-link" data-scroll-target="#export-pdf"><span class="header-section-number">1.4</span> Export pdf</a></li>
   </ul></li>
   <li><a href="#add-a-link-in-the-navigation-bar" id="toc-add-a-link-in-the-navigation-bar" class="nav-link" data-scroll-target="#add-a-link-in-the-navigation-bar"><span class="header-section-number">2</span> Add a link in the navigation bar</a></li>
-  <li><a href="#markdown-tips" id="toc-markdown-tips" class="nav-link" data-scroll-target="#markdown-tips"><span class="header-section-number">3</span> Markdown tips</a>
+  <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics"><span class="header-section-number">3</span> Markdown basics</a>
   <ul class="collapse">
-  <li><a href="#unordered-list" id="toc-unordered-list" class="nav-link" data-scroll-target="#unordered-list"><span class="header-section-number">3.1</span> Unordered List</a></li>
+  <li><a href="#text-format" id="toc-text-format" class="nav-link" data-scroll-target="#text-format"><span class="header-section-number">3.1</span> Text format</a></li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table"><span class="header-section-number">3.2</span> Table</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">3.3</span> List</a></li>
   </ul></li>
-  <li><a href="#quarto-tips" id="toc-quarto-tips" class="nav-link" data-scroll-target="#quarto-tips"><span class="header-section-number">4</span> Quarto tips</a>
+  <li><a href="#advanced-tools" id="toc-advanced-tools" class="nav-link" data-scroll-target="#advanced-tools"><span class="header-section-number">4</span> Advanced tools</a>
   <ul class="collapse">
-  <li><a href="#tabulations" id="toc-tabulations" class="nav-link" data-scroll-target="#tabulations"><span class="header-section-number">4.1</span> Tabulations</a></li>
-  <li><a href="#code-1" id="toc-code-1" class="nav-link" data-scroll-target="#code-1"><span class="header-section-number">4.2</span> Code</a></li>
+  <li><a href="#math" id="toc-math" class="nav-link" data-scroll-target="#math"><span class="header-section-number">4.1</span> Math</a></li>
+  <li><a href="#diagrams-with-mermaid" id="toc-diagrams-with-mermaid" class="nav-link" data-scroll-target="#diagrams-with-mermaid"><span class="header-section-number">4.2</span> Diagrams with Mermaid</a></li>
   <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks"><span class="header-section-number">4.3</span> Callout Blocks</a></li>
   </ul></li>
   </ul>
@@ -260,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson title</h1>
+<div class="quarto-title-block"><div><h1 class="title">Lesson title</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 <div>
@@ -290,7 +326,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to this course</p>
+<p>Welcome to this page.</p>
+<p>you can click on the <code>Code</code> button at the top right to see the page’s source code.</p>
 <section id="objectives" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="objectives">Objectives</h3>
 <ul class="task-list">
@@ -303,14 +340,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="metadata" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="metadata"><span class="header-section-number">1</span> Metadata</h2>
-<p>This file’s metadata is displayed at the top between the “—”.</p>
+<p>This file’s metadata is displayed at the top between the <code>---</code>.</p>
 <section id="basic-setup" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="basic-setup"><span class="header-section-number">1.1</span> Basic setup</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of this page"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Description of this page"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author name"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span><span class="co">                             # because it's a webpage</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span><span class="co">                     # you use markdown language</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of this page"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Description of this page"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author name"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span><span class="co">                             # because it's a webpage</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span><span class="co">                     # you use markdown language</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="advanced" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="advanced"><span class="header-section-number">1.2</span> Advanced</h3>
@@ -325,15 +364,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you want to remove a title from the table of contents, use the <code>unlisted</code> class :</p>
 <pre><code># My title {.unlisted}</code></pre>
 </section>
-</section>
-<section id="self-numbering" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="self-numbering"><span class="header-section-number">1.3</span> Self-numbering</h3>
+<section id="self-numbering" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="self-numbering"><span class="header-section-number">1.2.2</span> Self-numbering</h4>
 <p>If you use this setup <code>number-sections: true</code>, each title will be numbered.<br>
 If you don’t want to number a part, use class <code>unnumbered</code> :</p>
 <pre><code># Introduction {.unnumbered}</code></pre>
 </section>
-<section id="export-pdf" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="export-pdf"><span class="header-section-number">1.4</span> Export pdf</h3>
+<section id="export-pdf" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="export-pdf"><span class="header-section-number">1.2.3</span> Export pdf</h4>
 <p>The format of a web page is html.<br>
 But you can also export in pdf format.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
@@ -357,109 +395,96 @@ Note
 </div>
 </section>
 </section>
+</section>
 <section id="add-a-link-in-the-navigation-bar" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="add-a-link-in-the-navigation-bar"><span class="header-section-number">2</span> Add a link in the navigation bar</h2>
 <p>The navigation bar is setup in the file <code>_quarto.yml</code>. Look for <code>navbar</code> key, and then add a link to this page</p>
 </section>
-<section id="markdown-tips" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="markdown-tips"><span class="header-section-number">3</span> Markdown tips</h2>
-<section id="unordered-list" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="unordered-list"><span class="header-section-number">3.1</span> Unordered List</h3>
-<pre><code>- first
-- second
-- third
-- [ ] checkbox</code></pre>
+<section id="markdown-basics" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="markdown-basics"><span class="header-section-number">3</span> Markdown basics</h2>
+<p>For more information, you can see <a href="https://quarto.org/docs/authoring/markdown-basics.html" class="external" target="_blank">this page</a></p>
+<section id="text-format" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="text-format"><span class="header-section-number">3.1</span> Text format</h3>
+<p><strong>bold</strong> - <em>italic</em> - <strong><em>italicbold</em></strong> - <code>Script</code> - <del>strike</del></p>
+<blockquote class="blockquote">
+<p>Citation</p>
+</blockquote>
+<p><span class="orange_black">Orange text on black background</span> by defining class <em>.orange_black</em> in file <code>style.css</code> at the project root.</p>
+</section>
+<section id="table" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="table"><span class="header-section-number">3.2</span> Table</h3>
+<p>More about <a href="https://quarto.org/docs/authoring/tables.html" class="external" target="_blank">markdown table</a></p>
+<table class="table-striped table-hover table-success table">
+<caption>French Departments</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Code</th>
+<th>Name</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">01</td>
+<td>Ain</td>
+<td>Bourg-en-Bresse</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">02</td>
+<td>Aisne</td>
+<td>Laon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">03</td>
+<td>Allier</td>
+<td>Moulins</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td>Alpes-de-Haute-Provence</td>
+<td>Digne-les-Bains</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">05</td>
+<td>Hautes-Alpes</td>
+<td>Gap</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="list" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="list"><span class="header-section-number">3.3</span> List</h3>
+<ul>
+<li>item 1
+<ul>
+<li>item1.1</li>
+</ul></li>
+<li>item 2</li>
+<li><label><input type="checkbox">item3 with checkbox</label></li>
+</ul>
 </section>
 </section>
-<section id="quarto-tips" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="quarto-tips"><span class="header-section-number">4</span> Quarto tips</h2>
-<section id="tabulations" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="tabulations"><span class="header-section-number">4.1</span> Tabulations</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Data</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>file.py</strong></pre>
-</div>
-<div class="sourceCode" id="cb7" data-filename="file.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(pairs[:, <span class="dv">0</span>], pairs[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div id="d29d934e" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(pairs[:, <span class="dv">0</span>], pairs[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
+<section id="advanced-tools" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="advanced-tools"><span class="header-section-number">4</span> Advanced tools</h2>
+<section id="math" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="math"><span class="header-section-number">4.1</span> Math</h3>
+<ul>
+<li>with one <code>$</code> : inline <span class="math inline">\(\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}\)</span></li>
+<li>with two <code>$$</code>: <span class="math display">\[\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}\]</span></li>
+</ul>
+</section>
+<section id="diagrams-with-mermaid" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="diagrams-with-mermaid"><span class="header-section-number">4.2</span> Diagrams with <a href="https://mermaid.js.org/" target="_blank">Mermaid</a></h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="lesson_files/figure-html/cell-2-output-1.png" width="571" height="412" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div id="fc57750e" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pairs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0.37454012 0.95071431]
- [0.73199394 0.59865848]
- [0.15601864 0.15599452]
- [0.05808361 0.86617615]
- [0.60111501 0.70807258]
- [0.02058449 0.96990985]
- [0.83244264 0.21233911]
- [0.18182497 0.18340451]
- [0.30424224 0.52475643]
- [0.43194502 0.29122914]]</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="code-1" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="code-1"><span class="header-section-number">4.2</span> Code</h3>
-<div id="840ca266" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> norm.pdf(x, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, pdf, label<span class="op">=</span><span class="st">'Normal Distribution'</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<p></p><figure class="figure"><p></p>
 <div>
-<figure class="figure">
-<p><img src="lesson_files/figure-html/cell-4-output-1.png" width="579" height="411" class="figure-img"></p>
-</figure>
+<pre class="mermaid mermaid-js">flowchart LR
+    20 -- +12 --&gt; 32 -- /8 --&gt; 4
+</pre>
+</div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -496,6 +521,8 @@ Show
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -724,6 +751,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1031,7 +1109,182 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Lesson title"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Lesson description"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Author name"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-expand: 3</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    margin-left: 2cm</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">    margin-right: 2cm</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">    margin-top: 2cm</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">    margin-bottom: 2cm</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="an">from:</span><span class="co"> markdown+emoji</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction {.unnumbered}</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>Welcome to this page.</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>you can click on the <span class="in">`Code`</span> button at the top right to see the page's source code.</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Objectives {.unnumbered}</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create a webpage</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Learn how to use metadata</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Add a link in the navigation bar</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Writing in markdown</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>This file's metadata is displayed at the top between the <span class="in">`---`</span>.</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic setup</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of this page"</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Description of this page"</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author name"</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span><span class="co">                             # because it's a webpage</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span><span class="co">                     # you use markdown language</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Advanced</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Add a table of contents</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>With the following setup, all titles, i.e. lines beginning with <span class="in">`#`</span> will be added to the table of contents.</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">                            # Add a Table Of Contents</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-location</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-expand</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co">                        # 1 : only main titles ... 5 : highly detailed</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>If you want to remove a title from the table of contents, use the <span class="in">`unlisted`</span> class :</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in"># My title {.unlisted}</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Self-numbering</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>If you use this setup <span class="in">`number-sections: true`</span>, each title will be numbered.  </span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>If you don't want to number a part, use class <span class="in">`unnumbered`</span> :</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="in"># Introduction {.unnumbered}</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Export pdf</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>The format of a web page is html.  </span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>But you can also export in pdf format.</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="at">    </span>...</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>When you will render the quarto project, it will create a file <span class="in">`lesson.pdf`</span> in addition of <span class="in">`lesson.html`</span>.  </span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>On the webpage, a link will appear under the table of contents to download the pdf.</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>To perform this you have to install first tinytex : <span class="in">`quarto install tinytex`</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Add a link in the navigation bar</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>The navigation bar is setup in the file <span class="in">`_quarto.yml`</span>.</span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>Look for <span class="in">`navbar`</span> key, and then add a link to this page</span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Markdown basics</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>For more information, you can see <span class="co">[</span><span class="ot">this page </span><span class="co">](https://quarto.org/docs/authoring/markdown-basics.html)</span>{.external target="_blank"}</span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text format</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>**bold** - *italic* - ***italicbold*** - <span class="in">`Script`</span> - ~~strike~~</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Citation</span></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Orange text on black background</span><span class="co">]</span>{.orange_black} by defining class *.orange_black* in file <span class="in">`style.css`</span> at the project root.</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Table</span></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>More about <span class="co">[</span><span class="ot">markdown table</span><span class="co">](https://quarto.org/docs/authoring/tables.html)</span>{.external target="_blank"}</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>| Code | Name                    | City                 |</span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>|:----:|-------------------------|----------------------|</span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>| 01   | Ain                     | Bourg-en-Bresse      |</span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>| 02   | Aisne                   | Laon                 |</span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>| 03   | Allier                  | Moulins              |</span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>| 04   | Alpes-de-Haute-Provence | Digne-les-Bains      |</span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>| 05   | Hautes-Alpes            | Gap                  |</span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>: French Departments {.striped .hover .success}</span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### List</span></span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 1</span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>item1.1</span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 2</span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> item3 with checkbox</span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced tools</span></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### Math</span></span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with one <span class="in">`$`</span> : inline $\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}$</span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with two <span class="in">`$$`</span>: $$\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}$$</span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagrams with [Mermaid](https://mermaid.js.org/){target="_blank"}</span></span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="in">    20 -- +12 --&gt; 32 -- /8 --&gt; 4</span></span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### Callout Blocks</span></span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>Note that there are five types of callouts, including:</span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a><span class="in">`note`</span>, <span class="in">`tip`</span>, <span class="in">`warning`</span>, <span class="in">`caution`</span>, and <span class="in">`important`</span>.</span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Show</span></span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a>Hidden text</span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

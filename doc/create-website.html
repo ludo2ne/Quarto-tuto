@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ludovic Deneuville">
 
-<title>Quarto tuto - Créer son site avec Quarto</title>
+<title>Quarto tuto - Create a static site</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-presentation">    
         <li>
-    <a class="dropdown-item" href="../doc/presentation/presentation1.qmd">
+    <a class="dropdown-item" href="../doc/presentation/presentation1.html">
  <span class="dropdown-text">Presentation 1</span></a>
   </li>  
     </ul>
@@ -148,20 +182,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../doc/examples/presentation.qmd">
- <span class="dropdown-text">Presentation</span></a>
+    <a class="dropdown-item" href="../doc/examples/notebook.html">
+ <span class="dropdown-text">Notebook</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../doc/examples/practical.qmd">
+    <a class="dropdown-item" href="../doc/examples/practical.html">
  <span class="dropdown-text">Practical</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../doc/examples/codeR.qmd">
- <span class="dropdown-text">Presentation R</span></a>
+    <a class="dropdown-item" href="../doc/examples/presentation.html">
+ <span class="dropdown-text">Presentation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../doc/examples/codePython.qmd">
- <span class="dropdown-text">Presentation Python</span></a>
+    <a class="dropdown-item" href="../doc/examples/python.html">
+ <span class="dropdown-text">Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../doc/examples/R.html">
+ <span class="dropdown-text">R</span></a>
   </li>  
     </ul>
   </li>
@@ -186,14 +224,33 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general-principle" id="toc-general-principle" class="nav-link active" data-scroll-target="#general-principle">General principle</a></li>
+  <li><a href="#tools-for-local-use" id="toc-tools-for-local-use" class="nav-link" data-scroll-target="#tools-for-local-use"><span class="header-section-number">1</span> Tools for local use</a></li>
+  <li><a href="#deploy-your-site-with-github-pages" id="toc-deploy-your-site-with-github-pages" class="nav-link" data-scroll-target="#deploy-your-site-with-github-pages"><span class="header-section-number">2</span> Deploy your site with GitHub pages</a>
+  <ul class="collapse">
+  <li><a href="#create-a-repository" id="toc-create-a-repository" class="nav-link" data-scroll-target="#create-a-repository"><span class="header-section-number">2.1</span> Create a repository</a></li>
+  <li><a href="#turn-your-repository-into-a-quarto-project" id="toc-turn-your-repository-into-a-quarto-project" class="nav-link" data-scroll-target="#turn-your-repository-into-a-quarto-project"><span class="header-section-number">2.2</span> Turn your repository into a Quarto project</a></li>
+  <li><a href="#setup-github-actions" id="toc-setup-github-actions" class="nav-link" data-scroll-target="#setup-github-actions"><span class="header-section-number">2.3</span> Setup GitHub actions</a></li>
+  </ul></li>
+  <li><a href="#general-use" id="toc-general-use" class="nav-link" data-scroll-target="#general-use"><span class="header-section-number">3</span> General use</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Créer son site avec Quarto</h1>
+<div class="quarto-title-block"><div><h1 class="title">Create a static site</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -216,54 +273,186 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="install-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="install-quarto">Install Quarto</h2>
+<section id="general-principle" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="general-principle">General principle</h2>
+<ul>
+<li>You define Quarto setup</li>
+<li>You write your content in <em>.qmd</em> files in markdown format</li>
+<li>Quarto will generate the site’s html pages from these <em>.qmd</em> files</li>
+</ul>
 </section>
-<section id="create-a-repository-on-github" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-repository-on-github">Create a repository on GitHub</h2>
+<section id="tools-for-local-use" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="tools-for-local-use"><span class="header-section-number">1</span> Tools for local use</h2>
+<p>You will need the following tools to work locally :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><a href="https://quarto.org/docs/get-started/" class="external" target="_blank">Quarto</a></label></li>
+</ul>
+<p>If you want to use <code>Python</code> code :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">install <code>Python</code></label></li>
+<li><label><input type="checkbox"><code>pip install jupyter</code></label></li>
+<li><label><input type="checkbox"><code>pip install &lt;all_needed_packages&gt;</code></label></li>
+</ul>
+<p>To authorize the download of certain pages in <code>pdf</code> format, you must run : <code>quarto install tinytex</code></p>
+</section>
+<section id="deploy-your-site-with-github-pages" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="deploy-your-site-with-github-pages"><span class="header-section-number">2</span> Deploy your site with GitHub pages</h2>
+<section id="create-a-repository" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="create-a-repository"><span class="header-section-number">2.1</span> Create a repository</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Log in to <a href="https://github.com/" class="external" target="_blank">GitHub</a></label></li>
+<li><label><input type="checkbox">Create a new repository</label></li>
+<li><label><input type="checkbox">Create a new branch named <code>gh-pages</code></label></li>
+<li><label><input type="checkbox">Go to Settings &gt; Pages</label>
 <ul>
-<li>créer une branche nommée <code>gh-pages</code></li>
-<li>Settings &gt; Pages
-<ul>
-<li>Deploy from a branch</li>
-<li>branch : gh-pages</li>
+<li>Deploy from a branch : <strong>gh-pages</strong></li>
 </ul></li>
 </ul>
-</section>
-<section id="cloner-le-dépôt" class="level2">
-<h2 class="anchored" data-anchor-id="cloner-le-dépôt">Cloner le dépôt</h2>
-<p>Insérer à minima les fichiers suivants :</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why deploy from pages branch <em>gh-pages</em> ?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will keep your branch <code>main</code> clean and avoid including html pages generated by Quarto :</p>
 <ul>
-<li>_quarto.yml</li>
-<li>index.qmd</li>
-<li>styles.css</li>
-<li>.github/worflows/publish.yml</li>
+<li>branch <code>main</code> : setup and content in qmd files</li>
+<li>branch <code>gh-pages</code> : html for deployment</li>
 </ul>
-<p>Recommandé :</p>
+</div>
+</div>
+</section>
+<section id="turn-your-repository-into-a-quarto-project" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="turn-your-repository-into-a-quarto-project"><span class="header-section-number">2.2</span> Turn your repository into a Quarto project</h3>
+<p>You will have to create the following files :</p>
+<table class="table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>_quarto.yml</td>
+<td>Configuration file for Quarto setup</td>
+</tr>
+<tr class="even">
+<td>index.qmd</td>
+<td>The home page of the project</td>
+</tr>
+<tr class="odd">
+<td>styles.css</td>
+<td>CSS file for styling the project</td>
+</tr>
+<tr class="even">
+<td>.github/workflows/publish.yml</td>
+<td>Pipeline setup for deployment on GitHub</td>
+</tr>
+</tbody>
+</table>
+<p>Recommended files :</p>
 <ul>
-<li>.gitignore</li>
-<li>dossier <code>doc</code> pour ranger les pages
+<li><code>requirements.txt</code>
 <ul>
-<li>sous-dossiers <code>cours</code>, et <code>tp</code></li>
+<li>list of Python packages (if you use Python in your project)</li>
+</ul></li>
+<li><code>.gitignore</code>
+<ul>
+<li>to tell git to ignore these files</li>
+</ul>
+<pre><code>/.quarto/
+/_site/</code></pre></li>
+<li><code>doc</code> folder to store your files in a clean tree structure</li>
+</ul>
+<p>Example of tree :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>├── index.qmd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>├── _quarto.yml</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>├── styles.css</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>├── .github<span class="op">/</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>│   └── workflows<span class="op">/</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>│       └── publish.yml</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>└── doc<span class="op">/</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ├── lesson<span class="op">/</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    │   ├── img<span class="op">/</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    │   │   ├── image1.jpg</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    │   │   └── image2.jpg</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    │   ├── lesson1.qmd</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    │   ├── lesson2.qmd</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    │   └── ...</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    ├── practical<span class="op">/</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    │   ├── practical1.qmd</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    │   └── ...</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    └── presentation<span class="op">/</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        ├── presentation1.qmd</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        └── ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setup-github-actions" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="setup-github-actions"><span class="header-section-number">2.3</span> Setup GitHub actions</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>when you push the main branch, the <code>.github/worflows/publish.yml</code> file triggers a pipeline</li>
+<li>the site is deployed by default on <code>https://&lt;username&gt;.github.io/&lt;repositoryname&gt;</code>
+<ul class="task-list">
+<li><label><input type="checkbox">On the project’s GitHub page, add this link in the <code>About</code> section</label></li>
 </ul></li>
 </ul>
+</div>
+</div>
+<p>The <code>.github/workflows/publish.yml</code> file contains the list of actions required to deploy the site.</p>
+<p>You will need to add the commands to install all the necessary R or Python packages.</p>
+<p>Example for Python :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">      ...</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python and Dependencies</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3.10'</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">'pip'</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install jupyter</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">      ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="tester-en-local" class="level2">
-<h2 class="anchored" data-anchor-id="tester-en-local">Tester en local</h2>
-<ul>
-<li><code>quarto render</code> : Génrer les pages html</li>
-</ul>
 </section>
-<section id="déployer-sur-github-pages" class="level2">
-<h2 class="anchored" data-anchor-id="déployer-sur-github-pages">Déployer sur GitHub pages</h2>
+<section id="general-use" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="general-use"><span class="header-section-number">3</span> General use</h2>
 <ul>
-<li>lors d’un push, le fichier <code>.github/worflows/publish.yml</code> déclenche un pipeline</li>
-<li>le site est alors déployé sur https://<username>.github.io/<repositoryname>
+<li>edit or create <em>.qmd</em> files</li>
+<li>render the website
 <ul>
-<li><span class="emoji" data-emoji="bulb">💡</span> Sur la page GitHub du projet, ajouter ce lien dans la section <code>About</code></li>
-</ul></repositoryname></username></li>
+<li>open a terminal</li>
+<li><code>quarto render</code></li>
+<li>it generate <code>_site</code> folder containing html pages</li>
+</ul></li>
+<li>deploy on GitHub pages
+<ul>
+<li><em>commit</em> files with Git and <em>push</em></li>
+<li>a few minutes later, the site will be available</li>
+</ul></li>
 </ul>
 
+
+<!-- -->
 
 </section>
 
@@ -491,6 +680,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -798,7 +1038,155 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Create a static site"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ludovic Deneuville"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-expand: 3</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="an">from:</span><span class="co"> markdown+emoji</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## General principle {.unnumbered}</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You define Quarto setup</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You write your content in *.qmd* files in markdown format</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quarto will generate the site's html pages from these *.qmd* files</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools for local use</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>You will need the following tools to work locally :</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/docs/get-started/)</span>{.external target="_blank"}</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>If you want to use <span class="in">`Python`</span> code :</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> install <span class="in">`Python`</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="in">`pip install jupyter`</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="in">`pip install &lt;all_needed_packages&gt;`</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>To authorize the download of certain pages in <span class="in">`pdf`</span> format, you must run : <span class="in">`quarto install tinytex`</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deploy your site with GitHub pages</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Create a repository</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Log in to <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/)</span>{.external target="_blank"}</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create a new repository</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create a new branch named <span class="in">`gh-pages`</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Go to Settings &gt; Pages</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Deploy from a branch : **gh-pages**</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip }</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why deploy from pages branch *gh-pages* ?</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>This will keep your branch <span class="in">`main`</span> clean and avoid including html pages generated by Quarto : </span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>branch <span class="in">`main`</span> : setup and content in qmd files </span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>branch <span class="in">`gh-pages`</span> : html for deployment</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Turn your repository into a Quarto project</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>You will have to create the following files :</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>| File                          | Description                              |</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>|-------------------------------|------------------------------------------|</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>| _quarto.yml                   | Configuration file for Quarto setup      |</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>| index.qmd                     | The home page of the project             |</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>| styles.css                    | CSS file for styling the project         |</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>| .github/workflows/publish.yml | Pipeline setup for deployment on GitHub  |</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>Recommended files :</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`requirements.txt`</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>list of Python packages (if you use Python in your project)</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`.gitignore`</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>to tell git to ignore these files</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="in">```</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="in">  /.quarto/</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in">  /_site/</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">  ```</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`doc`</span> folder to store your files in a clean tree structure</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>Example of tree :</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{.python}</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">├── index.qmd</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="in">├── _quarto.yml</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="in">├── styles.css</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="in">├── .github/</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── workflows/</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">│       └── publish.yml</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="in">└── doc/</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="in">    ├── lesson/</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="in">    │   ├── img/</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="in">    │   │   ├── image1.jpg</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="in">    │   │   └── image2.jpg</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="in">    │   ├── lesson1.qmd</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="in">    │   ├── lesson2.qmd</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="in">    │   └── ...</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="in">    ├── practical/</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="in">    │   ├── practical1.qmd</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="in">    │   └── ...</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="in">    └── presentation/</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="in">        ├── presentation1.qmd</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="in">        └── ...</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setup GitHub actions</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>when you push the main branch, the <span class="in">`.github/worflows/publish.yml`</span> file triggers a pipeline</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the site is deployed by default on <span class="in">`https://&lt;username&gt;.github.io/&lt;repositoryname&gt;`</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="va">[ ]</span> On the project's GitHub page, add this link in the <span class="in">`About`</span> section</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.github/workflows/publish.yml`</span> file contains the list of actions required to deploy the site. </span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>You will need to add the commands to install all the necessary R or Python packages.</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>Example for Python :</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{.yaml}</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="in">    steps:</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="in">      ...</span></span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">      - name: Install Python and Dependencies</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="in">        uses: actions/setup-python@v4</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="in">        with:</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="in">          python-version: '3.10'</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">          cache: 'pip'</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="in">      - run: pip install jupyter</span></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="in">      - run: pip install -r requirements.txt</span></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="in">      ...</span></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## General use</span></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>edit or create *.qmd* files</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>render the website</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>open a terminal</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`quarto render`</span></span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>it generate <span class="in">`_site`</span> folder containing html pages</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>deploy on GitHub pages</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>*commit* files with Git and *push*</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>a few minutes later, the site will be available</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
