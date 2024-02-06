@@ -6,7 +6,16 @@ format: html
 from: markdown+emoji
 ---
 
-On this site you will find examples of how to create a static website with examples of :
+
+## Create a Quarto project
+
+- See section [Getting started](doc/create-website.qmd)
+- [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}
+
+
+## Content
+
+You will find here examples of how to create a static website with examples of:
 
 - Web page(doc/example/lesson.qmd)
 - Notebook(doc/example/notebook.qmd)
@@ -18,6 +27,7 @@ On this site you will find examples of how to create a static website with examp
 Easily create pages by entering text in markdown format. Quarto will format it into pretty pages.
 
 You can use a wide range of tools:
+
 - Tables, Lists
 - Images, Videos
 - Python or R code
@@ -39,7 +49,4 @@ You can use a wide range of tools:
 - Download *.ipynb* file and load it on Jupyter
 
 
-## Create a Quarto project
 
-- See section [Getting started](doc/create-website.qmd)
-- [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}

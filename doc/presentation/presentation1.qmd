@@ -1,7 +1,7 @@
 ---
-title: "Tuto Quarto-Reveal.js"
-subtitle: "Create a slideshow using Quarto and Reveal.js"
-author: "Ludovic Deneuville"
+title: "Presentation title"
+subtitle: "Presentation subtitle"
+author: "Author name"
 format:
   revealjs:
     theme: moon
