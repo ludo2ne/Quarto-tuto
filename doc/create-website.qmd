@@ -19,19 +19,13 @@ number-sections: true
 - Quarto will generate the site's html pages from these *.qmd* files
 
 
-## Tools for local use
+## Local use
 
 You will need the following tools to work locally :
 
-- [ ] [Quarto](https://quarto.org/docs/get-started/){.external target="_blank"}
-
-If you want to use `Python` code :
-
-- [ ] install `Python`
-- [ ] `pip install jupyter`
-- [ ] `pip install <all_needed_packages>`
-
-To authorize the download of certain pages in `pdf` format, you must run : `quarto install tinytex`
+- [ ] [Install Quarto](https://quarto.org/docs/get-started/){target="_blank"}
+- [ ] Choose an editor and install it
+- If you wanna generate pdf file, install : `quarto install tinytex`
 
 
 ## Deploy your site with GitHub pages
@@ -68,8 +62,6 @@ You will have to create the following files :
 
 Recommended files :
 
-- `requirements.txt`
-  - list of Python packages (if you use Python in your project)
 - `.gitignore`
   - to tell git to ignore these files
   ```
@@ -104,25 +96,30 @@ Example of tree :
 ```
 
 
-### Setup GitHub actions
+## Setup GitHub actions
 
 ::: {.callout-note}
 - when you push the main branch, the `.github/worflows/publish.yml` file triggers a pipeline
-- the site is deployed by default on `https://<username>.github.io/<repositoryname>`
+- the site is deployed by default on *https://<username>.github.io/<repositoryname>*
   - [ ] On the project's GitHub page, add this link in the `About` section
 :::
 
 The `.github/workflows/publish.yml` file contains the list of actions required to deploy the site. 
 
-You will need to add the commands to install all the necessary R or Python packages.
 
-Example for Python :
+## Python Setup
 
-```{.yaml}
+### Local
 
-    steps:
-      ...
+- [ ] install `Python`
+- [ ] list needed packages in file *requirements.txt*
+- [ ] `pip install jupyter`
+- [ ] `pip install -r requirements.txt`
 
+### Remote
+
+- [ ] in file `.github/workflow/publish.yml`, add a step to install Python and dependencies
+  ```{.yaml}
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
         with:
@@ -130,9 +127,28 @@ Example for Python :
           cache: 'pip'
       - run: pip install jupyter
       - run: pip install -r requirements.txt
+  ```
 
-      ...
-``` 
+## R Setup
+
+### Local
+
+- [ ] install R
+- [ ] install needed packages
+
+### Remote
+
+- [ ] List needed packages in file `DESCRIPTION`
+- [ ] in file `.github/workflow/publish.yml`, add steps to install R and packages
+  ```{.yaml}
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.0'
+
+      - name: Install R packages from DESCRIPTION file
+        uses: r-lib/actions/setup-r-dependencies@v2
+  ```
 
 
 ## General use

@@ -31,16 +31,8 @@ jobs:
         with:
           r-version: '4.3.0'
 
-      - name: Install R Dependencies
-        run: |
-          R -e 'install.packages("rmarkdown")'
-          R -e 'install.packages(c("rmarkdown", "ggplot2"))'
-
-# use renv instead of manually install
-#      - name: Install R Dependencies
-#        uses: r-lib/actions/setup-renv@v2
-#        with:
-#          cache-version: 1
+      - name: Install R packages from DESCRIPTION file
+        uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

@@ -13,6 +13,7 @@ format:
     margin-right: 2cm
     margin-top: 2cm
     margin-bottom: 2cm
+    shift-heading-level-by: -1
 from: markdown+emoji
 number-sections: true
 ---
@@ -87,7 +88,12 @@ But you can also export in pdf format.
 format:
   html:
     ...
-  pdf: default
+  pdf: 
+    margin-left: 2cm
+    margin-right: 2cm
+    margin-top: 2cm
+    margin-bottom: 2cm
+    shift-heading-level-by: -1
 ```
 
 When you will render the quarto project, it will create a file `lesson.pdf` in addition of `lesson.html`.  
@@ -141,6 +147,30 @@ More about [markdown table](https://quarto.org/docs/authoring/tables.html){.exte
 - [ ] item3 with checkbox
 
 
+### Columns
+
+::: {.columns}
+::: {.column}
+
+content of the first column
+
+:::
+::: {.column}
+
+content of the second column
+:::
+:::
+
+
+### Figures and Videos
+
+![Stones](img/stones.jpg)
+
+
+
+{{< video https://www.youtube.com/watch?v=tHKc-DBb_ME >}}
+
+
 
 ## Advanced tools
 
@@ -150,11 +180,23 @@ More about [markdown table](https://quarto.org/docs/authoring/tables.html){.exte
 - with two `$$`: $$\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}$$
 
 
-### Diagrams with [Mermaid](https://mermaid.js.org/){target="_blank"}
+### Diagrams 
+
+[Mermaid](https://mermaid.js.org/){target="_blank"} lets you create various diagrams and visualizations
 
 ```{mermaid}
 flowchart LR
     20 -- +12 --> 32 -- /8 --> 4
+```
+
+
+```{mermaid}
+stateDiagram-v2
+    state if_state <<choice>>
+    [*] --> IsPositive
+    IsPositive --> if_state
+    if_state --> False: if n < 0
+    if_state --> True : if n >= 0
 ```
 
 
@@ -166,8 +208,11 @@ Note that there are five types of callouts, including:
 :::
 
 
-::: {.callout-tip collapse="true"}
-## Show
+::: {.callout-important title="This is very very important"}
+With a custom title
+:::
 
+::: {.callout-tip collapse="true" title="With hidden text"}
 Hidden text
 :::
+

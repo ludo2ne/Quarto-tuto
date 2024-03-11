@@ -45,8 +45,8 @@ website:
         target: "_blank"
   page-footer:
     right: |
-      Website built with <a href=https://quarto.org/ target="_blank">Quarto</a><br>
-      <a href=https://github.com/ludo2ne/quarto-tuto target="_blank">Source code</a>
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
+      [Code source](https://github.com/ludo2ne/Quarto-tuto){.external target="_blank"}
   repo-url: https://github.com/ludo2ne/quarto-tuto
   repo-branch: main
   reader-mode: true

@@ -23,6 +23,9 @@ h4::before {
     margin-right: 8px;
   }
 
+.header-section-number:after { /*add a dot after the section number (1 title -> 1. title)*/
+    content: ".";
+  } 
 
 /************************************************************/
 /* Others                                                   */
@@ -32,8 +35,17 @@ h4::before {
     width: 50%;
     padding: 5px
 }
+  
+img{
+  max-width: 100%
+}
+
+p{
+text-align: justify
+}
 
 .orange_black{
   color:orange;
   background-color:black
 }
+

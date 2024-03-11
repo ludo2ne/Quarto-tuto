@@ -45,7 +45,7 @@ You can use a wide range of tools:
 ## Python notebooks
 
 - Write it with markdown syntax
-- Display it on you website
+- Display it on your website
 - Download *.ipynb* file and load it on Jupyter
 
 
