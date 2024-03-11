@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
 <meta name="description" content="Discover some of Quarto’s features">
 
-<title>Quarto tuto - Quarto-tuto</title>
+<title>Quarto tutorial - Quarto-tuto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Quarto tuto</span>
+    <span class="navbar-title">Quarto tutorial</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -226,29 +226,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>On this site you will find examples of how to create a static website with examples of</p>
+<section id="create-a-quarto-project" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-quarto-project">Create a Quarto project</h2>
 <ul>
-<li>Web page</li>
-<li>Notebook</li>
-<li>Presentation</li>
+<li>See section <a href="./doc/create-website.html">Getting started</a></li>
+<li><a href="https://quarto.org/docs/projects/quarto-projects.html" class="external" target="_blank">Project Basics</a></li>
 </ul>
+</section>
+<section id="content" class="level2">
+<h2 class="anchored" data-anchor-id="content">Content</h2>
+<p>You will find here examples of how to create a static website with examples of:</p>
+<ul>
+<li>Web page(doc/example/lesson.qmd)</li>
+<li>Notebook(doc/example/notebook.qmd)</li>
+<li>Presentation(doc/example/presentation.qmd)</li>
+</ul>
+</section>
 <section id="web-page" class="level2">
 <h2 class="anchored" data-anchor-id="web-page">Web page</h2>
 <p>Easily create pages by entering text in markdown format. Quarto will format it into pretty pages.</p>
-<p>You can use a wide range of tools: - Tables, Lists - Images, Videos - Python or R code - mathematical formulas - Export pdf</p>
+<p>You can use a wide range of tools:</p>
+<ul>
+<li>Tables, Lists</li>
+<li>Images, Videos</li>
+<li>Python or R code</li>
+<li>mathematical formulas</li>
+<li>Export pdf</li>
+</ul>
 </section>
-<section id="slideshow-with-revealjs" class="level2">
-<h2 class="anchored" data-anchor-id="slideshow-with-revealjs">Slideshow with <a href="https://quarto.org/docs/presentations/revealjs/" class="external" target="_blank">revealJS</a></h2>
+<section id="presentation-with-revealjs" class="level2">
+<h2 class="anchored" data-anchor-id="presentation-with-revealjs">Presentation with <a href="https://quarto.org/docs/presentations/revealjs/" class="external" target="_blank">revealJS</a></h2>
 <ul>
 <li>Speaker view</li>
 <li>chalkboard</li>
 <li>print-pdf</li>
 </ul>
 </section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
+<section id="python-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="python-notebooks">Python notebooks</h2>
 <ul>
-<li><a href="https://quarto.org/docs/projects/quarto-projects.html" class="external" target="_blank">Project Basics</a></li>
+<li>Write it with markdown syntax</li>
+<li>Display it on your website</li>
+<li>Download <em>.ipynb</em> file and load it on Jupyter</li>
 </ul>
 
 
@@ -478,6 +497,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ludo2ne\.github\.io\/Quarto-tuto\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -512,7 +549,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -796,7 +837,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/quarto-tuto" target="_blank">Source code</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/Quarto-tuto" class="external" target="_blank">Code source</a></p>
 </div>
   </div>
 </footer>

@@ -1,5 +1,243 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quarto-tuto",
+    "section": "",
+    "text": "See section Getting started\nProject Basics"
+  },
+  {
+    "objectID": "index.html#create-a-quarto-project",
+    "href": "index.html#create-a-quarto-project",
+    "title": "Quarto-tuto",
+    "section": "",
+    "text": "See section Getting started\nProject Basics"
+  },
+  {
+    "objectID": "index.html#content",
+    "href": "index.html#content",
+    "title": "Quarto-tuto",
+    "section": "Content",
+    "text": "Content\nYou will find here examples of how to create a static website with examples of:\n\nWeb page(doc/example/lesson.qmd)\nNotebook(doc/example/notebook.qmd)\nPresentation(doc/example/presentation.qmd)"
+  },
+  {
+    "objectID": "index.html#web-page",
+    "href": "index.html#web-page",
+    "title": "Quarto-tuto",
+    "section": "Web page",
+    "text": "Web page\nEasily create pages by entering text in markdown format. Quarto will format it into pretty pages.\nYou can use a wide range of tools:\n\nTables, Lists\nImages, Videos\nPython or R code\nmathematical formulas\nExport pdf"
+  },
+  {
+    "objectID": "index.html#presentation-with-revealjs",
+    "href": "index.html#presentation-with-revealjs",
+    "title": "Quarto-tuto",
+    "section": "Presentation with revealJS",
+    "text": "Presentation with revealJS\n\nSpeaker view\nchalkboard\nprint-pdf"
+  },
+  {
+    "objectID": "index.html#python-notebooks",
+    "href": "index.html#python-notebooks",
+    "title": "Quarto-tuto",
+    "section": "Python notebooks",
+    "text": "Python notebooks\n\nWrite it with markdown syntax\nDisplay it on your website\nDownload .ipynb file and load it on Jupyter"
+  },
+  {
+    "objectID": "doc/presentation/presentation1.html#introduction",
+    "href": "doc/presentation/presentation1.html#introduction",
+    "title": "Presentation title",
+    "section": "Introduction",
+    "text": "Introduction\nhello"
+  },
+  {
+    "objectID": "doc/presentation/presentation1.html#todays-plan",
+    "href": "doc/presentation/presentation1.html#todays-plan",
+    "title": "Presentation title",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\npart 1\npart 2"
+  },
+  {
+    "objectID": "doc/presentation/presentation1.html#part-1",
+    "href": "doc/presentation/presentation1.html#part-1",
+    "title": "Presentation title",
+    "section": "Part 1",
+    "text": "Part 1\n\n\n\nQuarto-tuto"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html",
+    "href": "doc/lesson/lesson1.html",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#introduction",
+    "href": "doc/lesson/lesson1.html#introduction",
+    "title": "Lesson 1",
+    "section": "",
+    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#part-1",
+    "href": "doc/lesson/lesson1.html#part-1",
+    "title": "Lesson 1",
+    "section": "1 Part 1",
+    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
+  },
+  {
+    "objectID": "doc/lesson/lesson1.html#part-2",
+    "href": "doc/lesson/lesson1.html#part-2",
+    "title": "Lesson 1",
+    "section": "2 Part 2",
+    "text": "2 Part 2"
+  },
+  {
+    "objectID": "doc/examples/python.html",
+    "href": "doc/examples/python.html",
+    "title": "Code Python dans les slides",
+    "section": "",
+    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
+  },
+  {
+    "objectID": "doc/examples/python.html#python",
+    "href": "doc/examples/python.html#python",
+    "title": "Code Python dans les slides",
+    "section": "",
+    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
+  },
+  {
+    "objectID": "doc/examples/python.html#cells",
+    "href": "doc/examples/python.html#cells",
+    "title": "Code Python dans les slides",
+    "section": "2 Cells",
+    "text": "2 Cells\n\n2.1 A non-evaluated cell\nIf you add a dot (.) before the keyword Python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nResult\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.2 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
+  },
+  {
+    "objectID": "doc/examples/python.html#tabulations",
+    "href": "doc/examples/python.html#tabulations",
+    "title": "Code Python dans les slides",
+    "section": "3 Tabulations",
+    "text": "3 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nDisplay table of data using tabulate\n\n\nCode\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nMarkdown(tabulate(\n  pairs, \n  headers=[\"X\",\"Y\"]\n))\n\n\n\n\n\nX\nY\n\n\n\n\n0.37454\n0.950714\n\n\n0.731994\n0.598658\n\n\n0.156019\n0.155995\n\n\n0.0580836\n0.866176\n\n\n0.601115\n0.708073\n\n\n0.0205845\n0.96991\n\n\n0.832443\n0.212339\n\n\n0.181825\n0.183405\n\n\n0.304242\n0.524756\n\n\n0.431945\n0.291229"
+  },
+  {
+    "objectID": "doc/examples/lesson.html",
+    "href": "doc/examples/lesson.html",
+    "title": "Lesson title",
+    "section": "",
+    "text": "Welcome to this page.\nyou can click on the Code button at the top right to see the page’s source code.\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#introduction",
+    "href": "doc/examples/lesson.html#introduction",
+    "title": "Lesson title",
+    "section": "",
+    "text": "Welcome to this page.\nyou can click on the Code button at the top right to see the page’s source code.\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#metadata",
+    "href": "doc/examples/lesson.html#metadata",
+    "title": "Lesson title",
+    "section": "1 Metadata",
+    "text": "1 Metadata\nThis file’s metadata is displayed at the top between the ---.\n\n1.1 Basic setup\n---\ntitle: \"Title of this page\"\ndescription: \"Description of this page\"\nauthor: \"Author name\"\nformat: html                             # because it's a webpage\nfrom: markdown+emoji                     # you use markdown language\n---\n\n\n1.2 Advanced\n\n1.2.1 Add a table of contents\nWith the following setup, all titles, i.e. lines beginning with # will be added to the table of contents.\nformat:\n  html:\n    toc: true                            # Add a Table Of Contents\n    toc-location: left\n    toc-expand: 3                        # 1 : only main titles ... 5 : highly detailed\nIf you want to remove a title from the table of contents, use the unlisted class :\n# My title {.unlisted}\n\n\n1.2.2 Self-numbering\nIf you use this setup number-sections: true, each title will be numbered.\nIf you don’t want to number a part, use class unnumbered :\n# Introduction {.unnumbered}\n\n\n1.2.3 Export pdf\nThe format of a web page is html.\nBut you can also export in pdf format.\nformat:\n  html:\n    ...\n  pdf: \n    margin-left: 2cm\n    margin-right: 2cm\n    margin-top: 2cm\n    margin-bottom: 2cm\n    shift-heading-level-by: -1\nWhen you will render the quarto project, it will create a file lesson.pdf in addition of lesson.html.\nOn the webpage, a link will appear under the table of contents to download the pdf.\n\n\n\n\n\n\nNote\n\n\n\nTo perform this you have to install first tinytex : quarto install tinytex"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "href": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "title": "Lesson title",
+    "section": "2 Add a link in the navigation bar",
+    "text": "2 Add a link in the navigation bar\nThe navigation bar is setup in the file _quarto.yml. Look for navbar key, and then add a link to this page"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#markdown-basics",
+    "href": "doc/examples/lesson.html#markdown-basics",
+    "title": "Lesson title",
+    "section": "3 Markdown basics",
+    "text": "3 Markdown basics\nFor more information, you can see this page\n\n3.1 Text format\nbold - italic - italicbold - Script - strike\n\nCitation\n\nOrange text on black background by defining class .orange_black in file style.css at the project root.\n\n\n3.2 Table\nMore about markdown table\n\nFrench Departments\n\n\nCode\nName\nCity\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n3.3 List\n\nitem 1\n\nitem1.1\n\nitem 2\nitem3 with checkbox\n\n\n\n3.4 Columns\n\n\ncontent of the first column\n\ncontent of the second column\n\n\n\n\n3.5 Figures and Videos\n\n\n\nStones"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#advanced-tools",
+    "href": "doc/examples/lesson.html#advanced-tools",
+    "title": "Lesson title",
+    "section": "4 Advanced tools",
+    "text": "4 Advanced tools\n\n4.1 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.2 Diagrams\nMermaid lets you create various diagrams and visualizations\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n\n\n\nstateDiagram-v2\n    state if_state &lt;&lt;choice&gt;&gt;\n    [*] --&gt; IsPositive\n    IsPositive --&gt; if_state\n    if_state --&gt; False: if n &lt; 0\n    if_state --&gt; True : if n &gt;= 0\n\n\n\n\n\n\n\n\n4.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nThis is very very important\n\n\n\nWith a custom title\n\n\n\n\n\n\n\n\nWith hidden text\n\n\n\n\n\nHidden text"
+  },
+  {
+    "objectID": "doc/examples/notebook.html",
+    "href": "doc/examples/notebook.html",
+    "title": "Notebook",
+    "section": "",
+    "text": "If you set metadata ipynb: default, it will generate the .ipynb file so you can download it\nDownload this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/examples/notebook.html#before-you-start",
+    "href": "doc/examples/notebook.html#before-you-start",
+    "title": "Notebook",
+    "section": "",
+    "text": "If you set metadata ipynb: default, it will generate the .ipynb file so you can download it\nDownload this Jupyter Notebook"
+  },
+  {
+    "objectID": "doc/examples/notebook.html#introduction",
+    "href": "doc/examples/notebook.html#introduction",
+    "title": "Notebook",
+    "section": "1 Introduction",
+    "text": "1 Introduction"
+  },
+  {
+    "objectID": "doc/examples/notebook.html#python-cells",
+    "href": "doc/examples/notebook.html#python-cells",
+    "title": "Notebook",
+    "section": "2 Python cells",
+    "text": "2 Python cells\n\n2.1 A python cell that will not be executed\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n2.2 A python cell to be executed if eval: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#introduction",
+    "href": "doc/examples/presentation.html#introduction",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Introduction",
+    "text": "Introduction\n\nhello\nwelcome\nReveal.js"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#objectives",
+    "href": "doc/examples/presentation.html#objectives",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "🎯 Objectives",
+    "text": "🎯 Objectives\n\nCreate a slideshow\nUse the Speaker View (shortcut : S)\nExplain some metadata"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#metadata",
+    "href": "doc/examples/presentation.html#metadata",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Metadata",
+    "text": "Metadata\nThe metadata of the current document is shown at the top of the page\n\npreview-links: true : view in current window. Try it\ntransition: slide : choose transmition mode\nchalkboard: true : activate chalkboard\ncontrols: true : show navigation arrows"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#speaker-view",
+    "href": "doc/examples/presentation.html#speaker-view",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Speaker View",
+    "text": "Speaker View\n\n::: {.notes} to add personal notes\nS to activate Speaker View\n\nUtilisation :\n\nOn your own screen: display Speaker View\nOn the presentation screen: display the slideshow\n\n\nPersonal notes\n\nnote 1\nnote 2"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#chalkboard",
+    "href": "doc/examples/presentation.html#chalkboard",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Chalkboard",
+    "text": "Chalkboard\n\nB to open a blackboard\nC to draw on your slide"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#lists",
+    "href": "doc/examples/presentation.html#lists",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Lists",
+    "text": "Lists\n\nitem 1\n\nitem 1.1\nitem 1.2\n\nitem 2\n\nincrémental display\n\n\nitem 3\nitem 4"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#table",
+    "href": "doc/examples/presentation.html#table",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Table",
+    "text": "Table\n\nFrench Departments\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n\nQuarto-tuto"
+  },
+  {
     "objectID": "doc/examples/practical.html",
     "href": "doc/examples/practical.html",
     "title": "Practical title",
@@ -63,53 +301,32 @@
     "text": "Tabsets\n\nPlotData\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160.0\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160.0\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108.0\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258.0\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360.0\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225.0\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n\n\nDuster 360\n14.3\n8\n360.0\n245\n3.21\n3.570\n15.84\n0\n0\n3\n4\n\n\nMerc 240D\n24.4\n4\n146.7\n62\n3.69\n3.190\n20.00\n1\n0\n4\n2\n\n\nMerc 230\n22.8\n4\n140.8\n95\n3.92\n3.150\n22.90\n1\n0\n4\n2\n\n\nMerc 280\n19.2\n6\n167.6\n123\n3.92\n3.440\n18.30\n1\n0\n4\n4\n\n\nMerc 280C\n17.8\n6\n167.6\n123\n3.92\n3.440\n18.90\n1\n0\n4\n4\n\n\nMerc 450SE\n16.4\n8\n275.8\n180\n3.07\n4.070\n17.40\n0\n0\n3\n3\n\n\nMerc 450SL\n17.3\n8\n275.8\n180\n3.07\n3.730\n17.60\n0\n0\n3\n3\n\n\nMerc 450SLC\n15.2\n8\n275.8\n180\n3.07\n3.780\n18.00\n0\n0\n3\n3\n\n\nCadillac Fleetwood\n10.4\n8\n472.0\n205\n2.93\n5.250\n17.98\n0\n0\n3\n4\n\n\nLincoln Continental\n10.4\n8\n460.0\n215\n3.00\n5.424\n17.82\n0\n0\n3\n4\n\n\nChrysler Imperial\n14.7\n8\n440.0\n230\n3.23\n5.345\n17.42\n0\n0\n3\n4\n\n\nFiat 128\n32.4\n4\n78.7\n66\n4.08\n2.200\n19.47\n1\n1\n4\n1\n\n\nHonda Civic\n30.4\n4\n75.7\n52\n4.93\n1.615\n18.52\n1\n1\n4\n2\n\n\nToyota Corolla\n33.9\n4\n71.1\n65\n4.22\n1.835\n19.90\n1\n1\n4\n1\n\n\nToyota Corona\n21.5\n4\n120.1\n97\n3.70\n2.465\n20.01\n1\n0\n3\n1\n\n\nDodge Challenger\n15.5\n8\n318.0\n150\n2.76\n3.520\n16.87\n0\n0\n3\n2\n\n\nAMC Javelin\n15.2\n8\n304.0\n150\n3.15\n3.435\n17.30\n0\n0\n3\n2\n\n\nCamaro Z28\n13.3\n8\n350.0\n245\n3.73\n3.840\n15.41\n0\n0\n3\n4\n\n\nPontiac Firebird\n19.2\n8\n400.0\n175\n3.08\n3.845\n17.05\n0\n0\n3\n2\n\n\nFiat X1-9\n27.3\n4\n79.0\n66\n4.08\n1.935\n18.90\n1\n1\n4\n1\n\n\nPorsche 914-2\n26.0\n4\n120.3\n91\n4.43\n2.140\n16.70\n0\n1\n5\n2\n\n\nLotus Europa\n30.4\n4\n95.1\n113\n3.77\n1.513\n16.90\n1\n1\n5\n2\n\n\nFord Pantera L\n15.8\n8\n351.0\n264\n4.22\n3.170\n14.50\n0\n1\n5\n4\n\n\nFerrari Dino\n19.7\n6\n145.0\n175\n3.62\n2.770\n15.50\n0\n1\n5\n6\n\n\nMaserati Bora\n15.0\n8\n301.0\n335\n3.54\n3.570\n14.60\n0\n1\n5\n8\n\n\nVolvo 142E\n21.4\n4\n121.0\n109\n4.11\n2.780\n18.60\n1\n1\n4\n2\n\n\n\n\n\n\n\n\n\n\n\nQuarto-tuto"
   },
   {
-    "objectID": "doc/examples/presentation.html#introduction",
-    "href": "doc/examples/presentation.html#introduction",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Introduction",
-    "text": "Introduction\n\nhello\nwelcome\nReveal.js"
+    "objectID": "doc/lesson/lesson2.html",
+    "href": "doc/lesson/lesson2.html",
+    "title": "Lesson 2 title",
+    "section": "",
+    "text": "Welcome to this course"
   },
   {
-    "objectID": "doc/examples/presentation.html#objectives",
-    "href": "doc/examples/presentation.html#objectives",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "🎯 Objectives",
-    "text": "🎯 Objectives\n\nCreate a slideshow\nUse the Speaker View (shortcut : S)\nExplain some metadata"
+    "objectID": "doc/lesson/lesson2.html#introduction",
+    "href": "doc/lesson/lesson2.html#introduction",
+    "title": "Lesson 2 title",
+    "section": "",
+    "text": "Welcome to this course"
   },
   {
-    "objectID": "doc/examples/presentation.html#metadata",
-    "href": "doc/examples/presentation.html#metadata",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Metadata",
-    "text": "Metadata\nThe metadata of the current document is shown at the top of the page\n\npreview-links: true : view in current window. Try it\ntransition: slide : choose transmition mode\nchalkboard: true : activate chalkboard\ncontrols: true : show navigation arrows"
+    "objectID": "doc/lesson/lesson2.html#part-1",
+    "href": "doc/lesson/lesson2.html#part-1",
+    "title": "Lesson 2 title",
+    "section": "1 Part 1",
+    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
   },
   {
-    "objectID": "doc/examples/presentation.html#speaker-view",
-    "href": "doc/examples/presentation.html#speaker-view",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Speaker View",
-    "text": "Speaker View\n\n::: {.notes} to add personal notes\nS to activate Speaker View\n\nUtilisation :\n\nOn your own screen: display Speaker View\nOn the presentation screen: display the slideshow\n\n\nPersonal notes\n\nnote 1\nnote 2"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#chalkboard",
-    "href": "doc/examples/presentation.html#chalkboard",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Chalkboard",
-    "text": "Chalkboard\n\nB to open a blackboard\nC to draw on your slide"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#lists",
-    "href": "doc/examples/presentation.html#lists",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Lists",
-    "text": "Lists\n\nitem 1\n\nitem 1.1\nitem 1.2\n\nitem 2\n\nincrémental display\n\n\nitem 3\nitem 4"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#table",
-    "href": "doc/examples/presentation.html#table",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Table",
-    "text": "Table\n\nFrench Departments\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n\nQuarto-tuto"
+    "objectID": "doc/lesson/lesson2.html#part-2",
+    "href": "doc/lesson/lesson2.html#part-2",
+    "title": "Lesson 2 title",
+    "section": "2 Part 2",
+    "text": "2 Part 2"
   },
   {
     "objectID": "doc/create-website.html",
@@ -126,25 +343,46 @@
     "text": "You define Quarto setup\nYou write your content in .qmd files in markdown format\nQuarto will generate the site’s html pages from these .qmd files"
   },
   {
-    "objectID": "doc/create-website.html#tools-for-local-use",
-    "href": "doc/create-website.html#tools-for-local-use",
+    "objectID": "doc/create-website.html#local-use",
+    "href": "doc/create-website.html#local-use",
     "title": "Create a static site",
-    "section": "1 Tools for local use",
-    "text": "1 Tools for local use\nYou will need the following tools to work locally :\n\nQuarto\n\nIf you want to use Python code :\n\ninstall Python\npip install jupyter\npip install &lt;all_needed_packages&gt;\n\nTo authorize the download of certain pages in pdf format, you must run : quarto install tinytex"
+    "section": "1 Local use",
+    "text": "1 Local use\nYou will need the following tools to work locally :\n\nInstall Quarto\nChoose an editor and install it\nIf you wanna generate pdf file, install : quarto install tinytex"
   },
   {
     "objectID": "doc/create-website.html#deploy-your-site-with-github-pages",
     "href": "doc/create-website.html#deploy-your-site-with-github-pages",
     "title": "Create a static site",
     "section": "2 Deploy your site with GitHub pages",
-    "text": "2 Deploy your site with GitHub pages\n\n2.1 Create a repository\n\nLog in to GitHub\nCreate a new repository\nCreate a new branch named gh-pages\nGo to Settings &gt; Pages\n\nDeploy from a branch : gh-pages\n\n\n\n\n\n\n\n\nWhy deploy from pages branch gh-pages ?\n\n\n\nThis will keep your branch main clean and avoid including html pages generated by Quarto :\n\nbranch main : setup and content in qmd files\nbranch gh-pages : html for deployment\n\n\n\n\n\n2.2 Turn your repository into a Quarto project\nYou will have to create the following files :\n\n\n\n\n\n\n\nFile\nDescription\n\n\n\n\n_quarto.yml\nConfiguration file for Quarto setup\n\n\nindex.qmd\nThe home page of the project\n\n\nstyles.css\nCSS file for styling the project\n\n\n.github/workflows/publish.yml\nPipeline setup for deployment on GitHub\n\n\n\nRecommended files :\n\nrequirements.txt\n\nlist of Python packages (if you use Python in your project)\n\n.gitignore\n\nto tell git to ignore these files\n\n/.quarto/\n/_site/\ndoc folder to store your files in a clean tree structure\n\nExample of tree :\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n├── .github/\n│   └── workflows/\n│       └── publish.yml\n└── doc/\n    ├── lesson/\n    │   ├── img/\n    │   │   ├── image1.jpg\n    │   │   └── image2.jpg\n    │   ├── lesson1.qmd\n    │   ├── lesson2.qmd\n    │   └── ...\n    ├── practical/\n    │   ├── practical1.qmd\n    │   └── ...\n    └── presentation/\n        ├── presentation1.qmd\n        └── ...\n\n\n2.3 Setup GitHub actions\n\n\n\n\n\n\nNote\n\n\n\n\nwhen you push the main branch, the .github/worflows/publish.yml file triggers a pipeline\nthe site is deployed by default on https://&lt;username&gt;.github.io/&lt;repositoryname&gt;\n\nOn the project’s GitHub page, add this link in the About section\n\n\n\n\nThe .github/workflows/publish.yml file contains the list of actions required to deploy the site.\nYou will need to add the commands to install all the necessary R or Python packages.\nExample for Python :\n\n    steps:\n      ...\n\n      - name: Install Python and Dependencies\n        uses: actions/setup-python@v4\n        with:\n          python-version: '3.10'\n          cache: 'pip'\n      - run: pip install jupyter\n      - run: pip install -r requirements.txt\n\n      ..."
+    "text": "2 Deploy your site with GitHub pages\n\n2.1 Create a repository\n\nLog in to GitHub\nCreate a new repository\nCreate a new branch named gh-pages\nGo to Settings &gt; Pages\n\nDeploy from a branch : gh-pages\n\n\n\n\n\n\n\n\nWhy deploy from pages branch gh-pages ?\n\n\n\nThis will keep your branch main clean and avoid including html pages generated by Quarto :\n\nbranch main : setup and content in qmd files\nbranch gh-pages : html for deployment\n\n\n\n\n\n2.2 Turn your repository into a Quarto project\nYou will have to create the following files :\n\n\n\n\n\n\n\nFile\nDescription\n\n\n\n\n_quarto.yml\nConfiguration file for Quarto setup\n\n\nindex.qmd\nThe home page of the project\n\n\nstyles.css\nCSS file for styling the project\n\n\n.github/workflows/publish.yml\nPipeline setup for deployment on GitHub\n\n\n\nRecommended files :\n\n.gitignore\n\nto tell git to ignore these files\n\n/.quarto/\n/_site/\ndoc folder to store your files in a clean tree structure\n\nExample of tree :\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n├── .github/\n│   └── workflows/\n│       └── publish.yml\n└── doc/\n    ├── lesson/\n    │   ├── img/\n    │   │   ├── image1.jpg\n    │   │   └── image2.jpg\n    │   ├── lesson1.qmd\n    │   ├── lesson2.qmd\n    │   └── ...\n    ├── practical/\n    │   ├── practical1.qmd\n    │   └── ...\n    └── presentation/\n        ├── presentation1.qmd\n        └── ..."
+  },
+  {
+    "objectID": "doc/create-website.html#setup-github-actions",
+    "href": "doc/create-website.html#setup-github-actions",
+    "title": "Create a static site",
+    "section": "3 Setup GitHub actions",
+    "text": "3 Setup GitHub actions\n\n\n\n\n\n\nNote\n\n\n\n\nwhen you push the main branch, the .github/worflows/publish.yml file triggers a pipeline\nthe site is deployed by default on https://.github.io/\n\nOn the project’s GitHub page, add this link in the About section\n\n\n\n\nThe .github/workflows/publish.yml file contains the list of actions required to deploy the site."
+  },
+  {
+    "objectID": "doc/create-website.html#python-setup",
+    "href": "doc/create-website.html#python-setup",
+    "title": "Create a static site",
+    "section": "4 Python Setup",
+    "text": "4 Python Setup\n\n4.1 Local\n\ninstall Python\nlist needed packages in file requirements.txt\npip install jupyter\npip install -r requirements.txt\n\n\n\n4.2 Remote\n\nin file .github/workflow/publish.yml, add a step to install Python and dependencies\n    - name: Install Python and Dependencies\n      uses: actions/setup-python@v4\n      with:\n        python-version: '3.10'\n        cache: 'pip'\n    - run: pip install jupyter\n    - run: pip install -r requirements.txt"
+  },
+  {
+    "objectID": "doc/create-website.html#r-setup",
+    "href": "doc/create-website.html#r-setup",
+    "title": "Create a static site",
+    "section": "5 R Setup",
+    "text": "5 R Setup\n\n5.1 Local\n\ninstall R\ninstall needed packages\n\n\n\n5.2 Remote\n\nList needed packages in file DESCRIPTION\nin file .github/workflow/publish.yml, add steps to install R and packages\n    - name: Install R\n      uses: r-lib/actions/setup-r@v2\n      with:\n        r-version: '4.3.0'\n\n    - name: Install R packages from DESCRIPTION file\n      uses: r-lib/actions/setup-r-dependencies@v2"
   },
   {
     "objectID": "doc/create-website.html#general-use",
     "href": "doc/create-website.html#general-use",
     "title": "Create a static site",
-    "section": "3 General use",
-    "text": "3 General use\n\nedit or create .qmd files\nrender the website\n\nopen a terminal\nquarto render\nit generate _site folder containing html pages\n\ndeploy on GitHub pages\n\ncommit files with Git and push\na few minutes later, the site will be available"
+    "section": "6 General use",
+    "text": "6 General use\n\nedit or create .qmd files\nrender the website\n\nopen a terminal\nquarto render\nit generate _site folder containing html pages\n\ndeploy on GitHub pages\n\ncommit files with Git and push\na few minutes later, the site will be available"
   },
   {
     "objectID": "doc/practical/practical1.html",
@@ -180,201 +418,5 @@
     "title": "Practical 1",
     "section": "2 Exercice 2",
     "text": "2 Exercice 2"
-  },
-  {
-    "objectID": "doc/lesson/lesson2.html",
-    "href": "doc/lesson/lesson2.html",
-    "title": "Lesson 2 title",
-    "section": "",
-    "text": "Welcome to this course"
-  },
-  {
-    "objectID": "doc/lesson/lesson2.html#introduction",
-    "href": "doc/lesson/lesson2.html#introduction",
-    "title": "Lesson 2 title",
-    "section": "",
-    "text": "Welcome to this course"
-  },
-  {
-    "objectID": "doc/lesson/lesson2.html#part-1",
-    "href": "doc/lesson/lesson2.html#part-1",
-    "title": "Lesson 2 title",
-    "section": "1 Part 1",
-    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
-  },
-  {
-    "objectID": "doc/lesson/lesson2.html#part-2",
-    "href": "doc/lesson/lesson2.html#part-2",
-    "title": "Lesson 2 title",
-    "section": "2 Part 2",
-    "text": "2 Part 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto-tuto",
-    "section": "",
-    "text": "On this site you will find examples of how to create a static website with examples of"
-  },
-  {
-    "objectID": "index.html#web-page",
-    "href": "index.html#web-page",
-    "title": "Quarto-tuto",
-    "section": "Web page",
-    "text": "Web page\nEasily create pages by entering text in markdown format. Quarto will format it into pretty pages.\nYou can use a wide range of tools: - Tables, Lists - Images, Videos - Python or R code - mathematical formulas - Export pdf"
-  },
-  {
-    "objectID": "index.html#slideshow-with-revealjs",
-    "href": "index.html#slideshow-with-revealjs",
-    "title": "Quarto-tuto",
-    "section": "Slideshow with revealJS",
-    "text": "Slideshow with revealJS\n\nSpeaker view\nchalkboard\nprint-pdf"
-  },
-  {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "Quarto-tuto",
-    "section": "Links",
-    "text": "Links\n\nProject Basics"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html",
-    "href": "doc/lesson/lesson1.html",
-    "title": "Lesson 1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html#introduction",
-    "href": "doc/lesson/lesson1.html#introduction",
-    "title": "Lesson 1",
-    "section": "",
-    "text": "Welcome to this course\n\n\n\nxxx\nyyy"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html#part-1",
-    "href": "doc/lesson/lesson1.html#part-1",
-    "title": "Lesson 1",
-    "section": "1 Part 1",
-    "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
-  },
-  {
-    "objectID": "doc/lesson/lesson1.html#part-2",
-    "href": "doc/lesson/lesson1.html#part-2",
-    "title": "Lesson 1",
-    "section": "2 Part 2",
-    "text": "2 Part 2"
-  },
-  {
-    "objectID": "doc/presentation/presentation1.html#introduction",
-    "href": "doc/presentation/presentation1.html#introduction",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Introduction",
-    "text": "Introduction\nhello"
-  },
-  {
-    "objectID": "doc/presentation/presentation1.html#todays-plan",
-    "href": "doc/presentation/presentation1.html#todays-plan",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Today’s plan",
-    "text": "Today’s plan\n\npart 1\npart 2"
-  },
-  {
-    "objectID": "doc/presentation/presentation1.html#part-1",
-    "href": "doc/presentation/presentation1.html#part-1",
-    "title": "Tuto Quarto-Reveal.js",
-    "section": "Part 1",
-    "text": "Part 1\n\n\n\nQuarto-tuto"
-  },
-  {
-    "objectID": "doc/examples/python.html",
-    "href": "doc/examples/python.html",
-    "title": "Code Python dans les slides",
-    "section": "",
-    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
-  },
-  {
-    "objectID": "doc/examples/python.html#python",
-    "href": "doc/examples/python.html#python",
-    "title": "Code Python dans les slides",
-    "section": "",
-    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
-  },
-  {
-    "objectID": "doc/examples/python.html#cells",
-    "href": "doc/examples/python.html#cells",
-    "title": "Code Python dans les slides",
-    "section": "2 Cells",
-    "text": "2 Cells\n\n2.1 A non-evaluated cell\nIf you add a dot (.) before the keyword Python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nResult\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.2 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
-  },
-  {
-    "objectID": "doc/examples/python.html#tabulations",
-    "href": "doc/examples/python.html#tabulations",
-    "title": "Code Python dans les slides",
-    "section": "3 Tabulations",
-    "text": "3 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nDisplay table of data using tabulate\n\n\nCode\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nMarkdown(tabulate(\n  pairs, \n  headers=[\"X\",\"Y\"]\n))\n\n\n\n\n\nX\nY\n\n\n\n\n0.37454\n0.950714\n\n\n0.731994\n0.598658\n\n\n0.156019\n0.155995\n\n\n0.0580836\n0.866176\n\n\n0.601115\n0.708073\n\n\n0.0205845\n0.96991\n\n\n0.832443\n0.212339\n\n\n0.181825\n0.183405\n\n\n0.304242\n0.524756\n\n\n0.431945\n0.291229"
-  },
-  {
-    "objectID": "doc/examples/lesson.html",
-    "href": "doc/examples/lesson.html",
-    "title": "Lesson title",
-    "section": "",
-    "text": "Welcome to this page.\nyou can click on the Code button at the top right to see the page’s source code.\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#introduction",
-    "href": "doc/examples/lesson.html#introduction",
-    "title": "Lesson title",
-    "section": "",
-    "text": "Welcome to this page.\nyou can click on the Code button at the top right to see the page’s source code.\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#metadata",
-    "href": "doc/examples/lesson.html#metadata",
-    "title": "Lesson title",
-    "section": "1 Metadata",
-    "text": "1 Metadata\nThis file’s metadata is displayed at the top between the ---.\n\n1.1 Basic setup\n---\ntitle: \"Title of this page\"\ndescription: \"Description of this page\"\nauthor: \"Author name\"\nformat: html                             # because it's a webpage\nfrom: markdown+emoji                     # you use markdown language\n---\n\n\n1.2 Advanced\n\n1.2.1 Add a table of contents\nWith the following setup, all titles, i.e. lines beginning with # will be added to the table of contents.\nformat:\n  html:\n    toc: true                            # Add a Table Of Contents\n    toc-location: left\n    toc-expand: 3                        # 1 : only main titles ... 5 : highly detailed\nIf you want to remove a title from the table of contents, use the unlisted class :\n# My title {.unlisted}\n\n\n1.2.2 Self-numbering\nIf you use this setup number-sections: true, each title will be numbered.\nIf you don’t want to number a part, use class unnumbered :\n# Introduction {.unnumbered}\n\n\n1.2.3 Export pdf\nThe format of a web page is html.\nBut you can also export in pdf format.\nformat:\n  html:\n    ...\n  pdf: default\nWhen you will render the quarto project, it will create a file lesson.pdf in addition of lesson.html.\nOn the webpage, a link will appear under the table of contents to download the pdf.\n\n\n\n\n\n\nNote\n\n\n\nTo perform this you have to install first tinytex : quarto install tinytex"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
-    "href": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
-    "title": "Lesson title",
-    "section": "2 Add a link in the navigation bar",
-    "text": "2 Add a link in the navigation bar\nThe navigation bar is setup in the file _quarto.yml. Look for navbar key, and then add a link to this page"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#markdown-basics",
-    "href": "doc/examples/lesson.html#markdown-basics",
-    "title": "Lesson title",
-    "section": "3 Markdown basics",
-    "text": "3 Markdown basics\nFor more information, you can see this page\n\n3.1 Text format\nbold - italic - italicbold - Script - strike\n\nCitation\n\nOrange text on black background by defining class .orange_black in file style.css at the project root.\n\n\n3.2 Table\nMore about markdown table\n\nFrench Departments\n\n\nCode\nName\nCity\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n3.3 List\n\nitem 1\n\nitem1.1\n\nitem 2\nitem3 with checkbox"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#advanced-tools",
-    "href": "doc/examples/lesson.html#advanced-tools",
-    "title": "Lesson title",
-    "section": "4 Advanced tools",
-    "text": "4 Advanced tools\n\n4.1 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.2 Diagrams with Mermaid\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n4.3 Callout Blocks\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nShow\n\n\n\n\n\nHidden text"
-  },
-  {
-    "objectID": "doc/examples/notebook.html",
-    "href": "doc/examples/notebook.html",
-    "title": "Notebook",
-    "section": "",
-    "text": "If you set metadata ipynb: default, it will generate the .ipynb file so you can download it\nDownload this Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/examples/notebook.html#before-you-start",
-    "href": "doc/examples/notebook.html#before-you-start",
-    "title": "Notebook",
-    "section": "",
-    "text": "If you set metadata ipynb: default, it will generate the .ipynb file so you can download it\nDownload this Jupyter Notebook"
-  },
-  {
-    "objectID": "doc/examples/notebook.html#introduction",
-    "href": "doc/examples/notebook.html#introduction",
-    "title": "Notebook",
-    "section": "1 Introduction",
-    "text": "1 Introduction\n# a python cell that will not be executed\n\n# a python cell to be executed if eval: true"
   }
 ]
