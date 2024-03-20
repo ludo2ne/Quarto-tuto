@@ -22,7 +22,9 @@ number-sections: true
 
 Welcome to this page.
 
-you can click on the `Code` button at the top right to see the page's source code.
+::: {.callout-important}
+You can click on the `Code` button at the top right to see the [page's source code]{.underline}.
+:::
 
 
 ### Objectives {.unnumbered}
@@ -71,15 +73,22 @@ If you want to remove a title from the table of contents, use the `unlisted` cla
 
 #### Self-numbering
 
-If you use this setup `number-sections: true`, each title will be numbered.  
-If you don't want to number a part, use class `unnumbered` :
+If you use the following setup, each title will be numbered.  
+
+```yaml
+---
+number-sections: true
+---
+```
+
+If you don't want to number a part, use class `unnumbered`. In this page, *Introduction* and *Objectives* are unnumbered.
 
 ```
-# Introduction {.unnumbered}
+## Introduction {.unnumbered}
 ```
 
 
-#### Export pdf
+#### PDF export
 
 The format of a web page is html.  
 But you can also export in pdf format.
@@ -107,7 +116,8 @@ To perform this you have to install first tinytex : `quarto install tinytex`
 ## Add a link in the navigation bar
 
 The navigation bar is setup in the file `_quarto.yml`.
-Look for `navbar` key, and then add a link to this page
+
+Look for `navbar` key, and then add a link to this page.
 
 
 ## Markdown basics
@@ -117,11 +127,11 @@ For more information, you can see [this page ](https://quarto.org/docs/authoring
 
 ### Text format
 
-**bold** - *italic* - ***italicbold*** - `Script` - ~~strike~~
+**bold** - *italic* - ***italicbold*** - `Script` - ~~strike~~ - [underline]{.underline}
 
 > Citation
 
-[Orange text on black background]{.orange_black} by defining class *.orange_black* in file `style.css` at the project root.
+It is also possible to add [custom]{.green-box} formatting by using the [style.css]{.yellow-box} file at the project root.
 
 
 ### Table
@@ -150,15 +160,15 @@ More about [markdown table](https://quarto.org/docs/authoring/tables.html){.exte
 ### Columns
 
 ::: {.columns}
-::: {.column}
 
+::: {.column}
 content of the first column
-
 :::
-::: {.column}
 
+::: {.column}
 content of the second column
 :::
+
 :::
 
 
@@ -171,8 +181,57 @@ content of the second column
 {{< video https://www.youtube.com/watch?v=tHKc-DBb_ME >}}
 
 
+### Emoji
+
+:bulb: In this page, you can add [*GitHub emojis*](https://gist.github.com/rxaviers/7360908){target="_blank"}. :heart_eyes:
+
 
 ## Advanced tools
+
+
+### Callout Blocks
+
+You can easily highlight text using `callout blocks`.
+
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+
+::: {.callout-important title="This is very very important"}
+With a custom title
+:::
+
+::: {.callout-tip collapse="true" title="With hidden text"}
+Hidden text
+:::
+
+
+### Tabulations
+
+:::{.panel-tabset}
+
+#### Tab1
+
+Content of the first tab
+
+
+#### Tab2
+
+Content of the second tab
+
+
+#### Tab3
+
+Content of the third tab
+
+:::
+
+::: {.callout-caution}
+In the PDF output, the content of each tab will be displayed consecutively, one after the other.
+:::
+
 
 ### Math
 
@@ -198,21 +257,4 @@ stateDiagram-v2
     if_state --> False: if n < 0
     if_state --> True : if n >= 0
 ```
-
-
-### Callout Blocks
-
-::: {.callout-note}
-Note that there are five types of callouts, including:
-`note`, `tip`, `warning`, `caution`, and `important`.
-:::
-
-
-::: {.callout-important title="This is very very important"}
-With a custom title
-:::
-
-::: {.callout-tip collapse="true" title="With hidden text"}
-Hidden text
-:::
 

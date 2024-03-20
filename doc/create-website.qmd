@@ -1,18 +1,20 @@
 ---
 title: "Create a static site"
+description: "Build a static site using Quarto in just 10 minutes"
 author: "Ludovic Deneuville"
 format:
   html:
     toc: true
     toc-location: left
     toc-expand: 3
-    code-tools: true
 from: markdown+emoji
 number-sections: true
 ---
 
 
 ## General principle {.unnumbered}
+
+With Quarto, it's very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files... It only takes **10 minutes** to get a first result, perhaps a little more the first time.
 
 - You define Quarto setup
 - You write your content in *.qmd* files in markdown format
@@ -24,7 +26,7 @@ number-sections: true
 You will need the following tools to work locally :
 
 - [ ] [Install Quarto](https://quarto.org/docs/get-started/){target="_blank"}
-- [ ] Choose an editor and install it
+- [ ] Choose an editor and install it, for example Visual Studio Code or R Studio
 - If you wanna generate pdf file, install : `quarto install tinytex`
 
 
@@ -49,6 +51,8 @@ This will keep your branch `main` clean and avoid including html pages generated
 
 
 ### Turn your repository into a Quarto project
+
+We recommend opening your project in an IDE such as VSCode or RStudio.
 
 You will have to create the following files :
 
@@ -104,7 +108,7 @@ Example of tree :
   - [ ] On the project's GitHub page, add this link in the `About` section
 :::
 
-The `.github/workflows/publish.yml` file contains the list of actions required to deploy the site. 
+The `.github/workflows/publish.yml` file contains the list of actions required to deploy the site ([Example here](https://github.com/ludo2ne/Quarto-tuto/blob/main/.github/workflows/publish.yml){target="_blank"})
 
 
 ## Python Setup
@@ -160,4 +164,4 @@ The `.github/workflows/publish.yml` file contains the list of actions required t
   - it generate `_site` folder containing html pages
 - deploy on GitHub pages
   - *commit* files with Git and *push*
-  - a few minutes later, the site will be available
+  - a few minutes later, the site will be available on `https://<username>.github.io/<repository_name>`

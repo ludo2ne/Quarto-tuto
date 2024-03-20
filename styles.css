@@ -44,8 +44,33 @@ p{
 text-align: justify
 }
 
-.orange_black{
-  color:orange;
-  background-color:black
+
+/************************************************************/
+/* Box                                                      */
+/************************************************************/
+
+.green-box,
+.blue-box,
+.yellow-box {
+    color: black;
+    border-radius: 10px;
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding: 2px;
+    width: 100%;
 }
 
+.green-box {
+  background-color: #d9f0dd;
+  border: solid 2px #226D68;
+}
+
+.blue-box {
+	background-color: #bbc5ee;
+  border: solid 2px #2f3bda;
+}
+
+.yellow-box {
+  background-color: #fdf0c9;
+  border: solid 2px #fdc218;
+}

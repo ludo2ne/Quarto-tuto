@@ -9,6 +9,7 @@ format:
     toc: true
     toc-location: left
     toc-expand: 3
+    code-tools: true
   pdf: default
 from: markdown+emoji
 number-sections: true

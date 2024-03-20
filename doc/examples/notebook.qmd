@@ -6,6 +6,7 @@ format:
     toc: true
     toc-location: left
     toc-expand: 3
+    code-tools: true
   ipynb: default
 from: markdown+emoji
 number-sections: true
