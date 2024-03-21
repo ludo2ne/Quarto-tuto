@@ -24,7 +24,7 @@ website:
           - href: doc/practical/practical1.qmd
             text: "Practical 1"
     right:
-      - href: doc/create-website.qmd
+      - href: doc/getting-started.qmd
         text: Getting started
       - text: Examples
         menu:

@@ -9,7 +9,7 @@ from: markdown+emoji
 
 ## Create a Quarto project
 
-- See section [Getting started](doc/create-website.qmd)
+- See section [Getting started](doc/getting-started.qmd)
 - [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}
 
 

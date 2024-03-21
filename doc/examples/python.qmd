@@ -9,15 +9,18 @@ format:
     code-tools: true
 from: markdown+emoji
 number-sections: true
+lightbox: true
 ---
 
 
 ## Python
 
-- [Utiliser Python](https://quarto.org/docs/computations/python.html){.external target="_blank"}
-- install Python
-- install jupyter
-- install all needed packages
+If you want to run python code in your quarto document, first you will have to :
+
+- [ ] Download and install [Python](https://www.python.org/downloads/){target="_blank"}
+- [ ] Install jupyter
+  - `pip install jupyter`
+- [ ] Install all needed packages
   - `pip install matplotlib numpy pandas ...`
 
 ::: {.callout-tip}
@@ -28,11 +31,13 @@ Instead of install packages one by one
 :::
 
 
+- [Official documentation about using Python](https://quarto.org/docs/computations/python.html){target="_blank"}
+
 ## Cells
 
 ### A non-evaluated cell
 
-If you add a dot (.) before the keyword `Python`, the cell will not be evaluated.
+If you add a dot (.) before the keyword `python`, the cell will **not** be evaluated.
 
 :::: {.columns}
 ::: {.column}
@@ -107,7 +112,7 @@ plt.show()
 
 #### Plot
 
-``` {python}
+```{python}
 #| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt

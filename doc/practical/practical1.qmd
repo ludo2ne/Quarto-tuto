@@ -10,6 +10,7 @@ format:
   pdf: default
 from: markdown+emoji
 number-sections: true
+lightbox: true
 ---
 
 ## Homework{.unnumbered}

@@ -2,6 +2,13 @@
 
 ## :construction: Todo
 
+- [ ] Clean getting started
+  - fast version
 - [ ] Observable
-- [ ] GitHub action -> R
-- [ ] Presentation example
+
+### Examples
+
+- [ ] Presentation
+- [ ] Practical
+- [ ] R -> html
+  - how to setup and use (same for python)
