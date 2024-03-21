@@ -263,21 +263,21 @@
     "href": "doc/examples/python.html",
     "title": "Code Python dans les slides",
     "section": "",
-    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
+    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\n\nOfficial documentation about using Python"
   },
   {
     "objectID": "doc/examples/python.html#python",
     "href": "doc/examples/python.html#python",
     "title": "Code Python dans les slides",
     "section": "",
-    "text": "Utiliser Python\ninstall Python\ninstall jupyter\ninstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt"
+    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\n\nOfficial documentation about using Python"
   },
   {
     "objectID": "doc/examples/python.html#cells",
     "href": "doc/examples/python.html#cells",
     "title": "Code Python dans les slides",
     "section": "2 Cells",
-    "text": "2 Cells\n\n2.1 A non-evaluated cell\nIf you add a dot (.) before the keyword Python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nResult\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.2 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
+    "text": "2 Cells\n\n2.1 A non-evaluated cell\nIf you add a dot (.) before the keyword python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nResult\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.2 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
   },
   {
     "objectID": "doc/examples/python.html#tabulations",
@@ -364,57 +364,57 @@
     "text": "Table\n\nFrench Departments\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n\nQuarto-tuto"
   },
   {
-    "objectID": "doc/create-website.html",
-    "href": "doc/create-website.html",
+    "objectID": "doc/getting-started.html",
+    "href": "doc/getting-started.html",
     "title": "Create a static site",
     "section": "",
     "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files… It only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files in markdown format\nQuarto will generate the site’s html pages from these .qmd files"
   },
   {
-    "objectID": "doc/create-website.html#general-principle",
-    "href": "doc/create-website.html#general-principle",
+    "objectID": "doc/getting-started.html#general-principle",
+    "href": "doc/getting-started.html#general-principle",
     "title": "Create a static site",
     "section": "",
     "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files… It only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files in markdown format\nQuarto will generate the site’s html pages from these .qmd files"
   },
   {
-    "objectID": "doc/create-website.html#local-use",
-    "href": "doc/create-website.html#local-use",
+    "objectID": "doc/getting-started.html#local-use",
+    "href": "doc/getting-started.html#local-use",
     "title": "Create a static site",
     "section": "1 Local use",
     "text": "1 Local use\nYou will need the following tools to work locally :\n\nInstall Quarto\nChoose an editor and install it, for example Visual Studio Code or R Studio\nIf you wanna generate pdf file, install : quarto install tinytex"
   },
   {
-    "objectID": "doc/create-website.html#deploy-your-site-with-github-pages",
-    "href": "doc/create-website.html#deploy-your-site-with-github-pages",
+    "objectID": "doc/getting-started.html#deploy-your-site-with-github-pages",
+    "href": "doc/getting-started.html#deploy-your-site-with-github-pages",
     "title": "Create a static site",
     "section": "2 Deploy your site with GitHub pages",
     "text": "2 Deploy your site with GitHub pages\n\n2.1 Create a repository\n\nLog in to GitHub\nCreate a new repository\nCreate a new branch named gh-pages\nGo to Settings &gt; Pages\n\nDeploy from a branch : gh-pages\n\n\n\n\n\n\n\n\nWhy deploy from pages branch gh-pages ?\n\n\n\nThis will keep your branch main clean and avoid including html pages generated by Quarto :\n\nbranch main : setup and content in qmd files\nbranch gh-pages : html for deployment\n\n\n\n\n\n2.2 Turn your repository into a Quarto project\nWe recommend opening your project in an IDE such as VSCode or RStudio.\nYou will have to create the following files :\n\n\n\n\n\n\n\nFile\nDescription\n\n\n\n\n_quarto.yml\nConfiguration file for Quarto setup\n\n\nindex.qmd\nThe home page of the project\n\n\nstyles.css\nCSS file for styling the project\n\n\n.github/workflows/publish.yml\nPipeline setup for deployment on GitHub\n\n\n\nRecommended files :\n\n.gitignore\n\nto tell git to ignore these files\n\n/.quarto/\n/_site/\ndoc folder to store your files in a clean tree structure\n\nExample of tree :\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n├── .github/\n│   └── workflows/\n│       └── publish.yml\n└── doc/\n    ├── lesson/\n    │   ├── img/\n    │   │   ├── image1.jpg\n    │   │   └── image2.jpg\n    │   ├── lesson1.qmd\n    │   ├── lesson2.qmd\n    │   └── ...\n    ├── practical/\n    │   ├── practical1.qmd\n    │   └── ...\n    └── presentation/\n        ├── presentation1.qmd\n        └── ..."
   },
   {
-    "objectID": "doc/create-website.html#setup-github-actions",
-    "href": "doc/create-website.html#setup-github-actions",
+    "objectID": "doc/getting-started.html#setup-github-actions",
+    "href": "doc/getting-started.html#setup-github-actions",
     "title": "Create a static site",
     "section": "3 Setup GitHub actions",
     "text": "3 Setup GitHub actions\n\n\n\n\n\n\nNote\n\n\n\n\nwhen you push the main branch, the .github/worflows/publish.yml file triggers a pipeline\nthe site is deployed by default on https://.github.io/\n\nOn the project’s GitHub page, add this link in the About section\n\n\n\n\nThe .github/workflows/publish.yml file contains the list of actions required to deploy the site (Example here)"
   },
   {
-    "objectID": "doc/create-website.html#python-setup",
-    "href": "doc/create-website.html#python-setup",
+    "objectID": "doc/getting-started.html#python-setup",
+    "href": "doc/getting-started.html#python-setup",
     "title": "Create a static site",
     "section": "4 Python Setup",
     "text": "4 Python Setup\n\n4.1 Local\n\ninstall Python\nlist needed packages in file requirements.txt\npip install jupyter\npip install -r requirements.txt\n\n\n\n4.2 Remote\n\nin file .github/workflow/publish.yml, add a step to install Python and dependencies\n    - name: Install Python and Dependencies\n      uses: actions/setup-python@v4\n      with:\n        python-version: '3.10'\n        cache: 'pip'\n    - run: pip install jupyter\n    - run: pip install -r requirements.txt"
   },
   {
-    "objectID": "doc/create-website.html#r-setup",
-    "href": "doc/create-website.html#r-setup",
+    "objectID": "doc/getting-started.html#r-setup",
+    "href": "doc/getting-started.html#r-setup",
     "title": "Create a static site",
     "section": "5 R Setup",
     "text": "5 R Setup\n\n5.1 Local\n\ninstall R\ninstall needed packages\n\n\n\n5.2 Remote\n\nList needed packages in file DESCRIPTION\nin file .github/workflow/publish.yml, add steps to install R and packages\n    - name: Install R\n      uses: r-lib/actions/setup-r@v2\n      with:\n        r-version: '4.3.0'\n\n    - name: Install R packages from DESCRIPTION file\n      uses: r-lib/actions/setup-r-dependencies@v2"
   },
   {
-    "objectID": "doc/create-website.html#general-use",
-    "href": "doc/create-website.html#general-use",
+    "objectID": "doc/getting-started.html#general-use",
+    "href": "doc/getting-started.html#general-use",
     "title": "Create a static site",
     "section": "6 General use",
     "text": "6 General use\n\nedit or create .qmd files\nrender the website\n\nopen a terminal\nquarto render\nit generate _site folder containing html pages\n\ndeploy on GitHub pages\n\ncommit files with Git and push\na few minutes later, the site will be available on https://&lt;username&gt;.github.io/&lt;repository_name&gt;"
