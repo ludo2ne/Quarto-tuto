@@ -27,7 +27,7 @@ You will need the following tools to work locally :
 
 - [ ] [Install Quarto](https://quarto.org/docs/get-started/){target="_blank"}
 - [ ] Choose an editor and install it, for example Visual Studio Code or R Studio
-- If you wanna generate pdf file, install : `quarto install tinytex`
+- [ ] If you wanna generate pdf file, install : `quarto install tinytex`
 
 
 ## Deploy your site with GitHub pages

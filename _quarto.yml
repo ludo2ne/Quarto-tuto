@@ -1,4 +1,3 @@
-
 project:
   type: website
 
@@ -50,6 +49,9 @@ website:
   repo-url: https://github.com/ludo2ne/quarto-tuto
   repo-branch: main
   reader-mode: true
+
+execute:
+  freeze: auto  # re-render only when source changes
 
 format:
   html:

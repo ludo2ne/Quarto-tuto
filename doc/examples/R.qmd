@@ -59,3 +59,27 @@ ggplot(mtcars, aes(hp, mpg, color = am)) +
 knitr::kable(mtcars)
 ```
 :::
+
+
+
+@fig-airquality Température et niveau d'ozone.
+
+```{r}
+#| echo: false
+#| output: true
+#| label: fig-airquality
+#| fig-cap: Température et niveau d'ozone.
+#| warning: false
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+### Code block and inline code
+
+```{r}
+a <- c(1, 2, 3, 4)
+```
+
+la moyenne de a est de `r mean(a)`.

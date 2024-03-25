@@ -5,8 +5,10 @@ format:
   html:
     toc: true
     toc-location: left
-    toc-expand: 3
-    code-tools: true
+    toc-expand: 3 
+    code-tools:
+      source: true
+      toggle: false
 from: markdown+emoji
 number-sections: true
 lightbox: true
@@ -144,3 +146,53 @@ Markdown(tabulate(
 
 :::
 
+
+
+
+
+
+## Line numbers
+
+```{python code-line-numbers="true"}
+def fibonacci(n) -> list[int]:
+    """Generate the Fibonacci sequence up to the nth term."""
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+# Example usage
+print(fibonacci(10))
+```
+
+
+### Inline code
+
+Mean of fibonacci(10) : `{python} np.mean(fibonacci(10))`.
+
+
+### Test highlight lines 3-8
+
+ne fonctionne qu'avec du code R ??
+
+```{.r code-line-numbers="3-8"}
+# Conversion d'un fichier csv en un fichier parquet partitionné :
+
+csv_to_parquet(
+  path_to_file = parquetize_example("region_2022.csv"),
+  path_to_parquet = tempfile(fileext = ".parquet"),
+  partition = "yes",
+  partitioning =  c("REG")
+)
+
+a <- 5
+#> Reading data...
+#> Writing data...
+#> ✔ Data are available in parquet dataset under /tmp/RtmpMT4bYz/file157830a758fa.parquet
+#> Writing data..
+```
