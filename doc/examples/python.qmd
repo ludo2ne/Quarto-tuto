@@ -33,9 +33,66 @@ Instead of install packages one by one
 :::
 
 
-- [Official documentation about using Python](https://quarto.org/docs/computations/python.html){target="_blank"}
+Official documentation :
+
+- [Using Python](https://quarto.org/docs/computations/python.html){target="_blank"}
+- [Jupyter Code Cells](https://quarto.org/docs/reference/cells/cells-jupyter.html){target="_blank"}
 
 ## Cells
+
+### How it works ?
+
+On the left side, you can see the code entered in the *.qmd* file, and on the right side, you can see the result.
+
+:::: {.columns}
+::: {.column}
+Code in your *.qmd* file
+
+```{{python}}
+1+1
+```
+:::
+
+::: {.column}
+Output
+
+```{python}
+1+1
+```
+:::
+::::
+
+### Cell options
+
+Cell options impact the execution and output of executable code blocks.  
+They are specified within comments at the beginning of a block.
+
+Some option examples :
+
+```{{python}}
+#| label: my_label         # Unique label for code cell
+#| eval: true              # Evaluate the cell
+#| echo: true              # Print the code
+#| output: false           # Don't print the output
+a = [1, 2, 3, 4]
+print(a)
+```
+
+
+### Imports
+
+To facilitate import management, it is recommended to group all of them in the first cell.
+
+```{python}
+#| label: python-imports
+import numpy as np
+import matplotlib.pyplot as plt
+
+from scipy.stats import norm
+from IPython.display import Markdown
+from tabulate import tabulate
+
+```
 
 ### A non-evaluated cell
 
@@ -47,10 +104,6 @@ Code
 
 ```
 ```{.python}
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-
 x = np.linspace(-5, 5, 1000)
 
 pdf = norm.pdf(x, 0, 1)
@@ -60,13 +113,9 @@ plt.show()
 :::
 
 ::: {.column}
-Result
+Output
 
 ```{.python}
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-
 x = np.linspace(-3, 3, 1000)
 
 pdf = norm.pdf(x, 0, 1)
@@ -83,10 +132,6 @@ if you remove the dot (.) before the keyword `Python`, the cell will be evaluate
 
 
 ```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import norm
-
 x = np.linspace(-3, 3, 1000)
 
 pdf = norm.pdf(x, 0, 1)
@@ -101,10 +146,9 @@ plt.show()
 
 #### Code
 
-``` {.python filename="file.py"}
-import numpy as np
-import matplotlib.pyplot as plt
-
+``` {python}
+#| filename: file.py
+#| eval: false
 np.random.seed(42)
 pairs = np.random.rand(10, 2)
 
@@ -116,9 +160,6 @@ plt.show()
 
 ```{python}
 #| code-fold: true
-import numpy as np
-import matplotlib.pyplot as plt
-
 np.random.seed(42)
 pairs = np.random.rand(10, 2)
 
@@ -128,12 +169,10 @@ plt.show()
 
 #### Data
 
-Display table of data using `tabulate`
+Display table of data using `tabulate` ([see imports](#python-imports))
 
 ``` {python}
 #| code-fold: true
-from IPython.display import Markdown
-from tabulate import tabulate
 
 np.random.seed(42)
 pairs = np.random.rand(10, 2)
@@ -153,7 +192,8 @@ Markdown(tabulate(
 
 ## Line numbers
 
-```{python code-line-numbers="true"}
+```{python}
+#| code-line-numbers: true
 def fibonacci(n) -> list[int]:
     """Generate the Fibonacci sequence up to the nth term."""
     if not isinstance(n, int):
@@ -173,26 +213,41 @@ print(fibonacci(10))
 
 ### Inline code
 
-Mean of fibonacci(10) : `{python} np.mean(fibonacci(10))`.
+
+It is possible to embed code within a line of text : 
+
+- The mean of fibonacci(10) is `{python} np.mean(fibonacci(10))`.
 
 
-### Test highlight lines 3-8
 
-ne fonctionne qu'avec du code R ??
+## A classer
 
-```{.r code-line-numbers="3-8"}
-# Conversion d'un fichier csv en un fichier parquet partitionné :
+```{python}
+#| label: fig-collatz27
+#| fig-cap: "Collatz conjecture starting with n = 27"
+def collatz_conjecture(n):
+    sequence = [n]
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    
+    return sequence
 
-csv_to_parquet(
-  path_to_file = parquetize_example("region_2022.csv"),
-  path_to_parquet = tempfile(fileext = ".parquet"),
-  partition = "yes",
-  partitioning =  c("REG")
-)
+def plot_collatz(n):
+    sequence = collatz_conjecture(n)
+    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')
+    plt.xlabel('Step')
+    plt.ylabel('Value')
+    plt.title('Collatz conjecture')
+    plt.grid(True)
+    plt.show()
 
-a <- 5
-#> Reading data...
-#> Writing data...
-#> ✔ Data are available in parquet dataset under /tmp/RtmpMT4bYz/file157830a758fa.parquet
-#> Writing data..
+plot_collatz(27)
 ```
+
+
+Reference to the [figure](#fig-collatz27)
