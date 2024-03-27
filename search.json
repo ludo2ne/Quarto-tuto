@@ -263,35 +263,42 @@
     "href": "doc/examples/python.html",
     "title": "Code Python dans les slides",
     "section": "",
-    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\n\nOfficial documentation about using Python"
+    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\nOfficial documentation :\n\nUsing Python\nJupyter Code Cells"
   },
   {
     "objectID": "doc/examples/python.html#python",
     "href": "doc/examples/python.html#python",
     "title": "Code Python dans les slides",
     "section": "",
-    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\n\nOfficial documentation about using Python"
+    "text": "If you want to run python code in your quarto document, first you will have to :\n\nDownload and install Python\nInstall jupyter\n\npip install jupyter\n\nInstall all needed packages\n\npip install matplotlib numpy pandas ...\n\n\n\n\n\n\n\n\nTip\n\n\n\nInstead of install packages one by one\n\nlist all needed packages in file requirements.txt at the project root\nrun pip install -r requirements.txt\n\n\n\nOfficial documentation :\n\nUsing Python\nJupyter Code Cells"
   },
   {
     "objectID": "doc/examples/python.html#cells",
     "href": "doc/examples/python.html#cells",
     "title": "Code Python dans les slides",
     "section": "2 Cells",
-    "text": "2 Cells\n\n2.1 A non-evaluated cell\nIf you add a dot (.) before the keyword python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nResult\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.2 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
+    "text": "2 Cells\n\n2.1 How it works ?\nOn the left side, you can see the code entered in the .qmd file, and on the right side, you can see the result.\n\n\nCode in your .qmd file\n```{python}\n1+1\n```\n\nOutput\n\n1+1\n\n2\n\n\n\n\n\n\n2.2 Cell options\nCell options impact the execution and output of executable code blocks.\nThey are specified within comments at the beginning of a block.\nSome option examples :\n```{python}\n#| label: my_label         # Unique label for code cell\n#| eval: true              # Evaluate the cell\n#| echo: true              # Print the code\n#| output: false           # Don't print the output\na = [1, 2, 3, 4]\nprint(a)\n```\n\n\n2.3 Imports\nTo facilitate import management, it is recommended to group all of them in the first cell.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfrom scipy.stats import norm\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\n\n\n2.4 A non-evaluated cell\nIf you add a dot (.) before the keyword python, the cell will not be evaluated.\n\n\nCode\n```{.python}\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\nOutput\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\n\n\n2.5 An evaluated cell\nif you remove the dot (.) before the keyword Python, the cell will be evaluated.\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
   },
   {
     "objectID": "doc/examples/python.html#tabulations",
     "href": "doc/examples/python.html#tabulations",
     "title": "Code Python dans les slides",
     "section": "3 Tabulations",
-    "text": "3 Tabulations\n\nCodePlotData\n\n\n\n\nfile.py\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nDisplay table of data using tabulate\n\n\nCode\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nMarkdown(tabulate(\n  pairs, \n  headers=[\"X\",\"Y\"]\n))\n\n\n\n\n\nX\nY\n\n\n\n\n0.37454\n0.950714\n\n\n0.731994\n0.598658\n\n\n0.156019\n0.155995\n\n\n0.0580836\n0.866176\n\n\n0.601115\n0.708073\n\n\n0.0205845\n0.96991\n\n\n0.832443\n0.212339\n\n\n0.181825\n0.183405\n\n\n0.304242\n0.524756\n\n\n0.431945\n0.291229"
+    "text": "3 Tabulations\n\nCodePlotData\n\n\n\n\n\nfile.py\n\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\nCode\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nplt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nDisplay table of data using tabulate (see imports)\n\n\nCode\nnp.random.seed(42)\npairs = np.random.rand(10, 2)\n\nMarkdown(tabulate(\n  pairs, \n  headers=[\"X\",\"Y\"]\n))\n\n\n\n\n\nX\nY\n\n\n\n\n0.37454\n0.950714\n\n\n0.731994\n0.598658\n\n\n0.156019\n0.155995\n\n\n0.0580836\n0.866176\n\n\n0.601115\n0.708073\n\n\n0.0205845\n0.96991\n\n\n0.832443\n0.212339\n\n\n0.181825\n0.183405\n\n\n0.304242\n0.524756\n\n\n0.431945\n0.291229"
   },
   {
     "objectID": "doc/examples/python.html#line-numbers",
     "href": "doc/examples/python.html#line-numbers",
     "title": "Code Python dans les slides",
     "section": "4 Line numbers",
-    "text": "4 Line numbers\n\ndef fibonacci(n) -&gt; list[int]:\n    \"\"\"Generate the Fibonacci sequence up to the nth term.\"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"n must be an integer\")\n\n    fib_sequence = []\n    a, b = 0, 1\n    for _ in range(n):\n        fib_sequence.append(a)\n        a, b = b, a + b\n    return fib_sequence\n\n# Example usage\nprint(fibonacci(10))\n\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n\n\n\n4.1 Inline code\nMean of fibonacci(10) : 8.8.\n\n\n4.2 Test highlight lines 3-8\nne fonctionne qu’avec du code R ??\n# Conversion d'un fichier csv en un fichier parquet partitionné :\n\ncsv_to_parquet(\n  path_to_file = parquetize_example(\"region_2022.csv\"),\n  path_to_parquet = tempfile(fileext = \".parquet\"),\n  partition = \"yes\",\n  partitioning =  c(\"REG\")\n)\n\na &lt;- 5\n#&gt; Reading data...\n#&gt; Writing data...\n#&gt; ✔ Data are available in parquet dataset under /tmp/RtmpMT4bYz/file157830a758fa.parquet\n#&gt; Writing data.."
+    "text": "4 Line numbers\n\ndef fibonacci(n) -&gt; list[int]:\n    \"\"\"Generate the Fibonacci sequence up to the nth term.\"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"n must be an integer\")\n\n    fib_sequence = []\n    a, b = 0, 1\n    for _ in range(n):\n        fib_sequence.append(a)\n        a, b = b, a + b\n    return fib_sequence\n\n# Example usage\nprint(fibonacci(10))\n\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n\n\n\n4.1 Inline code\nIt is possible to embed code within a line of text :\n\nThe mean of fibonacci(10) is 8.8."
+  },
+  {
+    "objectID": "doc/examples/python.html#a-classer",
+    "href": "doc/examples/python.html#a-classer",
+    "title": "Code Python dans les slides",
+    "section": "5 A classer",
+    "text": "5 A classer\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27\n\n\n\n\n\nReference to the figure\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27"
   },
   {
     "objectID": "doc/examples/notebook.html",
