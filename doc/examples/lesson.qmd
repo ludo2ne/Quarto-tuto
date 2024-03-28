@@ -16,6 +16,7 @@ format:
     shift-heading-level-by: -1
 from: markdown+emoji
 number-sections: true
+lightbox: true
 ---
 
 
