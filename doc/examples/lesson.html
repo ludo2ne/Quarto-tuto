@@ -208,6 +208,10 @@ window.Quarto = {
     <a class="nav-link" href="../../doc/getting-started.html"> 
 <span class="menu-text">Getting started</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../doc/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examples</span>
@@ -284,12 +288,13 @@ window.Quarto = {
   <li><a href="#figures-and-videos" id="toc-figures-and-videos" class="nav-link" data-scroll-target="#figures-and-videos"><span class="header-section-number">3.5</span> Figures and Videos</a></li>
   <li><a href="#emoji" id="toc-emoji" class="nav-link" data-scroll-target="#emoji"><span class="header-section-number">3.6</span> Emoji</a></li>
   </ul></li>
-  <li><a href="#advanced-tools" id="toc-advanced-tools" class="nav-link" data-scroll-target="#advanced-tools"><span class="header-section-number">4</span> Advanced tools</a>
+  <li><a href="#advanced-tools-id" id="toc-advanced-tools-id" class="nav-link" data-scroll-target="#advanced-tools-id"><span class="header-section-number">4</span> Advanced tools</a>
   <ul class="collapse">
   <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks"><span class="header-section-number">4.1</span> Callout Blocks</a></li>
   <li><a href="#tabulations" id="toc-tabulations" class="nav-link" data-scroll-target="#tabulations"><span class="header-section-number">4.2</span> Tabulations</a></li>
-  <li><a href="#math" id="toc-math" class="nav-link" data-scroll-target="#math"><span class="header-section-number">4.3</span> Math</a></li>
-  <li><a href="#diagrams" id="toc-diagrams" class="nav-link" data-scroll-target="#diagrams"><span class="header-section-number">4.4</span> Diagrams</a></li>
+  <li><a href="#internal-link" id="toc-internal-link" class="nav-link" data-scroll-target="#internal-link"><span class="header-section-number">4.3</span> Internal link</a></li>
+  <li><a href="#math" id="toc-math" class="nav-link" data-scroll-target="#math"><span class="header-section-number">4.4</span> Math</a></li>
+  <li><a href="#diagrams" id="toc-diagrams" class="nav-link" data-scroll-target="#diagrams"><span class="header-section-number">4.5</span> Diagrams</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lesson.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -505,7 +510,7 @@ Note
 <h3 data-number="3.5" class="anchored" data-anchor-id="figures-and-videos"><span class="header-section-number">3.5</span> Figures and Videos</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="img/stones.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Stones"><img src="img/stones.jpg" class="img-fluid figure-img" alt="Stones"></a></p>
+<p><a href="img/stones.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Stones"><img src="img/stones.jpg" class="img-fluid figure-img" alt="Stones"></a></p>
 <figcaption>Stones</figcaption>
 </figure>
 </div>
@@ -516,8 +521,8 @@ Note
 <p><span class="emoji" data-emoji="bulb">💡</span> In this page, you can add <a href="https://gist.github.com/rxaviers/7360908" target="_blank"><em>GitHub emojis</em></a>. <span class="emoji" data-emoji="heart_eyes">😍</span></p>
 </section>
 </section>
-<section id="advanced-tools" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="advanced-tools"><span class="header-section-number">4</span> Advanced tools</h2>
+<section id="advanced-tools-id" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="advanced-tools-id"><span class="header-section-number">4</span> Advanced tools</h2>
 <section id="callout-blocks" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="callout-blocks"><span class="header-section-number">4.1</span> Callout Blocks</h3>
 <p>You can easily highlight text using <code>callout blocks</code>.</p>
@@ -594,15 +599,24 @@ Caution
 </div>
 </div>
 </section>
-<section id="math" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="math"><span class="header-section-number">4.3</span> Math</h3>
+<section id="internal-link" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="internal-link"><span class="header-section-number">4.3</span> Internal link</h3>
+<p>It is possible to reference another section from the page :</p>
+<ol type="1">
+<li>add an id to the target section, for example <code>## Advanced tools {#advanced-tools-id}</code></li>
+<li>reference it : <code>[Advanced tools section](#advanced-tools-id)</code></li>
+</ol>
+<p>The result : link to the <a href="#advanced-tools-id">Advanced tools section</a></p>
+</section>
+<section id="math" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="math"><span class="header-section-number">4.4</span> Math</h3>
 <ul>
 <li>with one <code>$</code> : inline <span class="math inline">\(\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}\)</span></li>
 <li>with two <code>$$</code>: <span class="math display">\[\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}\]</span></li>
 </ul>
 </section>
-<section id="diagrams" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="diagrams"><span class="header-section-number">4.4</span> Diagrams</h3>
+<section id="diagrams" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="diagrams"><span class="header-section-number">4.5</span> Diagrams</h3>
 <p><a href="https://mermaid.js.org/" target="_blank">Mermaid</a> lets you create various diagrams and visualizations</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1439,7 +1453,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>:bulb: In this page, you can add <span class="co">[</span><span class="ot">*GitHub emojis*</span><span class="co">](https://gist.github.com/rxaviers/7360908)</span>{target="_blank"}. :heart_eyes:</span>
 <span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced tools</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced tools {#advanced-tools-id}</span></span>
 <span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Callout Blocks</span></span>
@@ -1460,56 +1474,66 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>Hidden text</span>
 <span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tabulations</span></span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>:::{.panel-tabset}</span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab1</span></span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>Content of the first tab</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tabulations</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>:::{.panel-tabset}</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab1</span></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>Content of the first tab</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab2</span></span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>Content of the second tab</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab2</span></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>Content of the second tab</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab3</span></span>
-<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>Content of the third tab</span>
-<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
-<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>In the PDF output, the content of each tab will be displayed consecutively, one after the other.</span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab3</span></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>Content of the third tab</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>In the PDF output, the content of each tab will be displayed consecutively, one after the other.</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### Math</span></span>
-<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with one <span class="in">`$`</span> : inline $\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}$</span>
-<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with two <span class="in">`$$`</span>: $$\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}$$</span>
-<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### Internal link</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>It is possible to reference another section from the page :</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>add an id to the target section, for example <span class="in">`## Advanced tools {#advanced-tools-id}`</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>reference it : <span class="in">`[Advanced tools section](#advanced-tools-id)`</span></span>
 <span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagrams </span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>The result : link to the <span class="co">[</span><span class="ot">Advanced tools section</span><span class="co">](#advanced-tools-id)</span></span>
 <span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Mermaid</span><span class="co">](https://mermaid.js.org/)</span>{target="_blank"} lets you create various diagrams and visualizations</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
-<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="in">    20 -- +12 --&gt; 32 -- /8 --&gt; 4</span></span>
-<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="fu">### Math</span></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with one <span class="in">`$`</span> : inline $\overline{X}_n = \frac{1}{n} \sum_{i=1}^{n}X_{i}$</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>with two <span class="in">`$$`</span>: $$\tilde{S}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_{i} - \overline{X}_n)^{2}$$</span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagrams </span></span>
 <span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="in">stateDiagram-v2</span></span>
-<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="in">    state if_state &lt;&lt;choice&gt;&gt;</span></span>
-<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="in">    [*] --&gt; IsPositive</span></span>
-<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a><span class="in">    IsPositive --&gt; if_state</span></span>
-<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="in">    if_state --&gt; False: if n &lt; 0</span></span>
-<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a><span class="in">    if_state --&gt; True : if n &gt;= 0</span></span>
-<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Mermaid</span><span class="co">](https://mermaid.js.org/)</span>{target="_blank"} lets you create various diagrams and visualizations</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a><span class="in">    20 -- +12 --&gt; 32 -- /8 --&gt; 4</span></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="in">stateDiagram-v2</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="in">    state if_state &lt;&lt;choice&gt;&gt;</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="in">    [*] --&gt; IsPositive</span></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="in">    IsPositive --&gt; if_state</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="in">    if_state --&gt; False: if n &lt; 0</span></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="in">    if_state --&gt; True : if n &gt;= 0</span></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
@@ -1526,7 +1550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

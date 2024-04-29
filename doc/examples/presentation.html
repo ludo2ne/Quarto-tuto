@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -459,6 +524,86 @@ Ludovic Deneuville
 </tr>
 </tbody>
 </table>
+</section>
+<section id="code" class="slide level2 smaller">
+<h2>Code</h2>
+<div class="panel-tabset nav-pills">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Result</a></li><li><a href="#tabset-1-3">Highlight lines</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1">
+<div id="6b0f81c7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="kw">def</span> collatz_conjecture(n):</span>
+<span id="cb1-4"><a></a>    sequence <span class="op">=</span> [n]</span>
+<span id="cb1-5"><a></a>    </span>
+<span id="cb1-6"><a></a>    <span class="cf">while</span> n <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb1-7"><a></a>        <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-8"><a></a>            n <span class="op">=</span> n <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb1-10"><a></a>            n <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-11"><a></a>        sequence.append(n)</span>
+<span id="cb1-12"><a></a>    </span>
+<span id="cb1-13"><a></a>    <span class="cf">return</span> sequence</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a><span class="kw">def</span> plot_collatz(n):</span>
+<span id="cb1-16"><a></a>    sequence <span class="op">=</span> collatz_conjecture(n)</span>
+<span id="cb1-17"><a></a>    plt.plot(sequence, linestyle<span class="op">=</span><span class="st">'-'</span>, marker<span class="op">=</span><span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">'darkcyan'</span>)</span>
+<span id="cb1-18"><a></a>    plt.xlabel(<span class="st">'Step'</span>)</span>
+<span id="cb1-19"><a></a>    plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb1-20"><a></a>    plt.title(<span class="st">'Collatz conjecture'</span>)</span>
+<span id="cb1-21"><a></a>    plt.grid(<span class="va">True</span>)</span>
+<span id="cb1-22"><a></a>    plt.show()</span>
+<span id="cb1-23"><a></a></span>
+<span id="cb1-24"><a></a>plot_collatz(<span class="dv">27</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div id="cell-fig-collatz27" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-collatz27" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-collatz27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="presentation_files/figure-revealjs/fig-collatz27-output-1.png" width="825" height="449">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-collatz27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Collatz conjecture starting with n = 27
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div id="1072626a" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="6-11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="kw">def</span> collatz_conjecture(n):</span>
+<span id="cb2-4"><a></a>    sequence <span class="op">=</span> [n]</span>
+<span id="cb2-5"><a></a>    </span>
+<span id="cb2-6"><a></a>    <span class="cf">while</span> n <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb2-7"><a></a>        <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-8"><a></a>            n <span class="op">=</span> n <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb2-9"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb2-10"><a></a>            n <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-11"><a></a>        sequence.append(n)</span>
+<span id="cb2-12"><a></a>    </span>
+<span id="cb2-13"><a></a>    <span class="cf">return</span> sequence</span>
+<span id="cb2-14"><a></a></span>
+<span id="cb2-15"><a></a><span class="kw">def</span> plot_collatz(n):</span>
+<span id="cb2-16"><a></a>    sequence <span class="op">=</span> collatz_conjecture(n)</span>
+<span id="cb2-17"><a></a>    plt.plot(sequence, linestyle<span class="op">=</span><span class="st">'-'</span>, marker<span class="op">=</span><span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">'darkcyan'</span>)</span>
+<span id="cb2-18"><a></a>    plt.xlabel(<span class="st">'Step'</span>)</span>
+<span id="cb2-19"><a></a>    plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb2-20"><a></a>    plt.title(<span class="st">'Collatz conjecture'</span>)</span>
+<span id="cb2-21"><a></a>    plt.grid(<span class="va">True</span>)</span>
+<span id="cb2-22"><a></a>    plt.show()</span>
+<span id="cb2-23"><a></a></span>
+<span id="cb2-24"><a></a>plot_collatz(<span class="dv">27</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
