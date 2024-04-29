@@ -188,7 +188,7 @@ content of the second column
 :bulb: In this page, you can add [*GitHub emojis*](https://gist.github.com/rxaviers/7360908){target="_blank"}. :heart_eyes:
 
 
-## Advanced tools
+## Advanced tools {#advanced-tools-id}
 
 
 ### Callout Blocks
@@ -208,7 +208,6 @@ With a custom title
 ::: {.callout-tip collapse="true" title="With hidden text"}
 Hidden text
 :::
-
 
 ### Tabulations
 
@@ -233,6 +232,17 @@ Content of the third tab
 ::: {.callout-caution}
 In the PDF output, the content of each tab will be displayed consecutively, one after the other.
 :::
+
+
+### Internal link
+
+It is possible to reference another section from the page :
+
+1. add an id to the target section, for example `## Advanced tools {#advanced-tools-id}`
+2. reference it : `[Advanced tools section](#advanced-tools-id)`
+
+The result : link to the [Advanced tools section](#advanced-tools-id)
+
 
 
 ### Math

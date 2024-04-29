@@ -1,85 +1,130 @@
 ---
-title: "Tuto Quarto-revealJS"
-subtitle: "Create beautiful interactive slide with Reveal.js"
+title: "Include R code"
 author: "Ludovic Deneuville"
 format:
-  revealjs:
-    theme: moon
-    footer: "[Quarto-tuto](../../index.html)"
-    slide-number: c/t                   # collapsed/total
-    preview-links: true
-    chalkboard: true
-    controls: true
-    transition: slide
-    code-tools: true
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3 
+    code-tools:
+      source: true
+      toggle: false
+from: markdown+emoji
+number-sections: true
+lightbox: true
 resources:
   - demo.pdf
 ---
 
 
-## Code R dans les slides
+## R
 
-[Utiliser R](https://quarto.org/docs/computations/r.html){.external target="_blank"}
+To render files including R code, you have to :
+
+- [ ] [Download and install R](https://cloud.r-project.org/){target="_blank"}
+- [ ] install required packages
+  - example : `install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))`
+
+### Documentation
+
+- [Using R with Quarto](https://quarto.org/docs/computations/r.html){target="_blank"}
 
 
-## installer R et les packages
 
-- https://cloud.r-project.org/
-- install.packages("rmarkdown")
-- install.packages("ggplot2")
+## Cells
 
+To write code cells, the principle is the same as with [Python](python.qmd#cells).
 
-## Executable Code
+Simply replace python with r between the braces.
+
+### Load packages
+
+A good practice is to load all packages at the beginning.
 
 ```{r}
-#| echo: true
-#| fig-width: 10
-#| fig-height: 4.5
+#| message: false
+library(dplyr)
 library(ggplot2)
-ggplot(mtcars, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess")
 ```
 
-## Tabsets {.smaller .scrollable transition="slide"}
 
-::: panel-tabset
-### Plot
+### First cell
+
+Imagine you want to draw a spiral.
 
 ```{r}
-library(ggplot2)
-ggplot(mtcars, aes(hp, mpg, color = am)) +
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "loess")
+#| label: fig-spiral
+#| fig-cap: A wonderfull spiral
+theta <- seq(0, 8 * pi, length.out = 1000)
+r <- 0.5 * theta
+
+data <- data.frame(theta = theta, r = r)
+data$x <- data$r * cos(data$theta)
+data$y <- data$r * sin(data$theta)
+
+ggplot(data, aes(x, y)) +
+  geom_path(color = "darkcyan", linewidth = 1.5)
 ```
 
-### Data
+You cannot see it in the output code but i add those options at the beginning :
+
+```{{r}}
+#| label: fig-spiral
+#| fig-cap: A wonderfull spiral
+theta <- seq(0, 8 * pi, length.out = 1000)
+r <- 0.5 * theta
+...
+```
+
+So you can use the label and reference the figure elsewhere:
+
+- @fig-spiral with this code : `@fig-spiral`
+- [my wonderfull spiral](#fig-spiral) with this code :`[my wonderfull spiral](#fig-spiral)`
+
+
+
+## Tabulations
+
+::: {.panel-tabset .nav-pills}
+
+#### Code
 
 ```{r}
-knitr::kable(mtcars)
+#| eval: false
+set.seed(42)
+pairs <- data.frame(x = runif(10), y = runif(10))
+
+ggplot(pairs, aes(x, y)) +
+  geom_point(color = "darkcyan", alpha = 0.7) +
+  labs(x = "X", y = "Y")
+```
+  
+#### Plot
+
+```{r}
+#| echo: false
+set.seed(42)
+pairs <- data.frame(x = runif(10), y = runif(10))
+
+ggplot(pairs, aes(x, y)) +
+  geom_point(color = "darkcyan", size = 3)
+```
+
+
+#### Data
+
+```{r}
+knitr::kable(pairs)
 ```
 :::
 
 
 
-@fig-airquality Température et niveau d'ozone.
+
+## Inline code
 
 ```{r}
-#| echo: false
-#| output: true
-#| label: fig-airquality
-#| fig-cap: Température et niveau d'ozone.
-#| warning: false
-
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
+ages <- c(20, 25, 30, 40)
 ```
 
-### Code block and inline code
-
-```{r}
-a <- c(1, 2, 3, 4)
-```
-
-la moyenne de a est de `r mean(a)`.
+The average age is **`r mean(ages)`**.

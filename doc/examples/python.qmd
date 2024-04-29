@@ -1,5 +1,5 @@
 ---
-title: "Code Python dans les slides"
+title: "Include Python code"
 author: "Ludovic Deneuville"
 format:
   html:
@@ -49,15 +49,17 @@ On the left side, you can see the code entered in the *.qmd* file, and on the ri
 Code in your *.qmd* file
 
 ```{{python}}
-1+1
+a = 1
+print(a + 1)
 ```
 :::
 
 ::: {.column}
-Output
+Output (Code + result)
 
 ```{python}
-1+1
+a = 1
+print(a + 1)
 ```
 :::
 ::::
@@ -74,8 +76,9 @@ Some option examples :
 #| eval: true              # Evaluate the cell
 #| echo: true              # Print the code
 #| output: false           # Don't print the output
-a = [1, 2, 3, 4]
-print(a)
+#| warning: false          # Hide warnings
+b = [1, 2, 3, 4]
+print(b)
 ```
 
 
@@ -135,14 +138,14 @@ if you remove the dot (.) before the keyword `Python`, the cell will be evaluate
 x = np.linspace(-3, 3, 1000)
 
 pdf = norm.pdf(x, 0, 1)
-plt.plot(x, pdf, label='Normal Distribution')
+plt.plot(x, pdf, label='Normal Distribution', color='darkcyan')
 plt.show()
 ```
 
 
 ## Tabulations
 
-::: {.panel-tabset}
+::: {.panel-tabset .nav-pills}
 
 #### Code
 
@@ -152,7 +155,7 @@ plt.show()
 np.random.seed(42)
 pairs = np.random.rand(10, 2)
 
-plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
+plt.scatter(pairs[:, 0], pairs[:, 1], color='darkcyan', alpha=0.7)
 plt.show()
 ```
 
@@ -163,7 +166,7 @@ plt.show()
 np.random.seed(42)
 pairs = np.random.rand(10, 2)
 
-plt.scatter(pairs[:, 0], pairs[:, 1], color='blue', alpha=0.7)
+plt.scatter(pairs[:, 0], pairs[:, 1], color='darkcyan', alpha=0.7)
 plt.show()
 ```
 
@@ -184,10 +187,6 @@ Markdown(tabulate(
 ```
 
 :::
-
-
-
-
 
 
 ## Line numbers
@@ -211,7 +210,7 @@ print(fibonacci(10))
 ```
 
 
-### Inline code
+## Inline code
 
 
 It is possible to embed code within a line of text : 
@@ -219,35 +218,3 @@ It is possible to embed code within a line of text :
 - The mean of fibonacci(10) is `{python} np.mean(fibonacci(10))`.
 
 
-
-## A classer
-
-```{python}
-#| label: fig-collatz27
-#| fig-cap: "Collatz conjecture starting with n = 27"
-def collatz_conjecture(n):
-    sequence = [n]
-    
-    while n != 1:
-        if n % 2 == 0:
-            n = n // 2
-        else:
-            n = 3 * n + 1
-        sequence.append(n)
-    
-    return sequence
-
-def plot_collatz(n):
-    sequence = collatz_conjecture(n)
-    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')
-    plt.xlabel('Step')
-    plt.ylabel('Value')
-    plt.title('Collatz conjecture')
-    plt.grid(True)
-    plt.show()
-
-plot_collatz(27)
-```
-
-
-Reference to the [figure](#fig-collatz27)

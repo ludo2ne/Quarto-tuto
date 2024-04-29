@@ -1,0 +1,16 @@
+---
+title: "Useful resources"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
+
+
+
+- [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/){target="_blank"}
+- [Quarto trick from productive-r-workflow](https://www.productive-r-workflow.com/quarto-tricks){target="_blank"}

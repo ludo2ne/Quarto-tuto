@@ -25,6 +25,8 @@ website:
     right:
       - href: doc/getting-started.qmd
         text: Getting started
+      - href: doc/resources.qmd
+        text: Resources
       - text: Examples
         menu:
           - href: doc/examples/lesson.qmd

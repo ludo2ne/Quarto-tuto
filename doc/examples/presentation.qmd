@@ -89,3 +89,104 @@ incrémental display
 
 : French Departments {.striped .hover .success}
 
+
+## Code{.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+### Code
+
+```{python}
+#| eval: false
+#| echo: true
+import matplotlib.pyplot as plt
+
+def collatz_conjecture(n):
+    sequence = [n]
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    
+    return sequence
+
+def plot_collatz(n):
+    sequence = collatz_conjecture(n)
+    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')
+    plt.xlabel('Step')
+    plt.ylabel('Value')
+    plt.title('Collatz conjecture')
+    plt.grid(True)
+    plt.show()
+
+plot_collatz(27)
+```
+
+
+### Result
+
+```{python}
+#| label: fig-collatz27
+#| fig-cap: "Collatz conjecture starting with n = 27"
+import matplotlib.pyplot as plt
+
+def collatz_conjecture(n):
+    sequence = [n]
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    
+    return sequence
+
+def plot_collatz(n):
+    sequence = collatz_conjecture(n)
+    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')
+    plt.xlabel('Step')
+    plt.ylabel('Value')
+    plt.title('Collatz conjecture')
+    plt.grid(True)
+    plt.show()
+
+plot_collatz(27)
+```
+
+### Highlight lines
+
+```{python}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6-11"
+import matplotlib.pyplot as plt
+
+def collatz_conjecture(n):
+    sequence = [n]
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    
+    return sequence
+
+def plot_collatz(n):
+    sequence = collatz_conjecture(n)
+    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')
+    plt.xlabel('Step')
+    plt.ylabel('Value')
+    plt.title('Collatz conjecture')
+    plt.grid(True)
+    plt.show()
+
+plot_collatz(27)
+```
+
+:::
