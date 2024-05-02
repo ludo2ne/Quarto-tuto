@@ -4,103 +4,89 @@
     "href": "index.html",
     "title": "Quarto-tuto",
     "section": "",
-    "text": "See section Getting started\nProject Basics"
+    "text": "Quarto is a robust, open-source tool designed for effortlessly crafting scientific reports using Markdown syntax.\n\nSeamlessly integrate code snippets and results from various languages such as R, Python, Julia, and more into your reports.\nQuarto offers versatile rendering options, producing outputs in multiple formats including HTML, PDF, doc, tex, Reveal.js…\n\nIt’s developed by Posit, the same team behind RStudio."
+  },
+  {
+    "objectID": "index.html#in-a-nutshell",
+    "href": "index.html#in-a-nutshell",
+    "title": "Quarto-tuto",
+    "section": "",
+    "text": "Quarto is a robust, open-source tool designed for effortlessly crafting scientific reports using Markdown syntax.\n\nSeamlessly integrate code snippets and results from various languages such as R, Python, Julia, and more into your reports.\nQuarto offers versatile rendering options, producing outputs in multiple formats including HTML, PDF, doc, tex, Reveal.js…\n\nIt’s developed by Posit, the same team behind RStudio."
   },
   {
     "objectID": "index.html#create-a-quarto-project",
     "href": "index.html#create-a-quarto-project",
     "title": "Quarto-tuto",
-    "section": "",
-    "text": "See section Getting started\nProject Basics"
+    "section": "Create a Quarto project",
+    "text": "Create a Quarto project\nSee section Getting started to create a Quarto project in a few minutes."
   },
   {
-    "objectID": "index.html#content",
-    "href": "index.html#content",
+    "objectID": "index.html#examples",
+    "href": "index.html#examples",
     "title": "Quarto-tuto",
-    "section": "Content",
-    "text": "Content\nYou will find here examples of how to create a static website with examples of:\n\nWeb page(doc/example/lesson.qmd)\nNotebook(doc/example/notebook.qmd)\nPresentation(doc/example/presentation.qmd)"
-  },
-  {
-    "objectID": "index.html#web-page",
-    "href": "index.html#web-page",
-    "title": "Quarto-tuto",
-    "section": "Web page",
-    "text": "Web page\nEasily create pages by entering text in markdown format. Quarto will format it into pretty pages.\nYou can use a wide range of tools:\n\nTables, Lists\nImages, Videos\nPython or R code\nmathematical formulas\nExport pdf"
-  },
-  {
-    "objectID": "index.html#presentation-with-revealjs",
-    "href": "index.html#presentation-with-revealjs",
-    "title": "Quarto-tuto",
-    "section": "Presentation with revealJS",
-    "text": "Presentation with revealJS\n\nSpeaker view\nchalkboard\nprint-pdf"
-  },
-  {
-    "objectID": "index.html#python-notebooks",
-    "href": "index.html#python-notebooks",
-    "title": "Quarto-tuto",
-    "section": "Python notebooks",
-    "text": "Python notebooks\n\nWrite it with markdown syntax\nDisplay it on your website\nDownload .ipynb file and load it on Jupyter"
+    "section": "Examples",
+    "text": "Examples\nYou will find examples of the numerous features:\n\nWeb page\nNotebook\nPresentation\n\nYou can use a wide range of tools:\n\nTables, Lists\nImages, Videos\nPython or R code\nMathematical formulas\nDiagrams\n\n\nStatic Web pages\nQuarto will beautifully format your code into HTML pages. Afterward, you can easily publish your site on GitHub, Quarto-hub, Netlify…\n\n\nPresentation\nYou can create presentation using revealJS\n\nSpeaker view\nchalkboard\nprint-pdf\n\n\n\nPython Notebooks\n\nWrite it with markdown syntax\nDisplay it on your website\nDownload .ipynb file and load it on Jupyter"
   },
   {
     "objectID": "doc/practical/practical1.html",
     "href": "doc/practical/practical1.html",
-    "title": "Practical 1",
+    "title": "Practical 1 - Template",
     "section": "",
     "text": "Read your lesson"
   },
   {
     "objectID": "doc/practical/practical1.html#homework",
     "href": "doc/practical/practical1.html#homework",
-    "title": "Practical 1",
+    "title": "Practical 1 - Template",
     "section": "",
     "text": "Read your lesson"
   },
   {
     "objectID": "doc/practical/practical1.html#before-you-start",
     "href": "doc/practical/practical1.html#before-you-start",
-    "title": "Practical 1",
+    "title": "Practical 1 - Template",
     "section": "Before you start",
     "text": "Before you start\ninitial setup"
   },
   {
     "objectID": "doc/practical/practical1.html#exercice-1",
     "href": "doc/practical/practical1.html#exercice-1",
-    "title": "Practical 1",
+    "title": "Practical 1 - Template",
     "section": "1 Exercice 1",
     "text": "1 Exercice 1\n\nquestion 1\nquestion 2"
   },
   {
     "objectID": "doc/practical/practical1.html#exercice-2",
     "href": "doc/practical/practical1.html#exercice-2",
-    "title": "Practical 1",
+    "title": "Practical 1 - Template",
     "section": "2 Exercice 2",
     "text": "2 Exercice 2"
   },
   {
     "objectID": "doc/lesson/lesson1.html",
     "href": "doc/lesson/lesson1.html",
-    "title": "Lesson 1",
+    "title": "Lesson 1 - Template",
     "section": "",
     "text": "Welcome to this course\n\n\n\nxxx\nyyy"
   },
   {
     "objectID": "doc/lesson/lesson1.html#introduction",
     "href": "doc/lesson/lesson1.html#introduction",
-    "title": "Lesson 1",
+    "title": "Lesson 1 - Template",
     "section": "",
     "text": "Welcome to this course\n\n\n\nxxx\nyyy"
   },
   {
     "objectID": "doc/lesson/lesson1.html#part-1",
     "href": "doc/lesson/lesson1.html#part-1",
-    "title": "Lesson 1",
+    "title": "Lesson 1 - Template",
     "section": "1 Part 1",
     "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
   },
   {
     "objectID": "doc/lesson/lesson1.html#part-2",
     "href": "doc/lesson/lesson1.html#part-2",
-    "title": "Lesson 1",
+    "title": "Lesson 1 - Template",
     "section": "2 Part 2",
     "text": "2 Part 2"
   },
@@ -415,49 +401,49 @@
   {
     "objectID": "doc/presentation/presentation1.html#introduction",
     "href": "doc/presentation/presentation1.html#introduction",
-    "title": "Presentation title",
+    "title": "Presentation - Template",
     "section": "Introduction",
     "text": "Introduction\nhello"
   },
   {
     "objectID": "doc/presentation/presentation1.html#todays-plan",
     "href": "doc/presentation/presentation1.html#todays-plan",
-    "title": "Presentation title",
+    "title": "Presentation - Template",
     "section": "Today’s plan",
     "text": "Today’s plan\n\npart 1\npart 2"
   },
   {
     "objectID": "doc/presentation/presentation1.html#part-1",
     "href": "doc/presentation/presentation1.html#part-1",
-    "title": "Presentation title",
+    "title": "Presentation - Template",
     "section": "Part 1",
     "text": "Part 1\n\n\n\nQuarto-tuto"
   },
   {
     "objectID": "doc/lesson/lesson2.html",
     "href": "doc/lesson/lesson2.html",
-    "title": "Lesson 2 title",
+    "title": "Lesson 2 - Template",
     "section": "",
     "text": "Welcome to this course"
   },
   {
     "objectID": "doc/lesson/lesson2.html#introduction",
     "href": "doc/lesson/lesson2.html#introduction",
-    "title": "Lesson 2 title",
+    "title": "Lesson 2 - Template",
     "section": "",
     "text": "Welcome to this course"
   },
   {
     "objectID": "doc/lesson/lesson2.html#part-1",
     "href": "doc/lesson/lesson2.html#part-1",
-    "title": "Lesson 2 title",
+    "title": "Lesson 2 - Template",
     "section": "1 Part 1",
     "text": "1 Part 1\n\n1.1 Part 1.1\n\n\n1.2 Part 1.2"
   },
   {
     "objectID": "doc/lesson/lesson2.html#part-2",
     "href": "doc/lesson/lesson2.html#part-2",
-    "title": "Lesson 2 title",
+    "title": "Lesson 2 - Template",
     "section": "2 Part 2",
     "text": "2 Part 2"
   },
