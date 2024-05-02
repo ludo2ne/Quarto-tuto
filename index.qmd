@@ -7,42 +7,53 @@ from: markdown+emoji
 ---
 
 
+## In a nutshell
+
+[Quarto](https://quarto.org/){target="_blank"} is a robust, open-source tool designed for effortlessly crafting scientific reports using Markdown syntax.
+
+- Seamlessly integrate code snippets and results from various languages such as R, Python, Julia, and more into your reports.
+- Quarto offers versatile rendering options, producing outputs in multiple formats including HTML, PDF, doc, tex, Reveal.js...
+
+It's developed by [Posit](https://posit.co/){target="_blank"}, the same team behind RStudio.
+
 ## Create a Quarto project
 
-- See section [Getting started](doc/getting-started.qmd)
-- [Project Basics](https://quarto.org/docs/projects/quarto-projects.html){.external target="_blank"}
+See section [Getting started](doc/getting-started.qmd) to create a Quarto project in a few minutes.
 
 
-## Content
+## Examples
 
-You will find here examples of how to create a static website with examples of:
+You will find examples of the numerous features:
 
-- Web page(doc/example/lesson.qmd)
-- Notebook(doc/example/notebook.qmd)
-- Presentation(doc/example/presentation.qmd)
+- [Web page](doc/examples/lesson.qmd)
+- [Notebook](doc/examples/notebook.qmd)
+- [Presentation](doc/examples/presentation.qmd)
 
-
-## Web page
-
-Easily create pages by entering text in markdown format. Quarto will format it into pretty pages.
 
 You can use a wide range of tools:
 
 - Tables, Lists
 - Images, Videos
 - Python or R code
-- mathematical formulas
-- Export pdf
+- Mathematical formulas
+- [Diagrams](https://quarto.org/docs/authoring/diagrams.html)
 
 
-## Presentation with [revealJS](https://quarto.org/docs/presentations/revealjs/){.external target="_blank"}
+### Static Web pages
+
+Quarto will beautifully format your code into HTML pages. Afterward, you can easily publish your site on GitHub, Quarto-hub, Netlify...
+
+
+### Presentation
+
+You can create presentation using [revealJS](https://quarto.org/docs/presentations/revealjs/){target="_blank"}
 
 - Speaker view
 - chalkboard
 - print-pdf
 
 
-## Python notebooks
+### Python Notebooks
 
 - Write it with markdown syntax
 - Display it on your website

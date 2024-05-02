@@ -2,8 +2,11 @@
 
 ## :construction: Todo
 
-- [ ] Clean getting started
-  - fast version
+- Getting started
+  - [ ] Create a basic project (fast version)
+  - [ ] Add R or Python
+  - [ ] Create a presentation
+  - [ ] Deploy on GitHub
 - [ ] Observable
 - [ ] Blog using [Listing](https://quarto.org/docs/websites/website-listings.html)
 - [ ] Lab example
@@ -19,8 +22,6 @@
 
 - [Interactive table with DT](https://www.productive-r-workflow.com/quarto-tricks#internal-link)
 - plotly : https://www.productive-r-workflow.com/quarto-tricks#plotly
-
-
 
 ### Links
 

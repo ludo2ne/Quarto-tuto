@@ -1,5 +1,5 @@
 ---
-title: "Lesson 2 title"
+title: "Lesson 2 - Template"
 description: "Lesson 2 description"
 author: "Author name"
 format:
