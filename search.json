@@ -347,7 +347,7 @@
     "href": "doc/examples/python.html#line-numbers",
     "title": "Include Python code",
     "section": "4 Line numbers",
-    "text": "4 Line numbers\n\ndef fibonacci(n) -&gt; list[int]:\n    \"\"\"Generate the Fibonacci sequence up to the nth term.\"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"n must be an integer\")\n\n    fib_sequence = []\n    a, b = 0, 1\n    for _ in range(n):\n        fib_sequence.append(a)\n        a, b = b, a + b\n    return fib_sequence\n\n# Example usage\nprint(fibonacci(10))\n\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+    "text": "4 Line numbers\n\ndef fibonacci(n) -&gt; list[int]:\n    \"\"\"Generate the Fibonacci sequence up to the nth term.\"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"n must be an integer\")\n\n    fib_sequence = []\n    a, b = 0, 1\n    for _ in range(n):\n        fib_sequence.append(a)\n        a, b = b, a + b\n    return fib_sequence\n\n# Example usage\nfib_10 = fibonacci(10)\nmean_fib_10 = np.mean(fib_10)\n\nprint(fib_10)\n\n[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
   },
   {
     "objectID": "doc/examples/python.html#inline-code",
@@ -452,6 +452,27 @@
     "href": "doc/examples/presentation.html#code",
     "title": "Tuto Quarto-Reveal.js",
     "section": "Code",
-    "text": "Code\n\nCodeResultHighlight lines\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\nQuarto-tuto"
+    "text": "Code\n\nCodeResultHighlight lines\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#big-text",
+    "href": "doc/examples/presentation.html#big-text",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Big text",
+    "text": "Big text\nThe r-fit-text class makes text as large as possible without overflowing the slide.\n\nBig Text"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#image-size-auto",
+    "href": "doc/examples/presentation.html#image-size-auto",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Image size auto",
+    "text": "Image size auto\nUse class .r-stretch with your image to automatically adapt image size."
+  },
+  {
+    "objectID": "doc/examples/presentation.html#animation",
+    "href": "doc/examples/presentation.html#animation",
+    "title": "Tuto Quarto-Reveal.js",
+    "section": "Animation",
+    "text": "Animation"
   }
 ]
