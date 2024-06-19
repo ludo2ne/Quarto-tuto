@@ -129,12 +129,31 @@ For more information, you can see [this page ](https://quarto.org/docs/authoring
 
 ### Text format
 
-**bold** - *italic* - ***italicbold*** - `Script` - ~~strike~~ - [underline]{.underline}
+**bold**
+
+*italic*
+
+***italicbold***
+
+`Script`
+
+~~strike~~
+
+[underline]{.underline}
+
+Subscript : U~n~
+
+Superscript : X^2^
 
 > Citation
 
 It is also possible to add [custom]{.green-box} formatting by using the [style.css]{.yellow-box} file at the project root.
 
+For one-off use, you can declare [the desired style]{style="color:orange; background-color: green"} right here in the document.
+
+| Line Block
+|   Spaces and newlines
+|   are preserved
 
 ### Table
 
@@ -156,12 +175,16 @@ More about [markdown table](https://quarto.org/docs/authoring/tables.html){.exte
 - item 1
   - item1.1
 - item 2
+
+---
+
 - [ ] item3 with checkbox
+- [x] item4 with checkbox
 
 
 ### Columns
 
-::: {.columns}
+:::::: {.columns}
 
 ::: {.column}
 content of the first column
@@ -171,13 +194,34 @@ content of the first column
 content of the second column
 :::
 
-:::
+::::::
+
+
+
+### Links
+
+#### External
+
+- <https://quarto.org/>
+- [Quarto](https://quarto.org/)
+- [Quarto with hover text](https://quarto.org/ "Welcome to Quarto, an open-source scientific and technical publishing system")
+- [Quarto in a new tab](https://quarto.org/){target="_blank"}
+
+
+#### Internal
+
+- Reference [Advanced tools section](#advanced-tools) with default id
+- Reference [Tabulations section](#tabulation-custom-id) with custom id
+- Reference [section Local repository](./practical.qmd#local-repository) from page `Examples/Practical`
 
 
 ### Figures and Videos
 
 ![Stones](img/stones.jpg)
 
+::: {.callout-tip}
+Metada `lightbox: true` defined at the top allow you to click on the figure.
+:::
 
 
 {{< video https://www.youtube.com/watch?v=tHKc-DBb_ME >}}
@@ -188,7 +232,7 @@ content of the second column
 :bulb: In this page, you can add [*GitHub emojis*](https://gist.github.com/rxaviers/7360908){target="_blank"}. :heart_eyes:
 
 
-## Advanced tools {#advanced-tools-id}
+## Advanced tools
 
 
 ### Callout Blocks
@@ -209,7 +253,7 @@ With a custom title
 Hidden text
 :::
 
-### Tabulations
+### Tabulations {#tabulation-custom-id}
 
 :::{.panel-tabset}
 
@@ -232,17 +276,6 @@ Content of the third tab
 ::: {.callout-caution}
 In the PDF output, the content of each tab will be displayed consecutively, one after the other.
 :::
-
-
-### Internal link
-
-It is possible to reference another section from the page :
-
-1. add an id to the target section, for example `## Advanced tools {#advanced-tools-id}`
-2. reference it : `[Advanced tools section](#advanced-tools-id)`
-
-The result : link to the [Advanced tools section](#advanced-tools-id)
-
 
 
 ### Math
