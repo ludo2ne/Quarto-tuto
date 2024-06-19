@@ -206,7 +206,10 @@ def fibonacci(n) -> list[int]:
     return fib_sequence
 
 # Example usage
-print(fibonacci(10))
+fib_10 = fibonacci(10)
+mean_fib_10 = np.mean(fib_10)
+
+print(fib_10)
 ```
 
 
@@ -215,6 +218,6 @@ print(fibonacci(10))
 
 It is possible to embed code within a line of text : 
 
-- The mean of fibonacci(10) is `{python} np.mean(fibonacci(10))`.
+- The mean of fibonacci(10) is `{python} mean_fib_10`.
 
 
