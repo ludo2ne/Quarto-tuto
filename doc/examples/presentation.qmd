@@ -7,6 +7,7 @@ format:
     theme: moon
     footer: "[Quarto-tuto](../../index.html)"      # Link to the homepage
     slide-number: c/t                              # collapsed/total
+    slide-level: 3                                 # Title 3 will create a new slide
     preview-links: true
     chalkboard: true
     controls: true
@@ -190,3 +191,31 @@ plot_collatz(27)
 ```
 
 :::
+
+## Big text
+
+The `r-fit-text` class makes text as large as possible without overflowing the slide.
+
+::: {.r-fit-text}
+Big Text
+:::
+
+
+## Image size auto
+
+Use class `.r-stretch` with your image to automatically adapt image size.
+
+![](img/stones.jpg){.r-stretch}
+
+
+## Animation
+
+### {auto-animate=true}
+
+Animation
+
+### {auto-animate=true}
+
+Implicit
+
+Animation
