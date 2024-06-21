@@ -7,7 +7,6 @@ format:
     toc: true
     toc-location: left
     toc-expand: 3
-  pdf: default
 from: markdown+emoji
 number-sections: true
 lightbox: true

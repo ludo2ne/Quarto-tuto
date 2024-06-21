@@ -1,3 +1,6 @@
+var:
+  url-repo: https://github.com/ludo2ne/Quarto-tuto   # to call this value : {{< meta var.url-repo >}}
+
 project:
   type: website
 
@@ -42,13 +45,13 @@ website:
           - href: doc/examples/R.qmd
             text: "R"
       - icon: github
-        href: https://github.com/ludo2ne/quarto-tuto
+        href: "{{< meta var.url-repo >}}"
         target: "_blank"
   page-footer:
     right: |
       Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
-      [Code source](https://github.com/ludo2ne/Quarto-tuto){.external target="_blank"}
-  repo-url: https://github.com/ludo2ne/quarto-tuto
+      [Code source]({{< meta var.url-repo >}}){.external target="_blank"}
+  repo-url: "{{< meta var.url-repo >}}"
   repo-branch: main
   reader-mode: true
 

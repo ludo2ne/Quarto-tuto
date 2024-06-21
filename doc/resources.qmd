@@ -7,16 +7,17 @@ format:
     toc-location: left
     toc-expand: 3
 from: markdown+emoji
-number-sections: true
 ---
 
+## Quarto tips
 
 - [Awesome-Quarto](https://github.com/mcanouil/awesome-quarto){target="_blank"} (Examples, tutorials, extensions, features...)
 - [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/){target="_blank"}
 - [Quarto trick from productive-r-workflow](https://www.productive-r-workflow.com/quarto-tricks){target="_blank"}
+- [Quarto RevealJS tips](https://www.avonture.be/blog/quarto-revealjs-tips/){target="_blank"}
 
 
-### Extensions
+## Extensions
 
 - [Extensions for Quarto](https://github.com/quarto-ext){target="_blank"}
 - [Send some confetti through your presentation](https://github.com/ArthurData/quarto-confetti){target="_blank"}
