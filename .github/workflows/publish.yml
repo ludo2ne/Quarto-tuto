@@ -16,7 +16,7 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      - run: quarto install tinytex
+      - run: quarto install tinytex                         # PDF engine
 
       - name: Install Python and Dependencies
         uses: actions/setup-python@v5
@@ -37,6 +37,6 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: gh-pages
+          target: gh-pages                                  # Branch name
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

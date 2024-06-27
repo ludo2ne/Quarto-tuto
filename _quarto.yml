@@ -9,7 +9,8 @@ website:
   navbar:
     background: "#447099"
     left:
-      - href: index.qmd
+      - icon: house
+        href: index.qmd
         text: Home
       - text: Lessons
         menu:
@@ -35,7 +36,7 @@ website:
           - href: doc/examples/lesson.qmd
             text: "Lesson"
           - href: doc/examples/notebook.qmd
-            text: "Notebook"
+            text: "Jupyter Notebook"
           - href: doc/examples/practical.qmd
             text: "Practical"
           - href: doc/examples/presentation.qmd

@@ -1,7 +1,7 @@
 ---
-title: "Lesson title"
-description: "Lesson description"
-author: "Author name"
+title: "Discover Quarto"
+description: "Some tips to start with Quarto"
+author: "Ludovic Deneuville"
 format:
   html:
     toc: true
@@ -43,7 +43,7 @@ This file's metadata is displayed at the top between the `---`.
 
 ### Basic setup
 
-```yaml
+```{.yml}
 ---
 title: "Title of this page"
 description: "Description of this page"
@@ -59,7 +59,7 @@ from: markdown+emoji                     # you use markdown language
 
 With the following setup, all titles, i.e. lines beginning with `#` will be added to the table of contents.
 
-```yaml
+```{.yml}
 format:
   html:
     toc: true                            # Add a Table Of Contents
@@ -77,7 +77,7 @@ If you want to remove a title from the table of contents, use the `unlisted` cla
 
 If you use the following setup, each title will be numbered.  
 
-```yaml
+```{.yml}
 ---
 number-sections: true
 ---
@@ -95,7 +95,7 @@ If you don't want to number a part, use class `unnumbered`. In this page, *Intro
 The format of a web page is html.  
 But you can also export in pdf format.
 
-```yaml
+```{.yml}
 format:
   html:
     ...
