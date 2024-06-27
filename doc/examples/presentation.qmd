@@ -1,17 +1,24 @@
 ---
 title: "Presentation example"
+description: "[Slides](presentation.html)"
 subtitle: "Slideshow using Quarto and Reveal.js"
 author: "Ludovic Deneuville"
 format:
   revealjs:
     theme: moon
-    footer: "[Quarto-tuto](../../index.html)"      # Link to the homepage
+    footer: "[Quarto-tuto](../../index.html) --- [Presentation html](presentation-html.html)"      # Link to the homepage
     slide-number: c/t                              # collapsed/total
     slide-level: 3                                 # Title 3 will create a new slide
     preview-links: true
     chalkboard: true
     controls: true
     transition: slide
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    code-tools: true
+    output-file: presentation-html.html
 from: markdown+emoji
 ---
 
