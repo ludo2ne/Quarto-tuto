@@ -1,5 +1,5 @@
 ---
-title: Notebook
+title: "Notebook example"
 description: example of python notebook
 format:
   html:
@@ -7,23 +7,22 @@ format:
     toc-location: left
     toc-expand: 3
     code-tools: true
-  ipynb: default
-from: markdown+emoji
-number-sections: true
-number-depth: 3
+  ipynb: 
+    output-file: notebook.ipynb
 jupyter: python3
 execute:
   eval: true
-lightbox: true
+from: markdown+emoji
 ---
 
-## Before you start {.unnumbered}
 
-- If you set metadata `ipynb: default`, it will generate the *.ipynb* file so you can download it
-- [ ] Download this [Jupyter Notebook](notebook.ipynb){target="_blank"}
+## Before you start
 
+You can choose to render a document in multiple formats (see `</> Code` on the top right).
 
-## Introduction
+For instance, this file is rendered both in *html* and *ipynb*.
+
+So now, you can download your file [notebook.ipynb](notebook.ipynb){target="_blank"} and  then load it on Jupyter.
 
 
 ## Python cells

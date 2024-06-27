@@ -12,25 +12,8 @@ website:
       - icon: house
         href: index.qmd
         text: Home
-      - text: Lessons
-        menu:
-          - href: doc/lesson/lesson1.qmd
-            text: "Lesson 1"
-          - href: doc/lesson/lesson2.qmd
-            text: "Lesson 2"
-      - text: Presentation
-        menu:
-          - href: doc/presentation/presentation1.qmd
-            text: "Presentation 1"
-      - text: Practicals
-        menu:
-          - href: doc/practical/practical1.qmd
-            text: "Practical 1"
-    right:
       - href: doc/getting-started.qmd
         text: Getting started
-      - href: doc/resources.qmd
-        text: Resources
       - text: Examples
         menu:
           - href: doc/examples/lesson.qmd
@@ -45,6 +28,9 @@ website:
             text: "Python"
           - href: doc/examples/R.qmd
             text: "R"
+      - href: doc/resources.qmd
+        text: Resources
+    right:
       - icon: github
         href: "{{< meta var.url-repo >}}"
         target: "_blank"

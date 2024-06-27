@@ -1,5 +1,6 @@
 ---
-title: "Include R code"
+title: "Executed R - Example"
+description: "Example of a web page with executed R code"
 author: "Ludovic Deneuville"
 format:
   html:

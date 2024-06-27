@@ -1,5 +1,5 @@
 ---
-title: "Discover Quarto"
+title: "Lesson example - Discover Quarto"
 description: "Some tips to start with Quarto"
 author: "Ludovic Deneuville"
 format:
@@ -39,7 +39,7 @@ You can click on the `Code` button at the top right to see the [page's source co
 
 ## Metadata
 
-This file's metadata is displayed at the top between the `---`.
+This file's metadata are displayed at the top between the `---`.
 
 ### Basic setup
 

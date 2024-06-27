@@ -1,5 +1,6 @@
 ---
-title: "Include Python code"
+title: "Executed python - Example"
+description: "Example of a web page with executed python code"
 author: "Ludovic Deneuville"
 format:
   html:

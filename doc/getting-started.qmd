@@ -76,14 +76,11 @@ Example of trees:
 |   │   │   ├── image1.jpg
 |   │   │   └── image2.jpg
 |   │   ├── lesson1.qmd
-|   │   ├── lesson2.qmd
-|   │   └── ...
+|   │   └── lesson2.qmd
 |   ├── practical/
-|   │   ├── practical1.qmd
-|   │   └── ...
+|   │   └── practical1.qmd
 |   └── presentation/
-|       ├── presentation1.qmd
-|       └── ...
+|       └── presentation1.qmd
 ├── .gitignore
 └── .github/
     └── workflows/
@@ -121,7 +118,7 @@ website:
           - href: doc/page2.qmd
             text: "Page 2"
       - href: doc/page3.qmd
-        text: Direct link to Page 3
+        text: "Direct link to Page 3"
     right:      
       - icon: github
         href: "https://github.com/<username>/<repository_name>"
@@ -233,7 +230,9 @@ If you want more markdown content, feel free to see code of files in the Example
   ```
 
 ::: {.callout-note}
-The `.github/workflows/publish.yml` file contains the list of actions required to deploy the site ([Example here](https://github.com/ludo2ne/Quarto-tuto/blob/main/.github/workflows/publish.yml){target="_blank"})
+The *.github/workflows/publish.yml* file contains the list of actions required to deploy the site.
+
+[Example](https://github.com/ludo2ne/Quarto-tuto/blob/main/.github/workflows/publish.yml){target="_blank"} of Quarto-tuto
 :::
 
 - [ ] Using Git, *add*, *commit* files and then *push*
@@ -253,14 +252,14 @@ If you want to execute Python code in your qmd files.
 
 ### Local
 
-- [ ] install `Python`
-- [ ] list needed packages in file *requirements.txt*
-- [ ] `pip install jupyter`
+- [ ] Install `Python`
+- [ ] Install Jupyter : `pip install jupyter`
+- [ ] List needed packages in file *requirements.txt* at the project root
 - [ ] `pip install -r requirements.txt`
 
 ### Remote
 
-- [ ] in file `.github/workflow/publish.yml`, add this step before step *Render and Publish*
+- [ ] In file `.github/workflow/publish.yml`, add this step before *Render and Publish*
   ```{.yaml}
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
@@ -279,13 +278,13 @@ If you want to execute R code in your qmd files.
 
 ### Local
 
-- [ ] install R
-- [ ] install needed packages
+- [ ] Install R
+- [ ] Install needed packages
 
 ### Remote
 
-- [ ] List needed packages in file `DESCRIPTION`
-- [ ] in file `.github/workflow/publish.yml`, add this step before step *Render and Publish*
+- [ ] List needed packages in file *DESCRIPTION* at the project root
+- [ ] In file *.github/workflow/publish.yml*, add this step before *Render and Publish*
   ```{.yaml}
       - name: Install R
         uses: r-lib/actions/setup-r@v2

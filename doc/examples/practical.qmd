@@ -1,6 +1,6 @@
 ---
-title: "Create a static website with Quarto"
-description: "Practical to create quickly a static website with Quarto"
+title: "Practical example"
+description: "Create a static website with Quarto"
 author: "Ludovic Deneuville"
 date: 09/20/2023
 date-format: long
