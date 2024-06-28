@@ -8,12 +8,6 @@ format:
     toc-location: left
     toc-expand: 3
     code-tools: true
-  pdf:
-    margin-left: 2cm
-    margin-right: 2cm
-    margin-top: 2cm
-    margin-bottom: 2cm
-    shift-heading-level-by: -1
 from: markdown+emoji
 number-sections: true
 lightbox: true
@@ -110,8 +104,17 @@ format:
 When you will render the quarto project, it will create a file `lesson.pdf` in addition of `lesson.html`.  
 On the webpage, a link will appear under the table of contents to download the pdf.
 
-::: {.callout-note}
+::: {.callout-caution}
 To perform this you have to install first tinytex : `quarto install tinytex`
+
+To publish on GitHub pages, you have to modify this step in `publish.yml`
+
+```{.yml filename=".github/workflow/publish.yml"}
+    steps:
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      - run: quarto install tinytex                         # PDF engine
+```
 :::
 
 
