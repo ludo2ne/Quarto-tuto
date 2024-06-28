@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -127,75 +127,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lessons</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
-        <li>
-    <a class="dropdown-item" href="../doc/lesson/lesson1.html">
- <span class="dropdown-text">Lesson 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../doc/lesson/lesson2.html">
- <span class="dropdown-text">Lesson 2</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-presentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Presentation</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-presentation">    
-        <li>
-    <a class="dropdown-item" href="../doc/presentation/presentation1.html">
- <span class="dropdown-text">Presentation 1</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practicals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Practicals</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-practicals">    
-        <li>
-    <a class="dropdown-item" href="../doc/practical/practical1.html">
- <span class="dropdown-text">Practical 1</span></a>
-  </li>  
-    </ul>
-  </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="../doc/getting-started.html" aria-current="page"> 
 <span class="menu-text">Getting started</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../doc/resources.html"> 
-<span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examples</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examples">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
         <li>
     <a class="dropdown-item" href="../doc/examples/lesson.html">
  <span class="dropdown-text">Lesson</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../doc/examples/notebook.html">
- <span class="dropdown-text">Notebook</span></a>
+ <span class="dropdown-text">Jupyter Notebook</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../doc/examples/practical.html">
  <span class="dropdown-text">Practical</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../doc/examples/presentation.html">
+    <a class="dropdown-item" href="../doc/examples/presentation-html.html">
  <span class="dropdown-text">Presentation</span></a>
   </li>  
         <li>
@@ -208,6 +166,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../doc/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ludo2ne/Quarto-tuto" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
@@ -235,24 +199,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#general-principle" id="toc-general-principle" class="nav-link active" data-scroll-target="#general-principle">General principle</a></li>
-  <li><a href="#local-use" id="toc-local-use" class="nav-link" data-scroll-target="#local-use"><span class="header-section-number">1</span> Local use</a></li>
-  <li><a href="#deploy-your-site-with-github-pages" id="toc-deploy-your-site-with-github-pages" class="nav-link" data-scroll-target="#deploy-your-site-with-github-pages"><span class="header-section-number">2</span> Deploy your site with GitHub pages</a>
+  <li><a href="#local-use" id="toc-local-use" class="nav-link" data-scroll-target="#local-use"><span class="header-section-number">1</span> Local use</a>
+  <ul class="collapse">
+  <li><a href="#create-a-quarto-project" id="toc-create-a-quarto-project" class="nav-link" data-scroll-target="#create-a-quarto-project"><span class="header-section-number">1.1</span> Create a Quarto project</a></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata"><span class="header-section-number">1.2</span> Metadata</a></li>
+  <li><a href="#create-your-index" id="toc-create-your-index" class="nav-link" data-scroll-target="#create-your-index"><span class="header-section-number">1.3</span> Create your index</a></li>
+  <li><a href="#create-pages" id="toc-create-pages" class="nav-link" data-scroll-target="#create-pages"><span class="header-section-number">1.4</span> Create pages</a></li>
+  <li><a href="#play-with-styles" id="toc-play-with-styles" class="nav-link" data-scroll-target="#play-with-styles"><span class="header-section-number">1.5</span> Play with styles</a></li>
+  <li><a href="#render" id="toc-render" class="nav-link" data-scroll-target="#render"><span class="header-section-number">1.6</span> Render</a></li>
+  </ul></li>
+  <li><a href="#deploy-with-github-pages" id="toc-deploy-with-github-pages" class="nav-link" data-scroll-target="#deploy-with-github-pages"><span class="header-section-number">2</span> Deploy with GitHub pages</a>
   <ul class="collapse">
   <li><a href="#create-a-repository" id="toc-create-a-repository" class="nav-link" data-scroll-target="#create-a-repository"><span class="header-section-number">2.1</span> Create a repository</a></li>
-  <li><a href="#turn-your-repository-into-a-quarto-project" id="toc-turn-your-repository-into-a-quarto-project" class="nav-link" data-scroll-target="#turn-your-repository-into-a-quarto-project"><span class="header-section-number">2.2</span> Turn your repository into a Quarto project</a></li>
+  <li><a href="#clone-your-repository" id="toc-clone-your-repository" class="nav-link" data-scroll-target="#clone-your-repository"><span class="header-section-number">2.2</span> Clone your repository</a></li>
   </ul></li>
-  <li><a href="#setup-github-actions" id="toc-setup-github-actions" class="nav-link" data-scroll-target="#setup-github-actions"><span class="header-section-number">3</span> Setup GitHub actions</a></li>
-  <li><a href="#python-setup" id="toc-python-setup" class="nav-link" data-scroll-target="#python-setup"><span class="header-section-number">4</span> Python Setup</a>
+  <li><a href="#python-setup" id="toc-python-setup" class="nav-link" data-scroll-target="#python-setup"><span class="header-section-number">3</span> Python Setup</a>
   <ul class="collapse">
-  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local"><span class="header-section-number">4.1</span> Local</a></li>
-  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote"><span class="header-section-number">4.2</span> Remote</a></li>
+  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local"><span class="header-section-number">3.1</span> Local</a></li>
+  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote"><span class="header-section-number">3.2</span> Remote</a></li>
   </ul></li>
-  <li><a href="#r-setup" id="toc-r-setup" class="nav-link" data-scroll-target="#r-setup"><span class="header-section-number">5</span> R Setup</a>
+  <li><a href="#r-setup" id="toc-r-setup" class="nav-link" data-scroll-target="#r-setup"><span class="header-section-number">4</span> R Setup</a>
   <ul class="collapse">
-  <li><a href="#local-1" id="toc-local-1" class="nav-link" data-scroll-target="#local-1"><span class="header-section-number">5.1</span> Local</a></li>
-  <li><a href="#remote-1" id="toc-remote-1" class="nav-link" data-scroll-target="#remote-1"><span class="header-section-number">5.2</span> Remote</a></li>
+  <li><a href="#local-1" id="toc-local-1" class="nav-link" data-scroll-target="#local-1"><span class="header-section-number">4.1</span> Local</a></li>
+  <li><a href="#remote-1" id="toc-remote-1" class="nav-link" data-scroll-target="#remote-1"><span class="header-section-number">4.2</span> Remote</a></li>
   </ul></li>
-  <li><a href="#general-use" id="toc-general-use" class="nav-link" data-scroll-target="#general-use"><span class="header-section-number">6</span> General use</a></li>
   </ul>
 </nav>
 </nav>
@@ -295,10 +265,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="general-principle" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="general-principle">General principle</h2>
-<p>With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files… It only takes <strong>10 minutes</strong> to get a first result, perhaps a little more the first time.</p>
+<p>With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files…</p>
+<p>It only takes <strong>10 minutes</strong> to get a first result, perhaps a little more the first time.</p>
 <ul>
 <li>You define Quarto setup</li>
-<li>You write your content in <em>.qmd</em> files in markdown format</li>
+<li>You write your content in <em>.qmd</em> files with markdown language</li>
 <li>Quarto will generate the site’s html pages from these <em>.qmd</em> files</li>
 </ul>
 </section>
@@ -306,29 +277,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1" class="anchored" data-anchor-id="local-use"><span class="header-section-number">1</span> Local use</h2>
 <p>You will need the following tools to work locally :</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><a href="https://quarto.org/docs/get-started/" target="_blank">Install Quarto</a></label></li>
-<li><label><input type="checkbox">Choose an editor and install it, for example Visual Studio Code or R Studio</label></li>
-<li><label><input type="checkbox">If you wanna generate pdf file, install : <code>quarto install tinytex</code></label></li>
+<li><label><input type="checkbox">Install <a href="https://quarto.org/docs/get-started/" target="_blank">Quarto</a></label></li>
+<li><label><input type="checkbox">Choose an editor and install it, for example <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or <a href="https://posit.co/download/rstudio-desktop/" target="_blank">R Studio</a> (also created by Posit)</label></li>
+<li><label><input type="checkbox">Optionnal: if you want to generate pdf files, install tinytex <code>quarto install tinytex</code></label></li>
 </ul>
-</section>
-<section id="deploy-your-site-with-github-pages" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="deploy-your-site-with-github-pages"><span class="header-section-number">2</span> Deploy your site with GitHub pages</h2>
-<section id="create-a-repository" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="create-a-repository"><span class="header-section-number">2.1</span> Create a repository</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Log in to <a href="https://github.com/" class="external" target="_blank">GitHub</a></label></li>
-<li><label><input type="checkbox">Create a new repository</label></li>
-<li><label><input type="checkbox">Create a new branch named <code>gh-pages</code></label></li>
-<li><label><input type="checkbox">Go to Settings &gt; Pages</label>
-<ul>
-<li>Deploy from a branch : <strong>gh-pages</strong></li>
-</ul></li>
-</ul>
-</section>
-<section id="turn-your-repository-into-a-quarto-project" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="turn-your-repository-into-a-quarto-project"><span class="header-section-number">2.2</span> Turn your repository into a Quarto project</h3>
-<p>We recommend opening your project in an IDE such as VSCode or RStudio.</p>
-<p>You will have to create the following files :</p>
+<section id="create-a-quarto-project" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="create-a-quarto-project"><span class="header-section-number">1.1</span> Create a Quarto project</h3>
+<p>You can read <a href="https://quarto.org/docs/projects/quarto-projects.html" target="_blank">official documentation</a> or simply follow these advices</p>
+<p>To create a Quarto projet you will need the following files :</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 42%">
@@ -343,57 +299,230 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>_quarto.yml</td>
-<td>Configuration file for Quarto setup</td>
+<td>Project Metadata</td>
 </tr>
 <tr class="even">
 <td>index.qmd</td>
-<td>The home page of the project</td>
+<td>Home page</td>
 </tr>
 <tr class="odd">
 <td>styles.css</td>
 <td>CSS file for styling the project</td>
 </tr>
-<tr class="even">
-<td>.github/workflows/publish.yml</td>
-<td>Pipeline setup for deployment on GitHub</td>
-</tr>
 </tbody>
 </table>
-<p>Recommended files :</p>
-<ul>
-<li><code>.gitignore</code>
-<ul>
-<li>to tell git to ignore these files</li>
-</ul>
-<pre><code>/.quarto/
-/_site/</code></pre></li>
-<li><code>doc</code> folder to store your files in a clean tree structure</li>
-</ul>
-<p>Example of tree :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>├── index.qmd</span>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We strongly advice you to also create a folder named <code>doc</code> to store your content in a clear tree structure.</p>
+</div>
+</div>
+<p>Example of trees:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Simple</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Advanced</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>├── index.qmd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── _quarto.yml</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>├── styles.css</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>└── doc/</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    ├── page1.qmd</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    ├── page2.qmd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    └── page3.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>├── index.qmd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>├── _quarto.yml</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>├── styles.css</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>├── .github<span class="op">/</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>│   └── workflows<span class="op">/</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>│       └── publish.yml</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>└── doc<span class="op">/</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ├── lesson<span class="op">/</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    │   ├── img<span class="op">/</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    │   │   ├── image1.jpg</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    │   │   └── image2.jpg</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    │   ├── lesson1.qmd</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    │   ├── lesson2.qmd</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    │   └── ...</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    ├── practical<span class="op">/</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    │   ├── practical1.qmd</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    │   └── ...</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    └── presentation<span class="op">/</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        ├── presentation1.qmd</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        └── ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>├── doc/</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>|   ├── lesson/</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>|   │   ├── img/</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>|   │   │   ├── image1.jpg</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>|   │   │   └── image2.jpg</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>|   │   ├── lesson1.qmd</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>|   │   └── lesson2.qmd</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>|   ├── practical/</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>|   │   └── practical1.qmd</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>|   └── presentation/</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>|       └── presentation1.qmd</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>├── .gitignore</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>└── .github/</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    └── workflows/</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        └── publish.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Create a folder with files of the <strong>simple tree</strong></label></li>
+</ul>
+</section>
+<section id="metadata" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="metadata"><span class="header-section-number">1.2</span> Metadata</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Create at the project root, a file named <code>_quarto.yml</code></label></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Simple</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Advanced</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My website title"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">background</span><span class="kw">:</span><span class="at"> </span><span class="st">"#447099"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Drop-down list of pages"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> doc/page1.qmd</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Page 1"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> doc/page2.qmd</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Page 2"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> doc/page3.qmd</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Direct link to Page 3"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at">      </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://github.com/&lt;username&gt;/&lt;repository_name&gt;"</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">target</span><span class="kw">:</span><span class="at"> </span><span class="st">"_blank"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> solar</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><a href="https://github.com/ludo2ne/Quarto-tuto/blob/main/_quarto.yml" target="_blank">_quarto.yml</a> file of Quarto-tuto.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="create-your-index" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="create-your-index"><span class="header-section-number">1.3</span> Create your index</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">At the project root, create file <code>index.qmd</code></label>
+<ul>
+<li>It will contain some metadata (title, description, author…) and then your content in markdown language</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title: "My home page"</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>description: "Description of my home page"</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>author: "Ludovic Deneuville"</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>format: html</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>from: markdown+emoji</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>## My content</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>my content using Markdown language</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-pages" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="create-pages"><span class="header-section-number">1.4</span> Create pages</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">The same way you created the index file, create files <code>doc/pages1.qmd</code>, <code>doc/pages2.qmd</code>, <code>doc/pages3.qmd</code></label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want more markdown content, feel free to see code of files in the Examples section, such as <a href="../doc/examples/practical.html" target="_blank">Practical</a></p>
+</div>
+</div>
+</section>
+<section id="play-with-styles" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="play-with-styles"><span class="header-section-number">1.5</span> Play with styles</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">At the project root, create file <code>styles.css</code></label>
+<ul>
+<li>you can let it empty for now</li>
+</ul></li>
+</ul>
+</section>
+<section id="render" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="render"><span class="header-section-number">1.6</span> Render</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">In a terminal, run <code>quarto render</code>. This command will convert your <em>qmd</em> files to <em>html</em></label></li>
+<li><label><input type="checkbox">Go to folder <em>_site</em> and open your <em>index.html</em></label></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled" title="Congratulation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Congratulation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="emoji" data-emoji="tada">🎉</span> you created your first quarto website!</p>
+</div>
+</div>
 </section>
 </section>
-<section id="setup-github-actions" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="setup-github-actions"><span class="header-section-number">3</span> Setup GitHub actions</h2>
+<section id="deploy-with-github-pages" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="deploy-with-github-pages"><span class="header-section-number">2</span> Deploy with GitHub pages</h2>
+<section id="create-a-repository" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="create-a-repository"><span class="header-section-number">2.1</span> Create a repository</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Log in to <a href="https://github.com/" target="_blank">GitHub</a></label></li>
+<li><label><input type="checkbox">Create a new repository</label></li>
+<li><label><input type="checkbox">Create a new branch named <code>gh-pages</code></label></li>
+</ul>
+</section>
+<section id="clone-your-repository" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="clone-your-repository"><span class="header-section-number">2.2</span> Clone your repository</h3>
+<ul class="task-list">
+<li><p><label><input type="checkbox">Paste in your local repository the content of your quarto project</label></p></li>
+<li><p><label><input type="checkbox">At the root, add a <code>.gitignore</code> file to exlude these folders</label></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>/_site/ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">Add this file to setup a publish pipeline</label></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>├── .github/</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>│   └── workflows/</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>│       └── publish.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">Paste this content</label></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> main</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Quarto Publish</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build-deploy</span><span class="kw">:</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">permissions</span><span class="kw">:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out repository</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Quarto</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/setup@v2</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render and Publish</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/publish@v2</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">target</span><span class="kw">:</span><span class="at"> gh-pages</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">GITHUB_TOKEN</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -404,84 +533,99 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The <em>.github/workflows/publish.yml</em> file contains the list of actions required to deploy the site.</p>
+<p><a href="https://github.com/ludo2ne/Quarto-tuto/blob/main/.github/workflows/publish.yml" target="_blank">Example</a> of Quarto-tuto</p>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Using Git, <em>add</em>, <em>commit</em> files and then <em>push</em></label>
 <ul>
-<li>when you push the main branch, the <code>.github/worflows/publish.yml</code> file triggers a pipeline</li>
-<li>the site is deployed by default on <em>https://<username>.github.io/<repositoryname></repositoryname></username></em>
+<li>A github pipeline is triggered by a <em>push</em></li>
+</ul></li>
+<li><label><input type="checkbox">In your GitHub repository, check in the <em>Action</em> section if everything is fine</label></li>
+</ul>
+<p>A few minutes later, the site will be available on <code>https://&lt;username&gt;.github.io/&lt;repository_name&gt;</code></p>
 <ul class="task-list">
 <li><label><input type="checkbox">On the project’s GitHub page, add this link in the <code>About</code> section</label></li>
-</ul></li>
 </ul>
-</div>
-</div>
-<p>The <code>.github/workflows/publish.yml</code> file contains the list of actions required to deploy the site (<a href="https://github.com/ludo2ne/Quarto-tuto/blob/main/.github/workflows/publish.yml" target="_blank">Example here</a>)</p>
 </section>
-<section id="python-setup" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="python-setup"><span class="header-section-number">4</span> Python Setup</h2>
-<section id="local" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="local"><span class="header-section-number">4.1</span> Local</h3>
+</section>
+<section id="python-setup" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="python-setup"><span class="header-section-number">3</span> Python Setup</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to execute Python code in your qmd files.</p>
+</div>
+</div>
+<section id="local" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="local"><span class="header-section-number">3.1</span> Local</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">install <code>Python</code></label></li>
-<li><label><input type="checkbox">list needed packages in file <em>requirements.txt</em></label></li>
-<li><label><input type="checkbox"><code>pip install jupyter</code></label></li>
+<li><label><input type="checkbox">Install <code>Python</code></label></li>
+<li><label><input type="checkbox">Install Jupyter : <code>pip install jupyter</code></label></li>
+<li><label><input type="checkbox">List needed packages in file <em>requirements.txt</em> at the project root</label></li>
 <li><label><input type="checkbox"><code>pip install -r requirements.txt</code></label></li>
 </ul>
 </section>
-<section id="remote" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="remote"><span class="header-section-number">4.2</span> Remote</h3>
+<section id="remote" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="remote"><span class="header-section-number">3.2</span> Remote</h3>
 <ul class="task-list">
-<li><p><label><input type="checkbox">in file <code>.github/workflow/publish.yml</code>, add a step to install Python and dependencies</label></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python and Dependencies</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3.10'</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">'pip'</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install jupyter</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">In file <code>.github/workflow/publish.yml</code>, add this step before <em>Render and Publish</em></label></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python and Dependencies</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'3.10'</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="st">'pip'</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install jupyter</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> pip install -r requirements.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 </section>
-<section id="r-setup" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="r-setup"><span class="header-section-number">5</span> R Setup</h2>
-<section id="local-1" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="local-1"><span class="header-section-number">5.1</span> Local</h3>
+<section id="r-setup" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r-setup"><span class="header-section-number">4</span> R Setup</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to execute R code in your qmd files.</p>
+</div>
+</div>
+<section id="local-1" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="local-1"><span class="header-section-number">4.1</span> Local</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">install R</label></li>
-<li><label><input type="checkbox">install needed packages</label></li>
+<li><label><input type="checkbox">Install R</label></li>
+<li><label><input type="checkbox">Install needed packages</label></li>
 </ul>
 </section>
-<section id="remote-1" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="remote-1"><span class="header-section-number">5.2</span> Remote</h3>
+<section id="remote-1" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="remote-1"><span class="header-section-number">4.2</span> Remote</h3>
 <ul class="task-list">
-<li><p><label><input type="checkbox">List needed packages in file <code>DESCRIPTION</code></label></p></li>
-<li><p><label><input type="checkbox">in file <code>.github/workflow/publish.yml</code>, add steps to install R and packages</label></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">r-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'4.3.0'</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R packages from DESCRIPTION file</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r-dependencies@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-</section>
-</section>
-<section id="general-use" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="general-use"><span class="header-section-number">6</span> General use</h2>
-<ul>
-<li>edit or create <em>.qmd</em> files</li>
-<li>render the website
-<ul>
-<li>open a terminal</li>
-<li><code>quarto render</code></li>
-<li>it generate <code>_site</code> folder containing html pages</li>
-</ul></li>
-<li>deploy on GitHub pages
-<ul>
-<li><em>commit</em> files with Git and <em>push</em></li>
-<li>a few minutes later, the site will be available on <code>https://&lt;username&gt;.github.io/&lt;repository_name&gt;</code></li>
-</ul></li>
+<li><p><label><input type="checkbox">List needed packages in file <em>DESCRIPTION</em> at the project root</label></p></li>
+<li><p><label><input type="checkbox">In file <em>.github/workflow/publish.yml</em>, add this step before <em>Render and Publish</em></label></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">r-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'4.3.0'</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R packages from DESCRIPTION file</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r-dependencies@v2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
