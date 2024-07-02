@@ -319,7 +319,7 @@
     "href": "doc/examples/lesson.html#advanced-tools",
     "title": "Lesson example - Discover Quarto",
     "section": "4 Advanced tools",
-    "text": "4 Advanced tools\n\n4.1 Callout Blocks\nYou can easily highlight text using callout blocks.\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nThis is very very important\n\n\n\nWith a custom title\n\n\n\n\n\n\n\n\nWith hidden text\n\n\n\n\n\nHidden text\n\n\n\n\n\n4.2 Tabulations\n\nTab1Tab2Tab3\n\n\nContent of the first tab\n\n\nContent of the second tab\n\n\nContent of the third tab\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nIn the PDF output, the content of each tab will be displayed consecutively, one after the other.\n\n\n\n\n4.3 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.4 Diagrams\nMermaid lets you create various diagrams and visualizations\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n\n\n\nstateDiagram-v2\n    state if_state &lt;&lt;choice&gt;&gt;\n    [*] --&gt; IsPositive\n    IsPositive --&gt; if_state\n    if_state --&gt; False: if n &lt; 0\n    if_state --&gt; True : if n &gt;= 0\n\n\n\n\n\n\n\n\n\n\n\nStones"
+    "text": "4 Advanced tools\n\n4.1 Callout Blocks\nYou can easily highlight text using callout blocks.\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nThis is very very important\n\n\n\nWith a custom title\n\n\n\n\n\n\n\n\nWith hidden text\n\n\n\n\n\nHidden text\n\n\n\n\n\n4.2 Tabulations\n\nTab1Tab2Tab3\n\n\nContent of the first tab\n\n\nContent of the second tab\n\n\nContent of the third tab\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nIn the PDF output, the content of each tab will be displayed consecutively, one after the other.\n\n\n\n\n4.3 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.4 Diagrams\nMermaid lets you create various diagrams and visualizations\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n\n\n\nstateDiagram-v2\n    state if_state &lt;&lt;choice&gt;&gt;\n    [*] --&gt; IsPositive\n    IsPositive --&gt; if_state\n    if_state --&gt; False: if n &lt; 0\n    if_state --&gt; True : if n &gt;= 0"
   },
   {
     "objectID": "doc/examples/python.html",
@@ -368,21 +368,21 @@
     "href": "doc/examples/R.html",
     "title": "Executed R - Example",
     "section": "",
-    "text": "To render files including R code, you have to :\n\nDownload and install R\ninstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
+    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
   },
   {
     "objectID": "doc/examples/R.html#r",
     "href": "doc/examples/R.html#r",
     "title": "Executed R - Example",
     "section": "",
-    "text": "To render files including R code, you have to :\n\nDownload and install R\ninstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
+    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
   },
   {
     "objectID": "doc/examples/R.html#cells",
     "href": "doc/examples/R.html#cells",
     "title": "Executed R - Example",
     "section": "2 Cells",
-    "text": "2 Cells\nTo write code cells, the principle is the same as with Python.\nSimply replace python with r between the braces.\n\n2.1 Load packages\nA good practice is to load all packages at the beginning.\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n\n\n2.2 First cell\nImagine you want to draw a spiral.\n\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n\ndata &lt;- data.frame(theta = theta, r = r)\ndata$x &lt;- data$r * cos(data$theta)\ndata$y &lt;- data$r * sin(data$theta)\n\nggplot(data, aes(x, y)) +\n  geom_path(color = \"darkcyan\", linewidth = 1.5)\n\n\n\n\n\n\n\nFigure 1: A wonderfull spiral\n\n\n\n\n\nYou cannot see it in the output code but i add those options at the beginning :\n```{r}\n#| label: fig-spiral\n#| fig-cap: A wonderfull spiral\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n...\n```\nSo you can use the label and reference the figure elsewhere:\n\nFigure 1 with this code : @fig-spiral\nmy wonderfull spiral with this code :[my wonderfull spiral](#fig-spiral)"
+    "text": "2 Cells\nTo write code cells, the principle is the same as with Python.\nSimply replace Python with R between the braces.\n\n2.1 Load packages\nA good practice is to load all packages at the beginning.\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\n\n\n\n\n\n\n\nDeploy on GitHub pages\n\n\n\nDon’t forget to add your libraries into the file called DESCRIPTION at the reposiroty root.\nThis file is essential to list all needed packages when you run GitHub actions.\n\n\n\n\n2.2 First cell\nImagine you want to draw a spiral.\n\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n\ndata &lt;- data.frame(theta = theta, r = r)\ndata$x &lt;- data$r * cos(data$theta)\ndata$y &lt;- data$r * sin(data$theta)\n\nggplot(data, aes(x, y)) +\n  geom_path(color = \"darkcyan\", linewidth = 1.5)\n\n\n\n\n\n\n\nFigure 1: A wonderfull spiral\n\n\n\n\n\nYou cannot see it in the output code but i add those options at the beginning :\n```{r}\n#| label: fig-spiral\n#| fig-cap: A wonderfull spiral\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n...\n```\nSo you can use the label and reference the figure elsewhere:\n\nFigure 1 with this code : @fig-spiral\nmy wonderfull spiral with this code :[my wonderfull spiral](#fig-spiral)"
   },
   {
     "objectID": "doc/examples/R.html#tabulations",
@@ -396,7 +396,14 @@
     "href": "doc/examples/R.html#inline-code",
     "title": "Executed R - Example",
     "section": "4 Inline code",
-    "text": "4 Inline code\n\nages &lt;- c(20, 25, 30, 40)\n\nThe average age is 28.75.\n\n\n\n\n\nFigure 1: A wonderfull spiral"
+    "text": "4 Inline code\nYou can display variable values in text.\n\nages &lt;- c(20, 25, 30, 40)\n\nThe average age is 28.75."
+  },
+  {
+    "objectID": "doc/examples/R.html#interactive-maps",
+    "href": "doc/examples/R.html#interactive-maps",
+    "title": "Executed R - Example",
+    "section": "5 Interactive Maps",
+    "text": "5 Interactive Maps\nYou can include maps using library Leaflet.\n\nleaflet() %&gt;%\n  setView(lng=2.6, lat=46.5, zoom=5) %&gt;%\n  addTiles() %&gt;%  \n  addMarkers(lng=-1.7419, lat=48.0507, popup=\"ENSAI\")"
   },
   {
     "objectID": "doc/getting-started.html",
