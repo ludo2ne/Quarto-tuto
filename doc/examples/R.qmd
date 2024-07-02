@@ -23,7 +23,7 @@ resources:
 To render files including R code, you have to :
 
 - [ ] [Download and install R](https://cloud.r-project.org/){target="_blank"}
-- [ ] install required packages
+- [ ] Install required packages
   - example : `install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))`
 
 ### Documentation
@@ -31,12 +31,11 @@ To render files including R code, you have to :
 - [Using R with Quarto](https://quarto.org/docs/computations/r.html){target="_blank"}
 
 
-
 ## Cells
 
 To write code cells, the principle is the same as with [Python](python.qmd#cells).
 
-Simply replace python with r between the braces.
+Simply replace *Python* with *R* between the braces.
 
 ### Load packages
 
@@ -44,10 +43,17 @@ A good practice is to load all packages at the beginning.
 
 ```{r}
 #| message: false
+#| warning: false
 library(dplyr)
 library(ggplot2)
+library(leaflet)
 ```
 
+::: {.callout-important title="Deploy on GitHub pages"}
+Don't forget to add your libraries into the file called `DESCRIPTION` at the reposiroty root.
+
+This file is essential to list all needed packages when you run GitHub actions.
+:::
 
 ### First cell
 
@@ -124,8 +130,22 @@ knitr::kable(pairs)
 
 ## Inline code
 
+You can display variable values in text.
+
 ```{r}
 ages <- c(20, 25, 30, 40)
 ```
 
 The average age is **`r mean(ages)`**.
+
+
+## Interactive Maps
+
+You can include maps using library [Leaflet](https://leafletjs.com/){target="_blank"}.
+
+```{r}
+leaflet() %>%
+  setView(lng=2.6, lat=46.5, zoom=5) %>%
+  addTiles() %>%  
+  addMarkers(lng=-1.7419, lat=48.0507, popup="ENSAI")
+```
