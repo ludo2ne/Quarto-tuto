@@ -15,6 +15,7 @@ number-sections: true
 lightbox: true
 ---
 
+
 ## Introduction{.unnumbered}
 
 You will learn how to create your first static website with Quarto.
@@ -80,7 +81,7 @@ All files within your repository will inherit these metadata settings. However, 
 
 - [ ] Create the `_quarto.yml` file in your repository's root
 - [ ] Paste the following code (you can custom title, navbar background color or both [themes](https://quarto.org/docs/output-formats/html-themes.html){target="_blank"})
-  ```{yml}
+  ```{.yml}
   project:
     type: website
   
@@ -119,7 +120,7 @@ In this file you can define all styles you can imagin.
 
 - [ ] create file `styles.css` in the root
 - [ ] in this file, create for example a class of green text on orange background
-  ```{css}
+  ```{.css}
   .green_orange{
     text: green;
     background: orange;

@@ -6,6 +6,9 @@ project:
 
 website:
   title: "Quarto tutorial"
+  repo-url: "{{< meta var.url-repo >}}"
+  repo-branch: main
+  reader-mode: true
   navbar:
     background: "#447099"
     left:
@@ -38,9 +41,6 @@ website:
     right: |
       Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
       [Code source]({{< meta var.url-repo >}}){.external target="_blank"}
-  repo-url: "{{< meta var.url-repo >}}"
-  repo-branch: main
-  reader-mode: true
 
 execute:
   freeze: auto  # re-render only when source changes

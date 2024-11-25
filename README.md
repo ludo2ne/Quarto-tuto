@@ -17,3 +17,9 @@ To render pages :
 
 - locally : `quarto render` (pages are created in the folder *_site*)
 - on [GitHub](https://ludo2ne.github.io/ENSAI-2A-complements-info/) : see file `.github/workflows/publish.yml`
+
+## Licence
+
+Ce projet est sous licence [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+Vous êtes libre de partager et modifier ce travail à des fins non commerciales, à condition de me créditer et de redistribuer sous la même licence.

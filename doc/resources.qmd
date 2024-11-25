@@ -22,6 +22,7 @@ from: markdown+emoji
 - [Extensions for Quarto](https://github.com/quarto-ext){target="_blank"}
 - [Send some confetti through your presentation](https://github.com/ArthurData/quarto-confetti){target="_blank"}
 - [RevealJS : Show the amount of slides in a vertical stack](https://github.com/Martinomagnifico/quarto-verticator){target="_blank"}
+- [Font awesome](https://github.com/quarto-ext/fontawesome){target="_blank"}
 
 ### Extension for Visual Studio Code
 
