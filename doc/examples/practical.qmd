@@ -28,7 +28,7 @@ To publish our website, we will use GitHub Pages. The first step is to create a 
 - [ ] Create a new repository called `Quarto-practical`
   - Visibility : Public
   - check Add a README file
-  - Choose a license : MIT Licence
+  - Choose a license : Creative Commons Attribution ShareAlike 4.0
 - [ ] Create a new branch called *gh-pages*
   - clic on button `main`
   - write *gh-pages*
