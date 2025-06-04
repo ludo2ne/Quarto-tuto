@@ -8,6 +8,7 @@
 - [ ] R : Using renv : https://github.com/r-lib/actions/tree/v2/setup-renv
 - [ ] R : [Interactive table with DT](https://www.productive-r-workflow.com/quarto-tricks#internal-link)
 - [ ] R : [plotly](https://www.productive-r-workflow.com/quarto-tricks#plotly)
+- Generate an Self-contained html : quarto render doc.qmd --to html --self-contained
 
 ## :rocket: Render pages
 
