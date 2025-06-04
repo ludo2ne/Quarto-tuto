@@ -28,130 +28,25 @@
     "text": "Examples\nYou will find examples of the numerous features:\n\nWeb page\nNotebook\nPresentation\n\nYou can use a wide range of tools:\n\nTables, Lists\nImages, Videos\nPython or R code\nMathematical formulas\nDiagrams\n\n\nStatic Web pages\nQuarto will beautifully format your code into HTML pages. Afterward, you can easily publish your site on GitHub, Quarto-hub, Netlify…\n\n\nPresentation\nYou can create presentation using revealJS\n\nSpeaker view\nchalkboard\nprint-pdf\n\n\n\nPython Notebooks\n\nWrite it with markdown syntax\nDisplay it on your website\nDownload .ipynb file and load it on Jupyter"
   },
   {
-    "objectID": "doc/getting-started.html",
-    "href": "doc/getting-started.html",
-    "title": "Create a static site",
+    "objectID": "doc/resources.html",
+    "href": "doc/resources.html",
+    "title": "Useful resources",
     "section": "",
-    "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files…\nIt only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files with markdown language\nQuarto will generate the site’s html pages from these .qmd files"
+    "text": "Awesome-Quarto (Examples, tutorials, extensions, features…)\nA Quarto tip a day\nQuarto trick from productive-r-workflow\nQuarto RevealJS tips"
   },
   {
-    "objectID": "doc/getting-started.html#general-principle",
-    "href": "doc/getting-started.html#general-principle",
-    "title": "Create a static site",
+    "objectID": "doc/resources.html#quarto-tips",
+    "href": "doc/resources.html#quarto-tips",
+    "title": "Useful resources",
     "section": "",
-    "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files…\nIt only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files with markdown language\nQuarto will generate the site’s html pages from these .qmd files"
+    "text": "Awesome-Quarto (Examples, tutorials, extensions, features…)\nA Quarto tip a day\nQuarto trick from productive-r-workflow\nQuarto RevealJS tips"
   },
   {
-    "objectID": "doc/getting-started.html#local-use",
-    "href": "doc/getting-started.html#local-use",
-    "title": "Create a static site",
-    "section": "1 Local use",
-    "text": "1 Local use\nYou will need the following tools to work locally :\n\nInstall Quarto\nChoose an editor and install it, for example Visual Studio Code or R Studio (also created by Posit)\nOptionnal: if you want to generate pdf files, install tinytex quarto install tinytex\n\n\n1.1 Create a Quarto project\nYou can read official documentation or simply follow these advices\nTo create a Quarto projet you will need the following files :\n\n\n\n\n\n\n\nFile\nDescription\n\n\n\n\n_quarto.yml\nProject Metadata\n\n\nindex.qmd\nHome page\n\n\nstyles.css\nCSS file for styling the project\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWe strongly advice you to also create a folder named doc to store your content in a clear tree structure.\n\n\nExample of trees:\n\nSimpleAdvanced\n\n\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n└── doc/\n    ├── page1.qmd\n    ├── page2.qmd\n    └── page3.qmd\n\n\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n├── doc/\n|   ├── lesson/\n|   │   ├── img/\n|   │   │   ├── image1.jpg\n|   │   │   └── image2.jpg\n|   │   ├── lesson1.qmd\n|   │   └── lesson2.qmd\n|   ├── practical/\n|   │   └── practical1.qmd\n|   └── presentation/\n|       └── presentation1.qmd\n├── .gitignore\n└── .github/\n    └── workflows/\n        └── publish.yml\n\n\n\n\nCreate a folder with files of the simple tree\n\n\n\n1.2 Metadata\n\nCreate at the project root, a file named _quarto.yml\n\n\nSimpleAdvanced\n\n\nproject:\n  type: website\nwebsite:\n  title: \"My website title\"\n  navbar:\n    background: \"#447099\"\n    left:\n      - href: index.qmd\n        text: Home\n      - text: \"Drop-down list of pages\"\n        menu:\n          - href: doc/page1.qmd\n            text: \"Page 1\"\n          - href: doc/page2.qmd\n            text: \"Page 2\"\n      - href: doc/page3.qmd\n        text: \"Direct link to Page 3\"\n    right:      \n      - icon: github\n        href: \"https://github.com/&lt;username&gt;/&lt;repository_name&gt;\"\n        target: \"_blank\"\nformat:\n  html:\n    theme:\n      dark: solar\n      light: cosmo\n    css: styles.css\n\n\n_quarto.yml file of Quarto-tuto.\n\n\n\n\n\n1.3 Create your index\n\nAt the project root, create file index.qmd\n\nIt will contain some metadata (title, description, author…) and then your content in markdown language\n\n\n---\ntitle: \"My home page\"\ndescription: \"Description of my home page\"\nauthor: \"Ludovic Deneuville\"\nformat: html\nfrom: markdown+emoji\n---\n\n## My content\n\nmy content using Markdown language\n\n\n1.4 Create pages\n\nThe same way you created the index file, create files doc/pages1.qmd, doc/pages2.qmd, doc/pages3.qmd\n\n\n\n\n\n\n\nTip\n\n\n\nIf you want more markdown content, feel free to see code of files in the Examples section, such as Practical\n\n\n\n\n1.5 Play with styles\n\nAt the project root, create file styles.css\n\nyou can let it empty for now\n\n\n\n\n1.6 Render\n\nIn a terminal, run quarto render. This command will convert your qmd files to html\nGo to folder _site and open your index.html\n\n\n\n\n\n\n\nCongratulation\n\n\n\n🎉 you created your first quarto website!"
-  },
-  {
-    "objectID": "doc/getting-started.html#deploy-with-github-pages",
-    "href": "doc/getting-started.html#deploy-with-github-pages",
-    "title": "Create a static site",
-    "section": "2 Deploy with GitHub pages",
-    "text": "2 Deploy with GitHub pages\n\n2.1 Create a repository\n\nLog in to GitHub\nCreate a new repository\nCreate a new branch named gh-pages\n\n\n\n2.2 Clone your repository\n\nPaste in your local repository the content of your quarto project\nAt the root, add a .gitignore file to exlude these folders\n/.quarto/\n/_site/ \nAdd this file to setup a publish pipeline\n├── .github/\n│   └── workflows/\n│       └── publish.yml\nPaste this content\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\nNote\n\n\n\nThe .github/workflows/publish.yml file contains the list of actions required to deploy the site.\nExample of Quarto-tuto\n\n\n\nUsing Git, add, commit files and then push\n\nA github pipeline is triggered by a push\n\nIn your GitHub repository, check in the Action section if everything is fine\n\nA few minutes later, the site will be available on https://&lt;username&gt;.github.io/&lt;repository_name&gt;\n\nOn the project’s GitHub page, add this link in the About section"
-  },
-  {
-    "objectID": "doc/getting-started.html#python-setup",
-    "href": "doc/getting-started.html#python-setup",
-    "title": "Create a static site",
-    "section": "3 Python Setup",
-    "text": "3 Python Setup\n\n\n\n\n\n\nNote\n\n\n\nIf you want to execute Python code in your qmd files.\n\n\n\n3.1 Local\n\nInstall Python\nInstall Jupyter : pip install jupyter\nList needed packages in file requirements.txt at the project root\npip install -r requirements.txt\n\n\n\n3.2 Remote\n\nIn file .github/workflow/publish.yml, add this step before Render and Publish\n    - name: Install Python and Dependencies\n      uses: actions/setup-python@v4\n      with:\n        python-version: '3.10'\n        cache: 'pip'\n    - run: pip install jupyter\n    - run: pip install -r requirements.txt"
-  },
-  {
-    "objectID": "doc/getting-started.html#r-setup",
-    "href": "doc/getting-started.html#r-setup",
-    "title": "Create a static site",
-    "section": "4 R Setup",
-    "text": "4 R Setup\n\n\n\n\n\n\nNote\n\n\n\nIf you want to execute R code in your qmd files.\n\n\n\n4.1 Local\n\nInstall R\nInstall needed packages\n\n\n\n4.2 Remote\n\nList needed packages in file DESCRIPTION at the project root\nIn file .github/workflow/publish.yml, add this step before Render and Publish\n    - name: Install R\n      uses: r-lib/actions/setup-r@v2\n      with:\n        r-version: '4.3.0'\n\n    - name: Install R packages from DESCRIPTION file\n      uses: r-lib/actions/setup-r-dependencies@v2"
-  },
-  {
-    "objectID": "doc/examples/R.html",
-    "href": "doc/examples/R.html",
-    "title": "Executed R - Example",
-    "section": "",
-    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
-  },
-  {
-    "objectID": "doc/examples/R.html#r",
-    "href": "doc/examples/R.html#r",
-    "title": "Executed R - Example",
-    "section": "",
-    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
-  },
-  {
-    "objectID": "doc/examples/R.html#cells",
-    "href": "doc/examples/R.html#cells",
-    "title": "Executed R - Example",
-    "section": "2 Cells",
-    "text": "2 Cells\nTo write code cells, the principle is the same as with Python.\nSimply replace Python with R between the braces.\n\n2.1 Load packages\nA good practice is to load all packages at the beginning.\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\n\n\n\n\n\n\n\nDeploy on GitHub pages\n\n\n\nDon’t forget to add your libraries into the file called DESCRIPTION at the reposiroty root.\nThis file is essential to list all needed packages when you run GitHub actions.\n\n\n\n\n2.2 First cell\nImagine you want to draw a spiral.\n\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n\ndata &lt;- data.frame(theta = theta, r = r)\ndata$x &lt;- data$r * cos(data$theta)\ndata$y &lt;- data$r * sin(data$theta)\n\nggplot(data, aes(x, y)) +\n  geom_path(color = \"darkcyan\", linewidth = 1.5)\n\n\n\n\n\n\n\nFigure 1: A wonderfull spiral\n\n\n\n\n\nYou cannot see it in the output code but i add those options at the beginning :\n```{r}\n#| label: fig-spiral\n#| fig-cap: A wonderfull spiral\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n...\n```\nSo you can use the label and reference the figure elsewhere:\n\nFigure 1 with this code : @fig-spiral\nmy wonderfull spiral with this code :[my wonderfull spiral](#fig-spiral)"
-  },
-  {
-    "objectID": "doc/examples/R.html#tabulations",
-    "href": "doc/examples/R.html#tabulations",
-    "title": "Executed R - Example",
-    "section": "3 Tabulations",
-    "text": "3 Tabulations\n\nCodePlotData\n\n\n\nset.seed(42)\npairs &lt;- data.frame(x = runif(10), y = runif(10))\n\nggplot(pairs, aes(x, y)) +\n  geom_point(color = \"darkcyan\", alpha = 0.7) +\n  labs(x = \"X\", y = \"Y\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::kable(pairs)\n\n\n\n\nx\ny\n\n\n\n\n0.9148060\n0.4577418\n\n\n0.9370754\n0.7191123\n\n\n0.2861395\n0.9346722\n\n\n0.8304476\n0.2554288\n\n\n0.6417455\n0.4622928\n\n\n0.5190959\n0.9400145\n\n\n0.7365883\n0.9782264\n\n\n0.1346666\n0.1174874\n\n\n0.6569923\n0.4749971\n\n\n0.7050648\n0.5603327"
-  },
-  {
-    "objectID": "doc/examples/R.html#inline-code",
-    "href": "doc/examples/R.html#inline-code",
-    "title": "Executed R - Example",
-    "section": "4 Inline code",
-    "text": "4 Inline code\nYou can display variable values in text.\n\nages &lt;- c(20, 25, 30, 40)\n\nThe average age is 28.75."
-  },
-  {
-    "objectID": "doc/examples/R.html#interactive-maps",
-    "href": "doc/examples/R.html#interactive-maps",
-    "title": "Executed R - Example",
-    "section": "5 Interactive Maps",
-    "text": "5 Interactive Maps\nYou can include maps using library Leaflet.\n\nleaflet() %&gt;%\n  setView(lng=2.6, lat=46.5, zoom=5) %&gt;%\n  addTiles() %&gt;%  \n  addMarkers(lng=-1.7419, lat=48.0507, popup=\"ENSAI\")"
-  },
-  {
-    "objectID": "doc/examples/lesson.html",
-    "href": "doc/examples/lesson.html",
-    "title": "Lesson example - Discover Quarto",
-    "section": "",
-    "text": "Welcome to this page.\n\n\n\n\n\n\nImportant\n\n\n\nYou can click on the Code button at the top right to see the page’s source code.\n\n\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#introduction",
-    "href": "doc/examples/lesson.html#introduction",
-    "title": "Lesson example - Discover Quarto",
-    "section": "",
-    "text": "Welcome to this page.\n\n\n\n\n\n\nImportant\n\n\n\nYou can click on the Code button at the top right to see the page’s source code.\n\n\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#metadata",
-    "href": "doc/examples/lesson.html#metadata",
-    "title": "Lesson example - Discover Quarto",
-    "section": "1 Metadata",
-    "text": "1 Metadata\nThis file’s metadata are displayed at the top between the ---.\n\n1.1 Basic setup\n---\ntitle: \"Title of this page\"\ndescription: \"Description of this page\"\nauthor: \"Author name\"\nformat: html                             # because it's a webpage\nfrom: markdown+emoji                     # you use markdown language\n---\n\n\n1.2 Advanced\n\n1.2.1 Add a table of contents\nWith the following setup, all titles, i.e. lines beginning with # will be added to the table of contents.\nformat:\n  html:\n    toc: true                            # Add a Table Of Contents\n    toc-location: left\n    toc-expand: 3                        # 1 : only main titles ... 5 : highly detailed\nIf you want to remove a title from the table of contents, use the unlisted class :\n# My title {.unlisted}\n\n\n1.2.2 Self-numbering\nIf you use the following setup, each title will be numbered.\n---\nnumber-sections: true\n---\nIf you don’t want to number a part, use class unnumbered. In this page, Introduction and Objectives are unnumbered.\n## Introduction {.unnumbered}\n\n\n1.2.3 PDF export\nThe format of a web page is html.\nBut you can also export in pdf format.\nformat:\n  html:\n    ...\n  pdf: \n    margin-left: 2cm\n    margin-right: 2cm\n    margin-top: 2cm\n    margin-bottom: 2cm\n    shift-heading-level-by: -1\nWhen you will render the quarto project, it will create a file lesson.pdf in addition of lesson.html.\nOn the webpage, a link will appear under the table of contents to download the pdf.\n\n\n\n\n\n\nCaution\n\n\n\nTo perform this you have to install first tinytex : quarto install tinytex\nTo publish on GitHub pages, you have to modify this step in publish.yml\n\n\n.github/workflow/publish.yml\n\n    steps:\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n      - run: quarto install tinytex                         # PDF engine"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
-    "href": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
-    "title": "Lesson example - Discover Quarto",
-    "section": "2 Add a link in the navigation bar",
-    "text": "2 Add a link in the navigation bar\nThe navigation bar is setup in the file _quarto.yml.\nLook for navbar key, and then add a link to this page."
-  },
-  {
-    "objectID": "doc/examples/lesson.html#markdown-basics",
-    "href": "doc/examples/lesson.html#markdown-basics",
-    "title": "Lesson example - Discover Quarto",
-    "section": "3 Markdown basics",
-    "text": "3 Markdown basics\nFor more information, you can see this page\n\n3.1 Text format\nbold\nitalic\nitalicbold\nScript\nstrike\nunderline\nSubscript : Un\nSuperscript : X2\n\nCitation\n\nIt is also possible to add custom formatting by using the style.css file at the project root.\nFor one-off use, you can declare the desired style right here in the document.\nLine Block\n  Spaces and newlines\n  are preserved\n\n\n3.2 Table\nMore about markdown table\n\nFrench Departments\n\n\nCode\nName\nCity\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n3.3 List\n\nitem 1\n\nitem1.1\n\nitem 2\n\n\n\nitem3 with checkbox\nitem4 with checkbox\n\n\n\n3.4 Columns\n\n\ncontent of the first column\n\ncontent of the second column\n\n\n\n\n3.5 Links\n\n3.5.1 External\n\nhttps://quarto.org/\nQuarto\nQuarto with hover text\nQuarto in a new tab\n\n\n\n3.5.2 Internal\n\nReference Advanced tools section with default id\nReference Tabulations section with custom id\nReference section Local repository from page Examples/Practical\n\n\n\n\n3.6 Figures and Videos\n\n\n\nStones\n\n\n\n\n\n\n\n\nTip\n\n\n\nMetada lightbox: true defined at the top allow you to click on the figure.\n\n\n\n\n\n3.7 Emoji\n💡 In this page, you can add GitHub emojis. 😍"
-  },
-  {
-    "objectID": "doc/examples/lesson.html#advanced-tools",
-    "href": "doc/examples/lesson.html#advanced-tools",
-    "title": "Lesson example - Discover Quarto",
-    "section": "4 Advanced tools",
-    "text": "4 Advanced tools\n\n4.1 Callout Blocks\nYou can easily highlight text using callout blocks.\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nThis is very very important\n\n\n\nWith a custom title\n\n\n\n\n\n\n\n\nWith hidden text\n\n\n\n\n\nHidden text\n\n\n\n\n\n4.2 Tabulations\n\nTab1Tab2Tab3\n\n\nContent of the first tab\n\n\nContent of the second tab\n\n\nContent of the third tab\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nIn the PDF output, the content of each tab will be displayed consecutively, one after the other.\n\n\n\n\n4.3 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.4 Diagrams\nMermaid lets you create various diagrams and visualizations\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n\n\n\nstateDiagram-v2\n    state if_state &lt;&lt;choice&gt;&gt;\n    [*] --&gt; IsPositive\n    IsPositive --&gt; if_state\n    if_state --&gt; False: if n &lt; 0\n    if_state --&gt; True : if n &gt;= 0"
+    "objectID": "doc/resources.html#extensions",
+    "href": "doc/resources.html#extensions",
+    "title": "Useful resources",
+    "section": "Extensions",
+    "text": "Extensions\n\nExtensions for Quarto\nSend some confetti through your presentation\nRevealJS : Show the amount of slides in a vertical stack\nFont awesome\nQuarto animate\nSpotlight for reveal\n\n\nExtension for Visual Studio Code\n\nquarto-vscode\nMardown-table"
   },
   {
     "objectID": "doc/examples/notebook.html",
@@ -173,6 +68,83 @@
     "title": "Notebook example",
     "section": "Python cells",
     "text": "Python cells\n\nA python cell that will not be executed\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n\n\nA python cell to be executed if eval: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-3, 3, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#introduction",
+    "href": "doc/examples/presentation.html#introduction",
+    "title": "Presentation example",
+    "section": "Introduction",
+    "text": "Introduction\n\nhello\nwelcome\nReveal.js"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#objectives",
+    "href": "doc/examples/presentation.html#objectives",
+    "title": "Presentation example",
+    "section": "🎯 Objectives",
+    "text": "🎯 Objectives\n\nCreate a slideshow\nUse the Speaker View (shortcut : S)\nExplain some metadata"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#metadata",
+    "href": "doc/examples/presentation.html#metadata",
+    "title": "Presentation example",
+    "section": "Metadata",
+    "text": "Metadata\nThe metadata of the current document is shown at the top of the page\n\npreview-links: true : view in current window. Try it\ntransition: slide : choose transmition mode\nchalkboard: true : activate chalkboard\ncontrols: true : show navigation arrows"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#speaker-view",
+    "href": "doc/examples/presentation.html#speaker-view",
+    "title": "Presentation example",
+    "section": "Speaker View",
+    "text": "Speaker View\n\n::: {.notes} to add personal notes\nS to activate Speaker View\n\nUtilisation :\n\nOn your own screen: display Speaker View\nOn the presentation screen: display the slideshow\n\n\nPersonal notes\n\nnote 1\nnote 2"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#chalkboard",
+    "href": "doc/examples/presentation.html#chalkboard",
+    "title": "Presentation example",
+    "section": "Chalkboard",
+    "text": "Chalkboard\n\nB to open a blackboard\nC to draw on your slide"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#lists",
+    "href": "doc/examples/presentation.html#lists",
+    "title": "Presentation example",
+    "section": "Lists",
+    "text": "Lists\n\nitem 1\n\nitem 1.1\nitem 1.2\n\nitem 2\n\nincrémental display\n\nitem 3\nitem 4"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#table",
+    "href": "doc/examples/presentation.html#table",
+    "title": "Presentation example",
+    "section": "Table",
+    "text": "Table\n\nFrench Departments\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#code",
+    "href": "doc/examples/presentation.html#code",
+    "title": "Presentation example",
+    "section": "Code",
+    "text": "Code\n\nCodeResultHighlight lines\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#big-text",
+    "href": "doc/examples/presentation.html#big-text",
+    "title": "Presentation example",
+    "section": "Big text",
+    "text": "Big text\nThe r-fit-text class makes text as large as possible without overflowing the slide.\n\nBig Text"
+  },
+  {
+    "objectID": "doc/examples/presentation.html#image-size-auto",
+    "href": "doc/examples/presentation.html#image-size-auto",
+    "title": "Presentation example",
+    "section": "Image size auto",
+    "text": "Image size auto\nUse class .r-stretch with your image to automatically adapt image size."
+  },
+  {
+    "objectID": "doc/examples/presentation.html#animation",
+    "href": "doc/examples/presentation.html#animation",
+    "title": "Presentation example",
+    "section": "Animation",
+    "text": "Animation"
   },
   {
     "objectID": "doc/examples/presentation-html.html",
@@ -259,132 +231,6 @@
     "text": "Animation\n\n\nAnimation\n\n\n\nImplicit\nAnimation"
   },
   {
-    "objectID": "doc/examples/presentation.html#introduction",
-    "href": "doc/examples/presentation.html#introduction",
-    "title": "Presentation example",
-    "section": "Introduction",
-    "text": "Introduction\n\nhello\nwelcome\nReveal.js"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#objectives",
-    "href": "doc/examples/presentation.html#objectives",
-    "title": "Presentation example",
-    "section": "🎯 Objectives",
-    "text": "🎯 Objectives\n\nCreate a slideshow\nUse the Speaker View (shortcut : S)\nExplain some metadata"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#metadata",
-    "href": "doc/examples/presentation.html#metadata",
-    "title": "Presentation example",
-    "section": "Metadata",
-    "text": "Metadata\nThe metadata of the current document is shown at the top of the page\n\npreview-links: true : view in current window. Try it\ntransition: slide : choose transmition mode\nchalkboard: true : activate chalkboard\ncontrols: true : show navigation arrows"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#speaker-view",
-    "href": "doc/examples/presentation.html#speaker-view",
-    "title": "Presentation example",
-    "section": "Speaker View",
-    "text": "Speaker View\n\n::: {.notes} to add personal notes\nS to activate Speaker View\n\nUtilisation :\n\nOn your own screen: display Speaker View\nOn the presentation screen: display the slideshow\n\n\nPersonal notes\n\nnote 1\nnote 2"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#chalkboard",
-    "href": "doc/examples/presentation.html#chalkboard",
-    "title": "Presentation example",
-    "section": "Chalkboard",
-    "text": "Chalkboard\n\nB to open a blackboard\nC to draw on your slide"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#lists",
-    "href": "doc/examples/presentation.html#lists",
-    "title": "Presentation example",
-    "section": "Lists",
-    "text": "Lists\n\nitem 1\n\nitem 1.1\nitem 1.2\n\nitem 2\n\nincrémental display\n\n\nitem 3\nitem 4"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#table",
-    "href": "doc/examples/presentation.html#table",
-    "title": "Presentation example",
-    "section": "Table",
-    "text": "Table\n\nFrench Departments\n\n\nNumber\nName\nMain City\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#code",
-    "href": "doc/examples/presentation.html#code",
-    "title": "Presentation example",
-    "section": "Code",
-    "text": "Code\n\nCodeResultHighlight lines\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Collatz conjecture starting with n = 27\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\ndef collatz_conjecture(n):\n    sequence = [n]\n    \n    while n != 1:\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        sequence.append(n)\n    \n    return sequence\n\ndef plot_collatz(n):\n    sequence = collatz_conjecture(n)\n    plt.plot(sequence, linestyle='-', marker='o', markersize=3, color='darkcyan')\n    plt.xlabel('Step')\n    plt.ylabel('Value')\n    plt.title('Collatz conjecture')\n    plt.grid(True)\n    plt.show()\n\nplot_collatz(27)"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#big-text",
-    "href": "doc/examples/presentation.html#big-text",
-    "title": "Presentation example",
-    "section": "Big text",
-    "text": "Big text\nThe r-fit-text class makes text as large as possible without overflowing the slide.\n\nBig Text"
-  },
-  {
-    "objectID": "doc/examples/presentation.html#image-size-auto",
-    "href": "doc/examples/presentation.html#image-size-auto",
-    "title": "Presentation example",
-    "section": "Image size auto",
-    "text": "Image size auto\nUse class .r-stretch with your image to automatically adapt image size."
-  },
-  {
-    "objectID": "doc/examples/presentation.html#animation",
-    "href": "doc/examples/presentation.html#animation",
-    "title": "Presentation example",
-    "section": "Animation",
-    "text": "Animation"
-  },
-  {
-    "objectID": "doc/examples/practical.html",
-    "href": "doc/examples/practical.html",
-    "title": "Practical example",
-    "section": "",
-    "text": "You will learn how to create your first static website with Quarto."
-  },
-  {
-    "objectID": "doc/examples/practical.html#introduction",
-    "href": "doc/examples/practical.html#introduction",
-    "title": "Practical example",
-    "section": "",
-    "text": "You will learn how to create your first static website with Quarto."
-  },
-  {
-    "objectID": "doc/examples/practical.html#github-repository",
-    "href": "doc/examples/practical.html#github-repository",
-    "title": "Practical example",
-    "section": "1 GitHub repository",
-    "text": "1 GitHub repository\nTo publish our website, we will use GitHub Pages. The first step is to create a repository on GitHub.\n\nLog in to GitHub\nCreate a new repository called Quarto-practical\n\nVisibility : Public\ncheck Add a README file\nChoose a license : Creative Commons Attribution ShareAlike 4.0\n\nCreate a new branch called gh-pages\n\nclic on button main\nwrite gh-pages\nclic on Create branch gh-pages from main\nwait 30 seconds and then refresh the page\n\n\n\n\n\n\n\n\nWhy deploy from pages branch gh-pages ?\n\n\n\nThis will keep your branch main clean and avoid including html pages generated by Quarto :\n\nbranch main : setup and content in qmd files\nbranch gh-pages : html for deployment\n\n\n\n\nIn the About section clic on ⚙️\n\nCheck Use your GitHub Pages website\nSave changes\n\n\nYou can clic on the url. Your website is created but empty."
-  },
-  {
-    "objectID": "doc/examples/practical.html#local-repository",
-    "href": "doc/examples/practical.html#local-repository",
-    "title": "Practical example",
-    "section": "2 Local repository",
-    "text": "2 Local repository\nIt’s time to create a folder to store your local repository :\n\nOpen Git Bash\nCreate the absolute path : mkdir -p /p/Cours1A/Quarto\nGo to this folder: cd /p/Cours1A/Quarto\nCreate a clone of your GitHub repository\n\nOn GitHub, clic on the green button Code, then SSH\ncopy the url (example : git@github.com:/ENSAI-1A-POO-TP.git)\nreplace username by yours and git clone git@github.com:&lt;username&gt;/ENSAI-1A-POO-TP.git"
-  },
-  {
-    "objectID": "doc/examples/practical.html#edit-your-files",
-    "href": "doc/examples/practical.html#edit-your-files",
-    "title": "Practical example",
-    "section": "3 Edit your files",
-    "text": "3 Edit your files\nWe will create and edit all needed files.\n\nOpen Visual Studio\nFile &gt; Open Folder\n\nGot to /p/Cours1A/Quarto\nClic once on Quarto-practical and then clic on Select a folder\n\n\n\n3.1 _quarto.yml\nIn your repository’s root directory, you’ll find the mandatory _quarto.yml file. This configuration file holds metadata settings.\nAll files within your repository will inherit these metadata settings. However, you have the flexibility to redefine these values for each individual file.\n\nCreate the _quarto.yml file in your repository’s root\nPaste the following code (you can custom title, navbar background color or both themes)\nproject:\n  type: website\n\nwebsite:\n  title: \"Quarto tutorial\"\n  navbar:\n    background: lightseagreen\n    left:\n      - href: index.qmd\n        text: Home\n\nformat:\n  html:\n    theme:\n      dark: solar\n      light: cosmo\n    css: styles.css\n\n\n\n\n\n\n\nLet’s have a closer look of these metadata\n\n\n\n\nproject type : website, let’s say it’s the default value\nthere is a navigation bar with a single tab\n\ntab name : Home\nit links to the index.qmd file ➡️ we will create it in the root\n\nthe default format is html\n\nwith two themes : one for the dark mode (first one so it is the default theme) and one for light mode\n\non the navbar top left you will find a trigger to toggle theme from dark to light\n\nit use styles from styles.css ➡️ we will create it in the root\n\n\n\n\n\n\n3.2 styles.css\nIn this file you can define all styles you can imagin.\n\ncreate file styles.css in the root\nin this file, create for example a class of green text on orange background\n.green_orange{\n  text: green;\n  background: orange;\n}\n\n\n\n3.3 index.qmd\nThis file is your homepage.\nIt will starts with some metadatas written in yaml and then markdown code.\n\n\n3.4 .gitignore\n\n\n3.5 .github/workflows/publish.yml"
-  },
-  {
-    "objectID": "doc/examples/practical.html#git-push",
-    "href": "doc/examples/practical.html#git-push",
-    "title": "Practical example",
-    "section": "4 git push",
-    "text": "4 git push"
-  },
-  {
-    "objectID": "doc/examples/practical.html#gear-second",
-    "href": "doc/examples/practical.html#gear-second",
-    "title": "Practical example",
-    "section": "5 Gear second",
-    "text": "5 Gear second"
-  },
-  {
     "objectID": "doc/examples/python.html",
     "href": "doc/examples/python.html",
     "title": "Executed python - Example",
@@ -427,31 +273,192 @@
     "text": "5 Inline code\nIt is possible to embed code within a line of text :\n\nThe mean of fibonacci(10) is np.float64(8.8)."
   },
   {
-    "objectID": "doc/resources.html",
-    "href": "doc/resources.html",
-    "title": "Useful resources",
+    "objectID": "doc/examples/practical.html",
+    "href": "doc/examples/practical.html",
+    "title": "Practical example",
     "section": "",
-    "text": "Awesome-Quarto (Examples, tutorials, extensions, features…)\nA Quarto tip a day\nQuarto trick from productive-r-workflow\nQuarto RevealJS tips"
+    "text": "You will learn how to create your first static website with Quarto."
   },
   {
-    "objectID": "doc/resources.html#quarto-tips",
-    "href": "doc/resources.html#quarto-tips",
-    "title": "Useful resources",
+    "objectID": "doc/examples/practical.html#introduction",
+    "href": "doc/examples/practical.html#introduction",
+    "title": "Practical example",
     "section": "",
-    "text": "Awesome-Quarto (Examples, tutorials, extensions, features…)\nA Quarto tip a day\nQuarto trick from productive-r-workflow\nQuarto RevealJS tips"
+    "text": "You will learn how to create your first static website with Quarto."
   },
   {
-    "objectID": "doc/resources.html#extensions",
-    "href": "doc/resources.html#extensions",
-    "title": "Useful resources",
-    "section": "Extensions",
-    "text": "Extensions\n\nExtensions for Quarto\nSend some confetti through your presentation\nRevealJS : Show the amount of slides in a vertical stack\nFont awesome\nQuarto animate\n\n\nExtension for Visual Studio Code\n\nquarto-vscode\nMardown-table"
+    "objectID": "doc/examples/practical.html#github-repository",
+    "href": "doc/examples/practical.html#github-repository",
+    "title": "Practical example",
+    "section": "1 GitHub repository",
+    "text": "1 GitHub repository\nTo publish our website, we will use GitHub Pages. The first step is to create a repository on GitHub.\n\nLog in to GitHub\nCreate a new repository called Quarto-practical\n\nVisibility : Public\ncheck Add a README file\n.gitignore : GitHubPages\nlicence : Creative Commons Zero v1.0 Universal\n\nCreate a new branch called gh-pages\n\nclic on button main\nwrite gh-pages\nclic on Create branch gh-pages from main\nwait 30 seconds and then refresh the page until a Deployments section appears at the bottom right\n\n\n\n\n\n\n\n\nWhy deploy from pages branch gh-pages ?\n\n\n\nThis will keep your branch main clean and avoid including html pages generated by Quarto :\n\nbranch main : setup and content in qmd files\nbranch gh-pages : html for deployment\n\n\n\n\nIn the About section clic on ⚙️\n\nCheck Use your GitHub Pages website\nSave changes\n\n\nYou can clic on the url. Your website is created but empty."
   },
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Quarto tutorial",
+    "objectID": "doc/examples/practical.html#local-repository",
+    "href": "doc/examples/practical.html#local-repository",
+    "title": "Practical example",
+    "section": "2 Local repository",
+    "text": "2 Local repository\nWe will use the IDE Visual Studio Code to edit our pages.\n\nLogin to SSPCloud\nlaunch a service Vscode-r-python-julia\nOpen a bash terminal\n\nterminal &gt; New terminal or CTRL + ù or CTRL + SHIFT + C\n\nClone the repository Quarto-practical using HTTPS\nOpen Folder Quarto-practical\n\nFile &gt; Open Folder &gt; /home/onyxia/work/Quarto-practical\n\nOnce again, open a bash terminal\n\n\n\n\n\n\n\nLicence\n\n\n\nThe license chosen in GitHub is too permissive. Let’s change it for a more restrictive one\n\nPaste the text of licence CC BY-NC-SA 4.0 in file LICENCE\n\nBY (Attribution): Credit must be given to the creator\nNC (Non Commercial): Only noncommercial uses of the work are permitted\nSA (Share Alike): Adaptations must be shared under the same terms\n\n\nMore about Creative Commons licences"
+  },
+  {
+    "objectID": "doc/examples/practical.html#create-a-quarto-project",
+    "href": "doc/examples/practical.html#create-a-quarto-project",
+    "title": "Practical example",
+    "section": "3 Create a Quarto project",
+    "text": "3 Create a Quarto project\nLet’s start by creating a quarto project. We’re going to create a website project, i.e. a collection of web pages.\n\nquarto create project\n\nType: website\nDirectory: .\nTitle: My first quarto site\n\n\nThis command will create the following files in the current directory (.):\n\n_quarto.yml: metadata\nindex.qmd: the home page\nabout.qmd: another page (not a mandatory file)\nstyles.css: to customize visual aspects of your Quarto website\n\n\n\n\n\n\n\nNote\n\n\n\nIt is also possible to create these files manually."
+  },
+  {
+    "objectID": "doc/examples/practical.html#preview-your-site",
+    "href": "doc/examples/practical.html#preview-your-site",
+    "title": "Practical example",
+    "section": "4 Preview your site",
+    "text": "4 Preview your site\n\nquarto preview\n\nYou can open the preview on a specific port.\n\nClick on Open in Browser\n\n\n\n\n\n\n\nTip\n\n\n\nCTRL + C to quit the preview"
+  },
+  {
+    "objectID": "doc/examples/practical.html#edit-your-files",
+    "href": "doc/examples/practical.html#edit-your-files",
+    "title": "Practical example",
+    "section": "5 Edit your files",
+    "text": "5 Edit your files\nNow it’s time to custom our website.\n\n5.1 index.qmd\nLet’s modify the index:\n\nadding some local metadata (between ---)\ninserting link to other pages\nputting an emoji\n\n---\ntitle: \"Quarto-practical\"\ndescription: \"Let's have fun with Quarto\"\nauthor: \"Me\"\nformat: html\nfrom: markdown+emoji\n---\n\n\n## Quarto \n\n- [External link to Quarto website](https://quarto.org/){target=\"_blank\"}\n- [R example](doc/r.qmd)\n- [Python example](doc/python.qmd) :snake:\n\n\n\n\n\n\nCaution\n\n\n\nYou will see this in the terminal. This is normal, as we haven’t yet created these files.\nWARN: Unable to resolve link target: doc/r.qmd\nWARN: Unable to resolve link target: doc/python.qmd\n\n\n\n\n5.2 _quarto.yml\nThis configuration file holds metadata settings.\nAll files within your repository will inherit these metadata settings. However, you have the flexibility to redefine these values for each individual file.\n\nPaste the following code (you can custom title, navbar background color or both themes)\nproject:\n  type: website\n\nwebsite:\n  title: \"Quarto tutorial\"\n  navbar:\n    background: lightseagreen\n    left:\n      - href: index.qmd\n        text: Home\n      - text: Examples with code\n        menu:\n          - href: doc/r.qmd\n            text: \"R code\"\n          - href: doc/python.qmd\n            text: \"Python code\"\n    right:\n      - about.qmd  \n\nformat:\n  html:\n    theme:\n      dark: solar\n      light: cosmo\n    css: styles.css\n\n\n\n\n\n\n\nLet’s have a closer look of these metadata\n\n\n\n\nproject type : website, let’s say it’s the default value\nthere is a navigation bar with a single tab\n\ntab name : Home\nit links to the index.qmd file ➡️ we will create it in the root\n\nthe default format is html\n\nwith two themes : one for the dark mode (first one so it is the default theme) and one for light mode\n\non the navbar top left you will find a trigger to toggle theme from dark to light\n\nit use styles from styles.css ➡️ we will create it in the root\n\n\n\n\n\n\n5.3 styles.css\nIn this file you can define all styles you can imagin.\n\nin this file, create for example a green button\n.green-button {\n  display: inline-block;\n  padding: 2px 5px;\n  font-size: 14px;\n  color: white;\n  background-color: green;\n  border: none;\n  border-radius: 12px;\n  text-align: center;\n  text-decoration: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\n.green-button:hover {\n  background-color: darkgreen;\n}\nAdd a green button in the index\n\n[a button]{.green-button}\n\n\n\n\n5.4 Create new files\n\n\n\n\n\n\nImportant\n\n\n\nFirst of all, we will create a folder to store our files.\nIt’s important to work cleanly and store your files properly.\n\n\n\nIn the root, create a doc folder\nIn this folder, create files r.qmd and python.qmd\n\n\n5.4.1 Using R Code\n\n\nr.qmd\n\n---\ntitle: \"R code\"\nauthor: \"Me\"\nformat: html\nfrom: markdown+emoji\ncode-block-bg: true\ncode-block-border-left: \"#31BAE9\"\n---\n\n```{R}\nalpha &lt;- 0.5\nbeta &lt;- 0.5\nn_values &lt;- 500\n\nset.seed(123)\nbeta_values &lt;- rbeta(n = n_values, shape1 = alpha, shape2 = beta)\n\nplot(density(beta_values),\n     main = expression(paste(\"Density of Beta(\", alpha, \" = 0.5, \", beta, \" = 0.5) Distribution\")),\n     xlab = \"Value\",\n     ylab = \"Density\",\n     col = \"blue\",\n     lwd = 2,\n     cex.main = 1.2,\n     cex.lab = 1.1,\n     cex.axis = 1.0\n)\n```\n\n\n\n5.4.2 Using Python Code\nTo run python cells, we have to install jupyter and needed packages\n\npip install jupyter matplotlib scipy\n\n\n\npython.qmd\n\n---\ntitle: \"Python code\"\nauthor: \"Me\"\nformat: html\nfrom: markdown+emoji\ncode-block-bg: true\ncode-block-border-left: orange\n---\n\n```{python}\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\nx = np.linspace(-5, 5, 1000)\n\npdf = norm.pdf(x, 0, 1)\nplt.plot(x, pdf, label='Normal Distribution')\nplt.show()\n```"
+  },
+  {
+    "objectID": "doc/examples/practical.html#publish",
+    "href": "doc/examples/practical.html#publish",
+    "title": "Practical example",
+    "section": "6 Publish",
+    "text": "6 Publish\nWe will use git to synchronise our repositories and deploy our pages on GitHub.\n\n6.1 .gitignore\n\ngit status\n\nYou may have noticed that a _site folder has been created (during the preview). This folder contains the html pages generated from the qmd files. It should not be versioned with git.\n\nAdd _site/ in the .gitignore file\n\n\n\n6.2 .github/workflows/publish.yml\n\n\n\n\n\n\nTip\n\n\n\nYou’ve just created a Quarto website on your computer.\nNow, you want to publish it online using GitHub Pages.\nTo do that, imagine GitHub gives you a brand new, empty computer every time you update your site. On this empty machine, you need to:\n\nDownload your project files\nInstall the needed tools (Quarto, R, Python, etc.)\nInstall the packages your site uses\nBuild (render) the website\nPublish it to GitHub Pages\n\nAll these steps are written in a script (called a GitHub Actions workflow), so GitHub can do them automatically every time you update your site.\n\n\n\nCreate folder .github then folder workflows\nCreate file publish.yml and paste the code below\n\n\n\n.github/workflows/publish.yml\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        \n      - name: Install R\n        uses: r-lib/actions/setup-r@v2\n        with:\n          r-version: '4.3.0'\n\n      - name: Install R packages from DESCRIPTION file\n        uses: r-lib/actions/setup-r-dependencies@v2\n        \n      - name: Install Python and Dependencies\n        uses: actions/setup-python@v4\n        with:\n          python-version: '3.10'\n          cache: 'pip'\n      - run: pip install jupyter\n      - run: pip install -r requirements.txt\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n6.3 List R and Python Packages\nAs you probably know, R and Python have many packages.\n\nUse these root files to list the packages you need\n\n\n\nDESCRIPTION\n\nPackage: quartotuto\nType: website\nTitle: Quarto tuto\nDescription: Used to declare R dependencies\nVersion: 1.0\nAuthors@R: c(\n    person(\"Ludovic\", \"DENEUVILLE\",role = c(\"aut\", \"cre\"), email = \"ludovic.deneuville@ensai.fr\"))\nURL: https://ludo2ne.github.io/Quarto-tuto\nLicense: MIT\nImports:\n    dplyr,\n    ggplot2,\n    leaflet,\n    rmarkdown\nEncoding: UTF-8\n\n\n\n\nrequirements.txt\n\nmatplotlib\nnumpy\nscipy\n\n\n\n6.4 git push\n\nAdd\nCommit\nPush"
+  },
+  {
+    "objectID": "doc/examples/practical.html#gear-second",
+    "href": "doc/examples/practical.html#gear-second",
+    "title": "Practical example",
+    "section": "7 Gear second",
+    "text": "7 Gear second\nLet’s go further."
+  },
+  {
+    "objectID": "doc/examples/lesson.html",
+    "href": "doc/examples/lesson.html",
+    "title": "Lesson example - Discover Quarto",
     "section": "",
-    "text": "Quarto-tuto by Ludovic Deneuville is licensed under CC BY-NC-SA 4.0."
+    "text": "Welcome to this page.\n\n\n\n\n\n\nImportant\n\n\n\nYou can click on the Code button at the top right to see the page’s source code.\n\n\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#introduction",
+    "href": "doc/examples/lesson.html#introduction",
+    "title": "Lesson example - Discover Quarto",
+    "section": "",
+    "text": "Welcome to this page.\n\n\n\n\n\n\nImportant\n\n\n\nYou can click on the Code button at the top right to see the page’s source code.\n\n\n\n\n\nCreate a webpage\nLearn how to use metadata\nAdd a link in the navigation bar\nWriting in markdown"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#metadata",
+    "href": "doc/examples/lesson.html#metadata",
+    "title": "Lesson example - Discover Quarto",
+    "section": "1 Metadata",
+    "text": "1 Metadata\nThis file’s metadata are displayed at the top between the ---.\n\n1.1 Basic setup\n---\ntitle: \"Title of this page\"\ndescription: \"Description of this page\"\nauthor: \"Author name\"\nformat: html                             # because it's a webpage\nfrom: markdown+emoji                     # you use markdown language\n---\n\n\n1.2 Advanced\n\n1.2.1 Add a table of contents\nWith the following setup, all titles, i.e. lines beginning with # will be added to the table of contents.\nformat:\n  html:\n    toc: true                            # Add a Table Of Contents\n    toc-location: left\n    toc-expand: 3                        # 1 : only main titles ... 5 : highly detailed\nIf you want to remove a title from the table of contents, use the unlisted class :\n# My title {.unlisted}\n\n\n1.2.2 Self-numbering\nIf you use the following setup, each title will be numbered.\n---\nnumber-sections: true\n---\nIf you don’t want to number a part, use class unnumbered. In this page, Introduction and Objectives are unnumbered.\n## Introduction {.unnumbered}\n\n\n1.2.3 PDF export\nThe format of a web page is html.\nBut you can also export in pdf format.\nformat:\n  html:\n    ...\n  pdf: \n    margin-left: 2cm\n    margin-right: 2cm\n    margin-top: 2cm\n    margin-bottom: 2cm\n    shift-heading-level-by: -1\nWhen you will render the quarto project, it will create a file lesson.pdf in addition of lesson.html.\nOn the webpage, a link will appear under the table of contents to download the pdf.\n\n\n\n\n\n\nCaution\n\n\n\nTo perform this you have to install first tinytex : quarto install tinytex\nTo publish on GitHub pages, you have to modify this step in publish.yml\n\n\n.github/workflow/publish.yml\n\n    steps:\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n      - run: quarto install tinytex                         # PDF engine"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "href": "doc/examples/lesson.html#add-a-link-in-the-navigation-bar",
+    "title": "Lesson example - Discover Quarto",
+    "section": "2 Add a link in the navigation bar",
+    "text": "2 Add a link in the navigation bar\nThe navigation bar is setup in the file _quarto.yml.\nLook for navbar key, and then add a link to this page."
+  },
+  {
+    "objectID": "doc/examples/lesson.html#markdown-basics",
+    "href": "doc/examples/lesson.html#markdown-basics",
+    "title": "Lesson example - Discover Quarto",
+    "section": "3 Markdown basics",
+    "text": "3 Markdown basics\nFor more information, you can see this page\n\n3.1 Text format\nbold\nitalic\nitalicbold\nScript\nstrike\nunderline\nSubscript : Un\nSuperscript : X2\n\nCitation\n\nIt is also possible to add custom formatting by using the style.css file at the project root.\nFor one-off use, you can declare the desired style right here in the document.\nLine Block\n  Spaces and newlines\n  are preserved\n\n\n3.2 Table\nMore about markdown table\n\nFrench Departments\n\n\nCode\nName\nCity\n\n\n\n\n01\nAin\nBourg-en-Bresse\n\n\n02\nAisne\nLaon\n\n\n03\nAllier\nMoulins\n\n\n04\nAlpes-de-Haute-Provence\nDigne-les-Bains\n\n\n05\nHautes-Alpes\nGap\n\n\n\n\n\n3.3 List\n\nitem 1\n\nitem1.1\n\nitem 2\n\n\n\nitem3 with checkbox\nitem4 with checkbox\n\n\n\n3.4 Columns\n\n\ncontent of the first column\n\ncontent of the second column\n\n\n\n\n3.5 Links\n\n3.5.1 External\n\nhttps://quarto.org/\nQuarto\nQuarto with hover text\nQuarto in a new tab\n\n\n\n3.5.2 Internal\n\nReference Advanced tools section with default id\nReference Tabulations section with custom id\nReference section Local repository from page Examples/Practical\n\n\n\n\n3.6 Figures and Videos\n\n\n\nStones\n\n\n\n\n\n\n\n\nTip\n\n\n\nMetada lightbox: true defined at the top allow you to click on the figure.\n\n\n\n\n\n3.7 Emoji\n💡 In this page, you can add GitHub emojis. 😍"
+  },
+  {
+    "objectID": "doc/examples/lesson.html#advanced-tools",
+    "href": "doc/examples/lesson.html#advanced-tools",
+    "title": "Lesson example - Discover Quarto",
+    "section": "4 Advanced tools",
+    "text": "4 Advanced tools\n\n4.1 Callout Blocks\nYou can easily highlight text using callout blocks.\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nThis is very very important\n\n\n\nWith a custom title\n\n\n\n\n\n\n\n\nWith hidden text\n\n\n\n\n\nHidden text\n\n\n\n\n\n4.2 Tabulations\n\nTab1Tab2Tab3\n\n\nContent of the first tab\n\n\nContent of the second tab\n\n\nContent of the third tab\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nIn the PDF output, the content of each tab will be displayed consecutively, one after the other.\n\n\n\n\n4.3 Math\n\nwith one $ : inline \\(\\overline{X}_n = \\frac{1}{n} \\sum_{i=1}^{n}X_{i}\\)\nwith two $$: \\[\\tilde{S}^2 = \\frac{1}{n} \\sum_{i=1}^{n}(X_{i} - \\overline{X}_n)^{2}\\]\n\n\n\n4.4 Diagrams\nMermaid lets you create various diagrams and visualizations\n\n\n\n\n\nflowchart LR\n    20 -- +12 --&gt; 32 -- /8 --&gt; 4\n\n\n\n\n\n\n\n\n\n\n\nstateDiagram-v2\n    state if_state &lt;&lt;choice&gt;&gt;\n    [*] --&gt; IsPositive\n    IsPositive --&gt; if_state\n    if_state --&gt; False: if n &lt; 0\n    if_state --&gt; True : if n &gt;= 0"
+  },
+  {
+    "objectID": "doc/examples/R.html",
+    "href": "doc/examples/R.html",
+    "title": "Executed R - Example",
+    "section": "",
+    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
+  },
+  {
+    "objectID": "doc/examples/R.html#r",
+    "href": "doc/examples/R.html#r",
+    "title": "Executed R - Example",
+    "section": "",
+    "text": "To render files including R code, you have to :\n\nDownload and install R\nInstall required packages\n\nexample : install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))\n\n\n\n\n\nUsing R with Quarto"
+  },
+  {
+    "objectID": "doc/examples/R.html#cells",
+    "href": "doc/examples/R.html#cells",
+    "title": "Executed R - Example",
+    "section": "2 Cells",
+    "text": "2 Cells\nTo write code cells, the principle is the same as with Python.\nSimply replace Python with R between the braces.\n\n2.1 Load packages\nA good practice is to load all packages at the beginning.\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\n\n\n\n\n\n\n\nDeploy on GitHub pages\n\n\n\nDon’t forget to add your libraries into the file called DESCRIPTION at the reposiroty root.\nThis file is essential to list all needed packages when you run GitHub actions.\n\n\n\n\n2.2 First cell\nImagine you want to draw a spiral.\n\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n\ndata &lt;- data.frame(theta = theta, r = r)\ndata$x &lt;- data$r * cos(data$theta)\ndata$y &lt;- data$r * sin(data$theta)\n\nggplot(data, aes(x, y)) +\n  geom_path(color = \"darkcyan\", linewidth = 1.5)\n\n\n\n\n\n\n\nFigure 1: A wonderfull spiral\n\n\n\n\n\nYou cannot see it in the output code but i add those options at the beginning :\n```{r}\n#| label: fig-spiral\n#| fig-cap: A wonderfull spiral\ntheta &lt;- seq(0, 8 * pi, length.out = 1000)\nr &lt;- 0.5 * theta\n...\n```\nSo you can use the label and reference the figure elsewhere:\n\nFigure 1 with this code : @fig-spiral\nmy wonderfull spiral with this code :[my wonderfull spiral](#fig-spiral)"
+  },
+  {
+    "objectID": "doc/examples/R.html#tabulations",
+    "href": "doc/examples/R.html#tabulations",
+    "title": "Executed R - Example",
+    "section": "3 Tabulations",
+    "text": "3 Tabulations\n\nCodePlotData\n\n\n\nset.seed(42)\npairs &lt;- data.frame(x = runif(10), y = runif(10))\n\nggplot(pairs, aes(x, y)) +\n  geom_point(color = \"darkcyan\", alpha = 0.7) +\n  labs(x = \"X\", y = \"Y\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::kable(pairs)\n\n\n\n\nx\ny\n\n\n\n\n0.9148060\n0.4577418\n\n\n0.9370754\n0.7191123\n\n\n0.2861395\n0.9346722\n\n\n0.8304476\n0.2554288\n\n\n0.6417455\n0.4622928\n\n\n0.5190959\n0.9400145\n\n\n0.7365883\n0.9782264\n\n\n0.1346666\n0.1174874\n\n\n0.6569923\n0.4749971\n\n\n0.7050648\n0.5603327"
+  },
+  {
+    "objectID": "doc/examples/R.html#inline-code",
+    "href": "doc/examples/R.html#inline-code",
+    "title": "Executed R - Example",
+    "section": "4 Inline code",
+    "text": "4 Inline code\nYou can display variable values in text.\n\nages &lt;- c(20, 25, 30, 40)\n\nThe average age is 28.75."
+  },
+  {
+    "objectID": "doc/examples/R.html#interactive-maps",
+    "href": "doc/examples/R.html#interactive-maps",
+    "title": "Executed R - Example",
+    "section": "5 Interactive Maps",
+    "text": "5 Interactive Maps\nYou can include maps using library Leaflet.\n\nleaflet() %&gt;%\n  setView(lng=2.6, lat=46.5, zoom=5) %&gt;%\n  addTiles() %&gt;%  \n  addMarkers(lng=-1.7419, lat=48.0507, popup=\"ENSAI\")"
+  },
+  {
+    "objectID": "doc/getting-started.html",
+    "href": "doc/getting-started.html",
+    "title": "Create a static site",
+    "section": "",
+    "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files…\nIt only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files with markdown language\nQuarto will generate the site’s html pages from these .qmd files"
+  },
+  {
+    "objectID": "doc/getting-started.html#general-principle",
+    "href": "doc/getting-started.html#general-principle",
+    "title": "Create a static site",
+    "section": "",
+    "text": "With Quarto, it’s very easy to create a static site containing HTML pages, slides, executed Python or R code, notebooks, pdf files…\nIt only takes 10 minutes to get a first result, perhaps a little more the first time.\n\nYou define Quarto setup\nYou write your content in .qmd files with markdown language\nQuarto will generate the site’s html pages from these .qmd files"
+  },
+  {
+    "objectID": "doc/getting-started.html#local-use",
+    "href": "doc/getting-started.html#local-use",
+    "title": "Create a static site",
+    "section": "1 Local use",
+    "text": "1 Local use\nYou will need the following tools to work locally :\n\nInstall Quarto\nChoose an editor and install it, for example Visual Studio Code or R Studio (also created by Posit)\nOptionnal: if you want to generate pdf files, install tinytex quarto install tinytex\n\n\n1.1 Create a Quarto project\nYou can read official documentation or simply follow these advices\nTo create a Quarto projet you will need the following files :\n\n\n\n\n\n\n\nFile\nDescription\n\n\n\n\n_quarto.yml\nProject Metadata\n\n\nindex.qmd\nHome page\n\n\nstyles.css\nCSS file for styling the project\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWe strongly advice you to also create a folder named doc to store your content in a clear tree structure.\n\n\nExample of trees:\n\nSimpleAdvanced\n\n\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n└── doc/\n    ├── page1.qmd\n    ├── page2.qmd\n    └── page3.qmd\n\n\n├── index.qmd\n├── _quarto.yml\n├── styles.css\n├── doc/\n|   ├── lesson/\n|   │   ├── img/\n|   │   │   ├── image1.jpg\n|   │   │   └── image2.jpg\n|   │   ├── lesson1.qmd\n|   │   └── lesson2.qmd\n|   ├── practical/\n|   │   └── practical1.qmd\n|   └── presentation/\n|       └── presentation1.qmd\n├── .gitignore\n└── .github/\n    └── workflows/\n        └── publish.yml\n\n\n\n\nCreate a folder with files of the simple tree\n\n\n\n1.2 Metadata\n\nCreate at the project root, a file named _quarto.yml\n\n\nSimpleAdvanced\n\n\nproject:\n  type: website\nwebsite:\n  title: \"My website title\"\n  navbar:\n    background: \"#447099\"\n    left:\n      - href: index.qmd\n        text: Home\n      - text: \"Drop-down list of pages\"\n        menu:\n          - href: doc/page1.qmd\n            text: \"Page 1\"\n          - href: doc/page2.qmd\n            text: \"Page 2\"\n      - href: doc/page3.qmd\n        text: \"Direct link to Page 3\"\n    right:      \n      - icon: github\n        href: \"https://github.com/&lt;username&gt;/&lt;repository_name&gt;\"\n        target: \"_blank\"\nformat:\n  html:\n    theme:\n      dark: solar\n      light: cosmo\n    css: styles.css\n\n\n_quarto.yml file of Quarto-tuto.\n\n\n\n\n\n1.3 Create your index\n\nAt the project root, create file index.qmd\n\nIt will contain some metadata (title, description, author…) and then your content in markdown language\n\n\n---\ntitle: \"My home page\"\ndescription: \"Description of my home page\"\nauthor: \"Ludovic Deneuville\"\nformat: html\nfrom: markdown+emoji\n---\n\n## My content\n\nmy content using Markdown language\n\n\n1.4 Create pages\n\nThe same way you created the index file, create files doc/pages1.qmd, doc/pages2.qmd, doc/pages3.qmd\n\n\n\n\n\n\n\nTip\n\n\n\nIf you want more markdown content, feel free to see code of files in the Examples section, such as Practical\n\n\n\n\n1.5 Play with styles\n\nAt the project root, create file styles.css\n\nyou can let it empty for now\n\n\n\n\n1.6 Render\n\nIn a terminal, run quarto render. This command will convert your qmd files to html\nGo to folder _site and open your index.html\n\n\n\n\n\n\n\nCongratulation\n\n\n\n🎉 you created your first quarto website!"
+  },
+  {
+    "objectID": "doc/getting-started.html#deploy-with-github-pages",
+    "href": "doc/getting-started.html#deploy-with-github-pages",
+    "title": "Create a static site",
+    "section": "2 Deploy with GitHub pages",
+    "text": "2 Deploy with GitHub pages\n\n2.1 Create a repository\n\nLog in to GitHub\nCreate a new repository\nCreate a new branch named gh-pages\n\n\n\n2.2 Clone your repository\n\nPaste in your local repository the content of your quarto project\nAt the root, add a .gitignore file to exlude these folders\n/.quarto/\n/_site/ \nAdd this file to setup a publish pipeline\n├── .github/\n│   └── workflows/\n│       └── publish.yml\nPaste this content\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\nNote\n\n\n\nThe .github/workflows/publish.yml file contains the list of actions required to deploy the site.\nExample of Quarto-tuto\n\n\n\nUsing Git, add, commit files and then push\n\nA github pipeline is triggered by a push\n\nIn your GitHub repository, check in the Action section if everything is fine\n\nA few minutes later, the site will be available on https://&lt;username&gt;.github.io/&lt;repository_name&gt;\n\nOn the project’s GitHub page, add this link in the About section"
+  },
+  {
+    "objectID": "doc/getting-started.html#python-setup",
+    "href": "doc/getting-started.html#python-setup",
+    "title": "Create a static site",
+    "section": "3 Python Setup",
+    "text": "3 Python Setup\n\n\n\n\n\n\nNote\n\n\n\nIf you want to execute Python code in your qmd files.\n\n\n\n3.1 Local\n\nInstall Python\nInstall Jupyter : pip install jupyter\nList needed packages in file requirements.txt at the project root\npip install -r requirements.txt\n\n\n\n3.2 Remote\n\nIn file .github/workflow/publish.yml, add this step before Render and Publish\n    - name: Install Python and Dependencies\n      uses: actions/setup-python@v4\n      with:\n        python-version: '3.10'\n        cache: 'pip'\n    - run: pip install jupyter\n    - run: pip install -r requirements.txt"
+  },
+  {
+    "objectID": "doc/getting-started.html#r-setup",
+    "href": "doc/getting-started.html#r-setup",
+    "title": "Create a static site",
+    "section": "4 R Setup",
+    "text": "4 R Setup\n\n\n\n\n\n\nNote\n\n\n\nIf you want to execute R code in your qmd files.\n\n\n\n4.1 Local\n\nInstall R\nInstall needed packages\n\n\n\n4.2 Remote\n\nList needed packages in file DESCRIPTION at the project root\nIn file .github/workflow/publish.yml, add this step before Render and Publish\n    - name: Install R\n      uses: r-lib/actions/setup-r@v2\n      with:\n        r-version: '4.3.0'\n\n    - name: Install R packages from DESCRIPTION file\n      uses: r-lib/actions/setup-r-dependencies@v2"
   }
 ]

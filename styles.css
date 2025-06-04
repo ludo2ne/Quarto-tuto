@@ -77,6 +77,70 @@ p{
   border: solid 2px #fdc218;
 }
 
+
+/************************************************************/
+/* Buttons                                                  */
+/************************************************************/
+
+
+.green-button {
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 14px;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+  background-color: darkgreen;
+}
+
+.grey-button {
+  display: inline-block;
+  padding: 2px 2px;
+  font-size: 14px;
+  color: black;
+  background-color: grey;
+  border: 2px solid blue;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.grey-button:hover {
+  background-color: darkgrey;
+  border-color: darkblue;
+}
+
+.blue-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 4px;
+    font-size: 14px;
+    font-family: sans-serif;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.blue-button:hover {
+    background-color: #0056b3;
+}
+
+
 /************************************************************/
 /* html Vs RevealJS                                         */
 /************************************************************/
