@@ -419,6 +419,7 @@ scipy
 - [ ] Commit
 - [ ] Push
 
+You can follow the pipeline in the *Actions* tab of your GitHub repository.
 
 ## Gear second
 

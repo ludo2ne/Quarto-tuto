@@ -3,6 +3,8 @@ var:
 
 project:
   type: website
+  post-render:
+    - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
 
 website:
   title: "Quarto tutorial"

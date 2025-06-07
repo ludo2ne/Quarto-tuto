@@ -15,6 +15,11 @@ number-sections: true
 lightbox: true
 resources:
   - demo.pdf
+jupyter: 
+  kernelspec: 
+    name: R
+    display_name: R
+    language: R
 ---
 
 

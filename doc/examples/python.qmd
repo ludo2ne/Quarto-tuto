@@ -221,4 +221,25 @@ It is possible to embed code within a line of text :
 
 - The mean of fibonacci(10) is `{python} mean_fib_10`.
 
+## Extract only code
+
+For example, you can use [jupytext](https://jupytext.readthedocs.io/){target="_blank"} to keep only the python code from a qmd file.
+
+```{.yml filename="_quarto.yml"}
+project:
+  post-render:
+    - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
+```
+
+See the output: [python.py](./python.py){target="_blank"}
+
+Next, you can clean the file removing all comments:
+
+```{.yml filename="_quarto.yml"}
+project:
+  post-render:
+    - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
+    - sed -i.bak '/^\s*#/d' _site/doc/examples/python.py && rm _site/doc/examples/python.py.bak
+```
+
 
