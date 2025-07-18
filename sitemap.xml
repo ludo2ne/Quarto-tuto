@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/index.html</loc>
-    <lastmod>2025-06-04T15:06:19.472Z</lastmod>
-  </url>
-  <url>
     <loc>https://ludo2ne.github.io/Quarto-tuto/doc/resources.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/notebook.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/presentation.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/presentation-html.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/python.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/practical.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
   </url>
   <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/lesson.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/observable.html</loc>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
   </url>
   <url>
-    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/R.html</loc>
-    <lastmod>2025-06-04T15:06:19.465Z</lastmod>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/python.html</loc>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/Quarto-tuto/doc/getting-started.html</loc>
-    <lastmod>2025-06-04T15:06:19.471Z</lastmod>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/index.html</loc>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/R.html</loc>
+    <lastmod>2025-07-18T14:51:30.958Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/notebook.html</loc>
+    <lastmod>2025-07-18T14:51:30.964Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/presentation-html.html</loc>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/presentation.html</loc>
+    <lastmod>2025-07-18T14:51:30.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/Quarto-tuto/doc/examples/lesson.html</loc>
+    <lastmod>2025-07-18T14:51:30.964Z</lastmod>
   </url>
 </urlset>

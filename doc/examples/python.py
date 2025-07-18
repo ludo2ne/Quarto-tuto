@@ -1,0 +1,258 @@
+# ---
+# jupyter:
+#   jupytext:
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.17.2
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+#     path: /opt/hostedtoolcache/Python/3.10.18/x64/share/jupyter/kernels/python3
+# ---
+
+# %% [markdown]
+# ---
+# title: "Executed python - Example"
+# description: "Example of a web page with executed python code"
+# author: "Ludovic Deneuville"
+# format:
+#   html:
+#     toc: true
+#     toc-location: left
+#     toc-expand: 3 
+#     code-tools:
+#       source: true
+#       toggle: false
+# from: markdown+emoji
+# number-sections: true
+# lightbox: true
+# ---
+#
+#
+# ## Python
+#
+# If you want to run python code in your quarto document, first you will have to :
+#
+# - [ ] Download and install [Python](https://www.python.org/downloads/){target="_blank"}
+# - [ ] Install jupyter
+#   - `pip install jupyter`
+# - [ ] Install all needed packages
+#   - `pip install matplotlib numpy pandas ...`
+#
+# ::: {.callout-tip}
+# Instead of install packages one by one
+#
+# - list all needed packages in file `requirements.txt` at the project root
+# - run `pip install -r requirements.txt`
+# :::
+#
+#
+# Official documentation :
+#
+# - [Using Python](https://quarto.org/docs/computations/python.html){target="_blank"}
+# - [Jupyter Code Cells](https://quarto.org/docs/reference/cells/cells-jupyter.html){target="_blank"}
+#
+# ## Cells
+#
+# ### How it works ?
+#
+# On the left side, you can see the code entered in the *.qmd* file, and on the right side, you can see the result.
+#
+# :::: {.columns}
+# ::: {.column}
+# Code in your *.qmd* file
+#
+# ```{{python}}
+# a = 1
+# print(a + 1)
+# ```
+# :::
+#
+# ::: {.column}
+# Output (Code + result)
+
+# %%
+a = 1
+print(a + 1)
+
+# %% [markdown]
+# :::
+# ::::
+#
+# ### Cell options
+#
+# Cell options impact the execution and output of executable code blocks.  
+# They are specified within comments at the beginning of a block.
+#
+# Some option examples :
+#
+# ```{{python}}
+# #| label: my_label         # Unique label for code cell
+# #| eval: true              # Evaluate the cell
+# #| echo: true              # Print the code
+# #| output: false           # Don't print the output
+# #| warning: false          # Hide warnings
+# b = [1, 2, 3, 4]
+# print(b)
+# ```
+#
+#
+# ### Imports
+#
+# To facilitate import management, it is recommended to group all of them in the first cell.
+
+# %%
+#| label: python-imports
+import numpy as np
+import matplotlib.pyplot as plt
+
+from scipy.stats import norm
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# %% [markdown]
+# ### A non-evaluated cell
+#
+# If you add a dot (.) before the keyword `python`, the cell will **not** be evaluated.
+#
+# :::: {.columns}
+# ::: {.column}
+# Code
+#
+# ```
+# ```{.python}
+# x = np.linspace(-5, 5, 1000)
+#
+# pdf = norm.pdf(x, 0, 1)
+# plt.plot(x, pdf, label='Normal Distribution')
+# plt.show()
+# ```
+# :::
+#
+# ::: {.column}
+# Output
+#
+# ```{.python}
+# x = np.linspace(-3, 3, 1000)
+#
+# pdf = norm.pdf(x, 0, 1)
+# plt.plot(x, pdf, label='Normal Distribution')
+# plt.show()
+# ```
+# :::
+# ::::
+#
+#
+# ### An evaluated cell
+#
+# if you remove the dot (.) before the keyword `Python`, the cell will be evaluated.
+#
+
+# %%
+x = np.linspace(-3, 3, 1000)
+
+pdf = norm.pdf(x, 0, 1)
+plt.plot(x, pdf, label='Normal Distribution', color='darkcyan')
+plt.show()
+
+# %% [markdown]
+# ## Tabulations
+#
+# ::: {.panel-tabset .nav-pills}
+#
+# #### Code
+
+# %% filename="file.py"
+#| eval: false
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+plt.scatter(pairs[:, 0], pairs[:, 1], color='darkcyan', alpha=0.7)
+plt.show()
+
+# %% [markdown]
+# #### Plot
+
+# %%
+#| code-fold: true
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+plt.scatter(pairs[:, 0], pairs[:, 1], color='darkcyan', alpha=0.7)
+plt.show()
+
+# %% [markdown]
+# #### Data
+#
+# Display table of data using `tabulate` ([see imports](#python-imports))
+
+# %%
+#| code-fold: true
+
+np.random.seed(42)
+pairs = np.random.rand(10, 2)
+
+Markdown(tabulate(
+  pairs, 
+  headers=["X","Y"]
+))
+
+
+# %% [markdown]
+# :::
+#
+#
+# ## Line numbers
+
+# %%
+#| code-line-numbers: true
+def fibonacci(n) -> list[int]:
+    """Generate the Fibonacci sequence up to the nth term."""
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+# Example usage
+fib_10 = fibonacci(10)
+mean_fib_10 = np.mean(fib_10)
+
+print(fib_10)
+
+# %% [markdown]
+# ## Inline code
+#
+#
+# It is possible to embed code within a line of text : 
+#
+# - The mean of fibonacci(10) is `{python} mean_fib_10`.
+#
+# ## Extract only code
+#
+# For example, you can use [jupytext](https://jupytext.readthedocs.io/){target="_blank"} to keep only the python code from a qmd file.
+#
+# ```{.yml filename="_quarto.yml"}
+# project:
+#   post-render:
+#     - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
+# ```
+#
+# See the output: [python.py](./python.py){target="_blank"}
+#
+# Next, you can clean the file removing all comments:
+#
+# ```{.yml filename="_quarto.yml"}
+# project:
+#   post-render:
+#     - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
+#     - sed -i.bak '/^\s*#/d' _site/doc/examples/python.py && rm _site/doc/examples/python.py.bak
+# ```
+#
