@@ -2,6 +2,10 @@
 
 ## :construction: Todo
 
+- [ ] Why quarto
+	- R : https://github.com/ludo2ne/R-tuto/blob/main/src/25.%20Inf%C3%A9rence%20Bay%C3%A9sienne.R
+	- Rmd : https://github.com/MathieuMarauri/ensai-apprentissage-supervise/blob/master/tp1/output/correction.qmd
+	- Qmd : https://ludo2ne.github.io/Quarto-tuto/doc/examples/practical.html qmd -> pandoc -> html, pdf, doc, diapo
 - [ ] Observable
 - [ ] Blog using [Listing](https://quarto.org/docs/websites/website-listings.html)
 - [ ] Lab example
@@ -9,6 +13,7 @@
 - [ ] R : [Interactive table with DT](https://www.productive-r-workflow.com/quarto-tricks#internal-link)
 - [ ] R : [plotly](https://www.productive-r-workflow.com/quarto-tricks#plotly)
 - Generate an Self-contained html : quarto render doc.qmd --to html --self-contained
+- https://ssphub.netlify.app/talk/2004-05-02-quarto/
 
 ## :rocket: Render pages
 

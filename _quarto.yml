@@ -3,6 +3,8 @@ var:
 
 project:
   type: website
+  preview:
+    port: 7777
   post-render:
     - jupytext --output _site/doc/examples/python.py doc/examples/python.qmd 
 
@@ -33,6 +35,8 @@ website:
             text: "Python"
           - href: doc/examples/R.qmd
             text: "R"
+          - href: doc/examples/observable.qmd
+            text: "Observable"
       - href: doc/resources.qmd
         text: Resources
     right:

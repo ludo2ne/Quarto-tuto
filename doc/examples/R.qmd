@@ -13,13 +13,6 @@ format:
 from: markdown+emoji
 number-sections: true
 lightbox: true
-resources:
-  - demo.pdf
-jupyter: 
-  kernelspec: 
-    name: R
-    display_name: R
-    language: R
 ---
 
 
@@ -30,6 +23,14 @@ To render files including R code, you have to :
 - [ ] [Download and install R](https://cloud.r-project.org/){target="_blank"}
 - [ ] Install required packages
   - example : `install.packages(c('rmarkdown', 'dplyr', 'ggplot2'))`
+
+::: {.callout-tip title="Install R packages"}
+Using Git Bash dans file DESCRIPTION:
+
+- `Rscript -e "install.packages('devtools', repos='https://cloud.r-project.org')"`
+- `Rscript -e 'devtools::install_deps(dependencies = TRUE)'`
+
+:::
 
 ### Documentation
 

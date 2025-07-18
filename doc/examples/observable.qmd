@@ -1,0 +1,347 @@
+---
+title: "Example with Observable"
+description: "For creating interactive data visualizations"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+    code-tools: true
+    grid:
+      body-width: 1100px
+from: markdown+emoji
+number-sections: true
+lightbox: true
+---
+
+
+## Todo {.unnumbered}
+
+:construction:
+
+- [ ] Preprocess data with R or Python then use ojs_define()
+  - <https://quarto.org/docs/interactive/ojs/data-sources.html>
+- [ ] Call an API
+- <https://observablehq.com/@observablehq/a-taste-of-observable>
+
+
+
+## Introduction {.unnumbered}
+
+Quarto lets you create static documents and websites. That's great for reports or blogs where content doesn’t change.
+
+What if we want to add interactive elements? 
+
+That's where Observable helps: it lets you embed reactive JavaScript code that updates automatically.
+
+For example, you can show a live clock or a countdown inside Quarto with Observable:
+
+```{ojs}
+{
+  while (true) {
+    yield new Promise(resolve =>
+      setTimeout(() => resolve(new Date().toLocaleTimeString()), 1000)
+    );
+  }
+}
+```
+
+### Adding css {.unnumbered}
+
+
+::::::{.columns}
+:::{.column}
+
+```{ojs}
+//| code-fold: true
+viewof digitalClock = {
+  const div = html`<div class="digital-clock">00:00:00</div>`;
+
+  const update = () => {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    div.textContent = time;
+  };
+
+  update();
+  const interval = setInterval(update, 1000);
+
+  invalidation.then(() => clearInterval(interval)); // cleanup on cell re-run
+
+  return div;
+}
+```
+
+<style>
+.digital-clock {
+  font-family: 'Courier New', monospace;
+  font-size: 2em;
+  color: red;
+  background-color: black;
+  padding: 0.1em 0.2em;
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+  width: fit-content;
+  text-align: center;
+}
+</style>
+
+:::
+
+:::{.column}
+
+<style>
+.clock-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1.8em;
+  color: red;
+  overflow: hidden;
+}
+
+.clock-time {
+  z-index: 2;
+}
+
+.clock-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+```{ojs}
+//| code-fold: true
+viewof circularClock = {
+  const container = html`<div class="clock-container">
+    <div class="clock-dots"></div>
+    <div class="clock-time">00:00:00</div>
+  </div>`;
+
+  const timeDiv = container.querySelector(".clock-time");
+  const dotsDiv = container.querySelector(".clock-dots");
+
+    function updateClock() {
+      const now = new Date();
+      const hh = String(now.getHours()).padStart(2, "0");
+      const mm = String(now.getMinutes()).padStart(2, "0");
+      const ss = now.getSeconds(); // numeric, not string here
+      timeDiv.textContent = `${hh}:${mm}`;
+
+      // Clear previous dots
+      dotsDiv.innerHTML = "";
+
+      // Draw up dots
+      for (let i = 0; i < ss && i < 60; i++) {
+        const dot = document.createElement("span");
+        dot.className = "dot";
+
+        const angle = (i * 6 - 90) * (Math.PI / 180);
+        const x = Math.cos(angle) * 90 + 100;
+        const y = Math.sin(angle) * 90 + 100;
+
+        dot.style.left = `${x}px`;
+        dot.style.top = `${y}px`;
+        dotsDiv.appendChild(dot);
+      }
+    }
+
+
+  updateClock();
+  const interval = setInterval(updateClock, 1000);
+  invalidation.then(() => clearInterval(interval));
+
+  return container;
+}
+```
+
+:::
+::::::
+
+### Another simple example {.unnumbered}
+
+```{ojs}
+countdown = {
+  for (let i = 100; i >= 0; i -= 1) {
+    yield i;
+    await new Promise(resolve => setTimeout(resolve, 200));
+  }
+  yield "Time is over";
+}
+
+countdown
+```
+
+## Run
+
+::: {.callout-important}
+In contrast to traditional Quarto usage, Observable-powered documents cannot be rendered as static HTML with quarto render.
+
+You need to run the app on your own machine using a local server, typically by specifying a port.
+:::
+
+To set the port (between 3000 and 8000), specify it in file `_quarto.yml`.
+
+```{.yml filename="_quarto.yml"}
+project:
+  type: website
+  preview:
+    port: 7777
+```
+
+- To launch the preview: `quarto preview`
+
+
+## Functions to compute pace and duration time
+
+### Running pace
+
+```{ojs}
+/**
+ * Converts speed (km/h) to running pace in min/km.
+ * @param {number} speed_kmh - Speed in kilometers per hour.
+ * @returns {string} Pace string in the format "mm:ss"
+ */
+function pace(speed_kmh) {
+  const totalMinutes = 60 / speed_kmh;
+  const mins = Math.floor(totalMinutes);
+  const secs = Math.round((totalMinutes - mins) * 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+```
+
+### Race time
+
+```{ojs}
+/**
+ * Calculates the estimated finish time for a race.
+ * @param {number} distance_km - Distance in kilometers.
+ * @param {number} speed_kmh - Speed in kilometers per hour.
+ * @returns {string} Formatted time string (e.g. "42m 05s", "1h 10m 30s")
+ */
+function raceTime(distance_km, speed_kmh) {
+  const totalSeconds = Math.round((distance_km / speed_kmh) * 3600);
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = totalSeconds % 60;
+
+  return `${h > 0 ? `${h}h ` : ""}${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
+}
+```
+
+## Inputs
+
+### Distances dictionnary
+
+```{ojs}
+distances = [
+  { name: "1 km", km: 1, percentMAS: 1.1 },
+  { name: "5 km", km: 5, percentMAS: 0.93 },
+  { name: "10 km", km: 10, percentMAS: 0.88 },
+  { name: "Half Marathon", km: 21.0975, percentMAS: 0.82 },
+  { name: "Marathon", km: 42.195, percentMAS: 0.75 },
+  { name: "100 km", km: 100, percentMAS: 0.65 }
+]
+```
+
+::: {.callout-note title="Maximum Aerobic Speed"}
+MAS (Maximum Aerobic Speed) is the highest running speed at which your body reaches maximum oxygen consumption (VO₂ max). 
+
+It's typically the fastest pace you can sustain for about 6 minutes.
+
+The *percentMAS* column represents the estimated percentage of your MAS that you can sustain over each race distance. 
+
+For example, a value of 0.93 means you’re running at 93% of your MAS for that distance.
+:::
+
+
+## Choose input and compute
+
+::::::{.columns}
+:::{.column}
+
+Let's create an input:
+
+```{ojs}
+viewof mas = Inputs.range([8, 25], {
+  value: 15,
+  step: 0.5,
+  label: "MAS (km/h)",
+})
+```
+
+And then create a dataframe:
+
+```{ojs}
+df = distances.map(d => {
+  const speed = mas * d.percentMAS;
+  return {
+    distanceStr: d.name,
+    distance: d.km,
+    speed: speed.toFixed(2),
+    paceStr: pace(speed),
+    timeStr: raceTime(d.km, speed),
+    timeHour: d.km / speed
+  }
+})
+```
+
+:::
+
+:::{.column}
+
+Display the dataframe:
+
+```{ojs}
+Inputs.table(df, {
+  columns: ["distanceStr", "speed", "paceStr", "timeStr"],
+  header: {
+    distanceStr: "Distance",
+    speed: "Speed (km/h)",
+    paceStr: "Pace (min/km)",
+    timeStr: "Estimated Time"
+  }
+})
+```
+
+:::
+::::::
+
+
+
+## Plot speed against distance
+
+```{ojs}
+//| code-fold: true
+Plot.plot({
+  x: { label: "Distance (km)" },
+  y: {
+    label: "Time (Hours)",
+    domain: [0, 5],
+    ticks: 5 },
+  marks: [
+    Plot.line(df.filter(d => d.distance < 50), { x: "distance", y: "timeHour" }),
+    Plot.dot(df.filter(d => d.distance < 50), { x: "distance", y: "timeHour" })
+  ]
+})
+```

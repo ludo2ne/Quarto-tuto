@@ -306,3 +306,22 @@ stateDiagram-v2
     if_state --> True : if n >= 0
 ```
 
+### Page Layout
+
+You may feel that the central part is not wide enough and that the margins are too wide.
+
+It is possible to modify these default values :
+
+- sidebar: left side
+- body: middle part
+- margin: right side
+
+```{.yml}
+format:
+  html: 
+    grid:
+      sidebar-width: 250px
+      body-width: 800px
+      margin-width: 250px
+      gutter-width: 1.5rem
+```
