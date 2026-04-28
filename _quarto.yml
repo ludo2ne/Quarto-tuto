@@ -37,6 +37,8 @@ website:
             text: "R"
           - href: doc/examples/observable.qmd
             text: "Observable"
+          - href: doc/examples/dashboard.qmd
+            text: "Dashboard"
       - href: doc/resources.qmd
         text: Resources
     right:

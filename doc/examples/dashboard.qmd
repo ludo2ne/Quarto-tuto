@@ -1,0 +1,213 @@
+---
+title: "Chess Analytics" 
+format:
+  dashboard:
+    theme: pulse
+    orientation: columns
+from: markdown+emoji
+lightbox: true
+---
+
+```{r}
+#| label: load-packages
+library(DT)
+library(gt)
+library(leaflet)
+library(lubridate)
+library(tidyverse)
+library(tidygeocoder)
+```
+
+```{r}
+#| label: load-data
+df_raw <- read_csv("data/chess_games.csv")
+```
+
+```{r}
+#| label: prep-data
+df <- df_raw |>
+  mutate(
+    result_simple = case_when(
+      result == "1 - 0" ~ "White",
+      result == "0 - 1" ~ "Black",
+      TRUE ~ "Draw"
+    )
+  )
+```
+
+## Column 1 {width=65%}
+
+### Colum 1.1 {height=40%}
+
+#### Top openings
+
+```{r}
+#| fig-width: 4
+#| fig-asp: 0.6
+opening_results <- df |>
+  count(opening, result_simple) |>
+  group_by(opening) |>
+  mutate(total = sum(n)) |>
+  ungroup()
+
+top_openings <- opening_results |>
+  distinct(opening, total) |>
+  arrange(desc(total)) |>
+  slice_head(n = 5)
+
+plot_data <- opening_results |>
+  filter(opening %in% top_openings$opening)
+
+ggplot(plot_data, aes(x = reorder(opening, total), y = n, fill = result_simple)) +
+  geom_col(width = 0.7) +
+  geom_text(
+    aes(label = n),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    size = 3.5
+  ) +
+  coord_flip() +
+  scale_fill_manual(
+    values = c(
+      "White" = "#6BAED6",
+      "Draw"  = "#2171B5",
+      "Black" = "#08306B"
+    ),
+    breaks = c("White", "Draw", "Black")
+  ) +
+  labs(
+    title = "Top 5 Openings",
+    x = "",
+    y = "Game count",
+    fill = "Winner"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    plot.title = element_text(face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  ) +
+  guides(fill = guide_legend(nrow = 1))
+```
+
+
+#### Simple card
+
+::: {.card title="Games" }
+`r nrow(df)` games played.
+:::
+
+
+
+### Top ten players winrate {height=60%}
+
+```{r}
+#| title: "Top 10 players by win rate"
+players <- df |>
+  mutate(
+    White_win = result_simple == "White",
+    Black_win = result_simple == "Black",
+    Draw = result_simple == "Draw"
+  ) |>
+  pivot_longer(
+    cols = c(white, black),
+    names_to = "color",
+    values_to = "player"
+  ) |>
+  mutate(
+    win = case_when(
+      color == "white" & result_simple == "White" ~ 1,
+      color == "black" & result_simple == "Black" ~ 1,
+      TRUE ~ 0
+    ),
+    loss = case_when(
+      color == "white" & result_simple == "Black" ~ 1,
+      color == "black" & result_simple == "White" ~ 1,
+      TRUE ~ 0
+    ),
+    Draw = if_else(result_simple == "Draw", 1, 0),
+    elo = if_else(color == "white", elo_white, elo_black)
+  )
+
+ranking <- players |>
+  group_by(player) |>
+  summarise(
+    elo = round(mean(elo, na.rm = TRUE)),
+    wins = sum(win),
+    losses = sum(loss),
+    Draws = sum(Draw),
+    total = n(),
+    winrate = round(wins / total, 2)
+  ) |>
+  arrange(desc(winrate)) |>
+  slice_head(n = 10)
+
+datatable(ranking)
+```
+
+
+## Column 2 {width=35%}
+
+### Win rates {height=30%}
+
+```{r}
+win_rates <- df |>
+  count(result_simple) |>
+  mutate(pct = n / sum(n))
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "White"
+#| icon: circle
+#| color: light
+list(value=win_rates |>
+  filter(result_simple == "White") |>
+  pull(pct))
+```
+
+```{r}
+#| content: valuebox
+#| title: "Black"
+#| icon: circle-fill
+#| color: dark
+list(value=win_rates |>
+  filter(result_simple == "Black") |>
+  pull(pct))
+```
+
+```{r}
+#| content: valuebox
+#| title: "Draw"
+#| icon: circle-half
+#| color: secondary
+list(value=win_rates |>
+  filter(result_simple == "Draw") |>
+  pull(pct))
+```
+
+
+
+### Cities tournament map 
+
+
+```{r}
+#| title: Cities tournament map
+cities <- df |>
+  filter(!is.na(city), city != "NA") |>
+  distinct(city) |>
+  geocode(city, method = "osm")
+
+df_map <- df |>
+  left_join(cities, by = "city")
+
+leaflet(df_map) |>
+  addTiles() |>
+  addCircleMarkers(
+    lng = ~long,
+    lat = ~lat,
+    popup = ~city,
+    radius = 2
+  )
+```

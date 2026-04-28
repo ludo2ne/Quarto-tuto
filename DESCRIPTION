@@ -9,7 +9,11 @@ URL: https://ludo2ne.github.io/Quarto-tuto
 License: MIT
 Imports:
     dplyr,
+    DT,
     ggplot2,
     leaflet,
-    rmarkdown
+    lubridate,
+    rmarkdown,
+    stringr,
+    tidyverse
 Encoding: UTF-8
