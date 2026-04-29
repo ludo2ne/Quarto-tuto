@@ -15,5 +15,6 @@ Imports:
     lubridate,
     rmarkdown,
     stringr,
+    tidygeocoder,
     tidyverse
 Encoding: UTF-8
